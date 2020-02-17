@@ -9,11 +9,11 @@ var _0x202f=['Z2V0SXRlbUh0bWw=','bldieVY=','RHJhd0xheWVy','UVpyVWM=','YnVob1I=',
  
 (function webpackUniversalModuleDefinition(root, factory) {
     if (typeof exports === 'object' && typeof module === 'object')
-        module.exports = factory(require("cesium/Cesium"), require("jquery"), require("@turf/turf"), require("echarts"), require("mapv"));
+        module.exports = factory(require("cesium/Cesium"), require("jquery"), require("@turf/turf"));
     else if (typeof define === 'function' && define.amd)
-        define(["cesium/Cesium", "jquery", "@turf/turf", "echarts", "mapv"], factory);
+        define(["cesium/Cesium", "jquery", "@turf/turf"], factory);
     else if (typeof exports === 'object')
-        exports["mars3d"] = factory(require("cesium/Cesium"), require("jquery"), require("@turf/turf"), require("echarts"), require("mapv"));
+        exports["mars3d"] = factory(require("cesium/Cesium"), require("jquery"), require("@turf/turf"));
     else
-        root["mars3d"] = factory(root["Cesium"], root["jQuery"], root["turf"], root["echarts"], root["mapv"]);
+        root["mars3d"] = factory(root["Cesium"], root["jQuery"], root["turf"]);
 })(window, mars3dFactory);
