@@ -1,6 +1,12 @@
 # Mars3D三维地球 - Vue脚手架
  Vue技术栈下的一个最简[Mars3D](http://cesium.marsgis.cn)应用的三维地球项目模版,Mars3D等库都是采用import方式引入。
- 这是一个基于 [VueCli](https://cli.vuejs.org/config/)并整合了leaflet、MarsGIS的基础项目。
+ 这是一个基于 [VueCli](https://cli.vuejs.org/config/)并整合了Cesium、MarsGIS的基础项目。
+
+当前脚手架内Mars3D等所有js库都是**采用import方式引入的**。
+```javascript
+import * as Cesium from "cesium/Cesium";
+import mars3d from "./mars3d/mars3d";
+```
 
  其他技术栈，请参考 [Mars3D开源导航](https://github.com/marsgis/MarsGIS-for-Cesium)
  
@@ -28,29 +34,16 @@
 
 
 ## 项目说明
-1. 部分第三方库不是npm方式引入，是主页head中静态资源方式引入的。资源放在public目录下。
- 主要原因是：
-*    （1）一些第三方cesium插件并没有提供NPM包,以模块化的方式引入cesium没办法直接使用这些第三方插件包,通过静态资源的方式可以解决此问题。
-*    （2）cesium库有不同版本，并且我们有汉化修复bug，直接引入npm的库没法使用。
-2. public目录下文件与 Mars3D基础项目 的目录和文件完全相同，可以直接复制到该目录下进行更新。
+ 当前仓库是一个最简的项目模板，并且所有第3方js库都是import的标准引入方式（所以Cesium使用的是原生Cesium，因此有少部分mars3d分析相关功能无法使用），该仓库主要提供给 特定简单项目 或 有代码洁癖的童鞋 使用。
  
  
 ### 更新项目
  此脚手架中类库不保证是最新版本，请您自行拷贝交付资料中任意包下的 lib\mars3d\ 覆盖至: src\map\mars3d\ 目录下
  
 
-### 与其他脚手架的区别
-1. 与[mars3d-simple-vue](https://github.com/marsgis/mars3d-simple-vue)区别：
-  lib包的引入方式不同，当前是import方式的规范方式引入包含mars3d在内的所有lib，cesium使用的是原生cesium库。
-  mars3d-simple-vue是head静态资源引入。
-  
-
- SDK引入示例
-```javascript
-import * as Cesium from "cesium/Cesium";
-import mars3d from "./mars3d/mars3d";
-```
-
+### 与[mars3d-simple-vue](https://github.com/marsgis/mars3d-simple-vue)仓库的区别
+1. 当前是import方式的规范方式引入包含mars3d在内的所有lib。而 mars3d-simple-vue是head静态资源引入。
+2. 当前仓库使用的是npm原生的Cesium库。
 
 ## 版权说明
   本项目主要是为了展示[Mars3D](http://cesium.marsgis.cn)的项目应用，仅限大家学习之用，如需用于商业项目，请联系购买[火星科技](http://cesium.marsgis.cn)SDK授权。
