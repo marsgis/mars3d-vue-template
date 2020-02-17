@@ -1,0 +1,144 @@
+﻿{
+    "map3d": {
+        "homeButton": true,
+        "sceneModePicker": true,
+        "navigationHelpButton": true,
+        "infoBox": true,
+        "vrButton": false,
+        "fullscreenButton": false,
+        "geocoder": false,
+        "baseLayerPicker": true,
+        "showRenderLoopErrors": true,
+        "center": { "y": 31.686288, "x": 117.229619, "z": 11333.9, "heading": 359.2, "pitch": -39.5, "roll": 360 },
+        "minzoom": 1,
+        "maxzoom": 20000000,
+        "style": { "atmosphere": true, "lighting": false, "fog": false, "testTerrain": false },     
+        "contextmenu":true,  
+        "mouseZoom": true,
+        "location": {
+            "format": "<div>经度:{x}</div> <div>纬度:{y}</div> <div>海拔：{z}米</div> <div>方向：{heading}度</div> <div>视高：{height}米</div>",
+            "crs": ""
+        },
+        "navigation": {
+          "legend": { "left": "100px", "bottom": "-1px" },
+          "compass": { "bottom": "200px", "right": "2px" }
+        },
+        "terrain": {
+            "url": "http://data.marsgis.cn/terrain",
+            "visible": true
+        },
+        "basemaps": [
+            {
+                "name": "谷歌卫星",
+                "icon": "img/basemaps/google_img.png",
+                "type": "www_google",
+                "crs": "wgs84",
+                "layer": "img_d",
+                "visible": true
+            },
+            {
+                "name": "ArcGIS卫星",
+                "icon": "img/basemaps/esriWorldImagery.png",
+                "type": "arcgis",
+                "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+                "enablePickFeatures": false
+            },
+            {
+                "name": "微软卫星",
+                "icon": "img/basemaps/bingAerial.png",
+                "type": "www_bing",
+                "layer": "Aerial"
+            },
+            {
+                "name": "天地图卫星",
+                "icon": "img/basemaps/tdt_img.png",
+                "type": "group",
+                "layers": [
+                    { "name": "底图", "type": "www_tdt", "layer": "img_d", "key": ["6c99c7793f41fccc4bd595b03711913e" ] },
+                    { "name": "注记", "type": "www_tdt", "layer": "img_z", "key": [  "56b81006f361f6406d0e940d2f89a39c" ] }
+                ] 
+            }, 
+            {
+                "name": "天地图电子",
+                "icon": "img/basemaps/tdt_vec.png",
+                "type": "group",
+                "layers": [
+                    { "name": "底图", "type": "www_tdt", "layer": "vec_d", "key": ["313cd4b28ed520472e8b43de00b2de56" ] },
+                    { "name": "注记", "type": "www_tdt", "layer": "vec_z", "key": [  "83b36ded6b43b9bc81fbf617c40b83b5" ] }
+                ]               
+            }, 
+            {
+                "name": "OSM地图",
+                "type": "xyz",
+                "icon": "img/basemaps/osm.png",
+                "url": "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                "subdomains": "abc"
+            },
+            {
+                "name": "黑色底图",
+                "icon": "img/basemaps/bd-c-dark.png",
+                "type": "mapbox",
+                "mapId": "mapbox.dark"
+            },
+            {
+                "name": "灰色底图",
+                "icon": "img/basemaps/bd-c-grayscale.png",
+                "type": "mapbox",
+                "mapId": "mapbox.light"
+            },
+            {
+                "name": "离线地图  (供参考)",
+                "type": "xyz",
+                "icon": "img/basemaps/mapboxSatellite.png",
+                "url": "http://data.marsgis.cn/maptile/wgs3857img/{z}/{x}/{y}.jpg", 
+                "rectangle": { "xmin": -180, "xmax": 180, "ymin": -85, "ymax": 85 }
+            },
+            {
+                "name": "单张图片  (本地离线)",
+                "icon": "img/basemaps/offline.png",
+                "type": "image",
+                "url": "img/world/world.jpg"
+            }
+        ],
+        "operationallayers": [
+            { 
+                "type": "3dtiles",
+                "name": "县城社区",
+                "url": "http://data.marsgis.cn/3dtiles/qx-shequ/tileset.json",
+                "maximumScreenSpaceError": 2,
+                "maximumMemoryUsage": 8192,
+                "dynamicScreenSpaceError": true,
+                "cullWithChildrenBounds": false,
+                "luminanceAtZenith": 0.6,
+                "offset": {
+                    "z": 3
+                },
+                "center": {
+                    "y": 28.440864,
+                    "x": 119.486477,
+                    "z": 588.23,
+                    "heading": 268.6,
+                    "pitch": -37.8,
+                    "roll": 359.8
+                }
+            },
+            {
+                "type": "3dtiles",
+                "name": "合肥市区",
+                "url": "http://data.marsgis.cn/3dtiles/jzw-hefei/tileset.json",
+                "showClickFeature": true,
+                "popup": [
+                    {
+                        "field": "name",
+                        "name": "名称"
+                    },
+                    {
+                        "field": "floor",
+                        "name": "楼层"
+                    }
+                ],
+                "visible": false
+            }
+        ]
+    }
+}

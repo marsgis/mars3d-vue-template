@@ -1,0 +1,60 @@
+{
+  "name": "mars3d-vue-cli",
+  "version": "2.0.0",
+  "description": "Mars3D三维地球-Vue脚手架",
+  "main": "index.js",
+  "keywords": [
+    "marsgis",
+    "mars3d",
+    "cesium",
+    "vue",
+    "gis"
+  ],
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "@turf/turf": "^5.1.6",
+    "cesium": "^1.66",    
+    "echarts": "^4.5.0",
+    "jquery": "^3.4.0",
+    "mapv": "^2.0.34", 
+    "element-ui": "^2.8.2",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.4",
+    "@vue/cli-service": "^3.0.4",
+    "strip-pragma-loader": "^1.0.0",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 11"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marsgis/mars3d-vue-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marsgis/mars3d-vue-cli/issues",
+    "email": "wh@marsgis.cn"
+  },
+  "author": {
+    "name": "火星科技",
+    "url": "http://www.marsgis.cn"
+  },
+  "license": "ISC",
+  "homepage": "https://github.com/marsgis/mars3d-vue-cli"
+}
