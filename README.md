@@ -42,7 +42,7 @@ import mars3d from "./mars3d/mars3d";
  
 
 ### 与[mars3d-simple-vue](https://github.com/marsgis/mars3d-simple-vue)仓库的区别
-1. 当前是import方式的规范方式引入包含mars3d在内的所有lib。而 mars3d-simple-vue是head静态资源引入。
+1. 当前是import方式引入lib的（包含mars3d），而 mars3d-simple-angular是head静态资源引入。
 2. 当前仓库使用的是npm原生的Cesium库。
 
 ## 版权说明
