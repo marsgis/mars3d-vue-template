@@ -18,7 +18,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "@turf/turf": "^5.1.6",
-    "cesium": "^1.66",    
+    "cesium": "^1.67",    
     "echarts": "^4.5.0",
     "jquery": "^3.4.0",
     "mapv": "^2.0.34", 
