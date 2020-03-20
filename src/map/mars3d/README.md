@@ -9,7 +9,7 @@
 	Mars3D ( MarsGIS for Cesium )三维地球框架 是火星科技研发的一个Web三维地图开发平台系统 。平台框架核心功能编写在cesium-mars类库中，
 	该类库是我们开发并打包编译生产的一个js和一个css文件，引用这2个文件即可使用框架功能。
 
-核心依赖库： jquery 、Cesium
+核心依赖库：Cesium
 部分依赖库： 
     turf（测量角度、面积、绘制曲线、中心点等功能依赖）  
     mapv（使用mapv时才需要引入，非必须） 
