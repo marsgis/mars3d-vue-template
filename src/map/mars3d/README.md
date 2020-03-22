@@ -1,14 +1,23 @@
-#mars3d  基于Cesium的Web三维地球的 功能插件
+# mars3d
+  Mars3D ( MarsGIS for Cesium ) 地图平台核心SDK类库
 
-本地版本： 具体版本号请参考F12浏览器控制台打印值
-更新日期：
 
-官方地址：http://cesium.marsgis.cn
+## Mars3D介绍
+ Mars3D三维地球平台软件,简称Mars3D（曾用名 MarsGIS for Cesium ） 是[火星科技](http://www.marsgis.cn/)研发的一个Web三维地图开发平台系统，是火星科技团队成员多年GIS开发和Cesium使用的技术沉淀。基于Cesium和现代Web技术栈全新构建， 集成了领先的开源地图库、可视化库，提供了全新的大数据可视化、实时流数据可视化功能，通过本产品可快速实现浏览器和移动端上美观、流畅的地图呈现与空间分析。 框架主要目的是升级Cesium的基础功能和编写相关示例，方便快速搭建Cesium地图项目，敏捷开发，可复用，支持各种配置，适合各种场景使用。
 
-介绍：
-	Mars3D ( MarsGIS for Cesium )三维地球框架 是火星科技研发的一个Web三维地图开发平台系统 。平台框架核心功能编写在cesium-mars类库中，
-	该类库是我们开发并打包编译生产的一个js和一个css文件，引用这2个文件即可使用框架功能。
+## 相关网站
+[产品介绍手册](http://cesium.marsgis.cn/docs/file/cpjs.pdf)  
+[Mars3D官网](http://cesium.marsgis.cn)  
+[GitHub开源](https://github.com/marsgis/MarsGIS-for-Cesium)
 
-核心依赖库：Cesium
-部分依赖库： 
-    turf（测量角度、面积、绘制曲线、中心点等功能依赖） 
+ 
+
+## 版本信息
+   具体版本号及版本日期等信息，请在浏览器 F12控制台 查看打印值 
+ 
+
+## 相关依赖
+ 核心依赖库： Cesium   
+ 部分依赖库（非必须）： 
+    turf（仅部分功能中使用以下6个方法：`area 求面积, rhumbBearing 求角度,  bezierSpline 计算曲线,buffer 缓冲分析,centerOfMass 计算中心点, booleanPointInPolygon 判断点在面内`）  
+
