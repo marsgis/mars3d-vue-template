@@ -75,18 +75,6 @@
                 "subdomains": "abc"
             },
             {
-                "name": "黑色底图",
-                "icon": "img/basemaps/bd-c-dark.png",
-                "type": "mapbox",
-                "mapId": "mapbox.dark"
-            },
-            {
-                "name": "灰色底图",
-                "icon": "img/basemaps/bd-c-grayscale.png",
-                "type": "mapbox",
-                "mapId": "mapbox.light"
-            },
-            {
                 "name": "离线地图  (供参考)",
                 "type": "xyz",
                 "icon": "img/basemaps/mapboxSatellite.png",
