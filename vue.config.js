@@ -1,74 +1,86 @@
-// vue.config.js 配置说明
-//官方vue.config.js 参考文档 https://cli.vuejs.org/zh/config/#css-loaderoptions
-// 这里只列一部分，具体配置参考文档
+const path = require("path");
+const webpack = require("webpack");
+const CompressionPlugin = require("compression-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-const webpack = require('webpack')
-const path = require('path')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const cesiumSource = 'node_modules/cesium/Source';
-const cesiumWorkers = '../Build/Cesium/Workers';
+const cesiumSource = "node_modules/cesium/Source";
+const cesiumWorkers = "../Build/Cesium/Workers";
 
 module.exports = {
-  baseUrl: './',
-  assetsDir: './static',
+  publicPath: "/",
+
+  lintOnSave: false,
+
   productionSourceMap: false,
+
   devServer: {
-    host: "localhost", //也可以直接写IP地址这样方便真机测试
+    host: "localhost",
     port: 3001, // 端口号
-    https: false, // https:{type:Boolean}
-    open: true, //配置自动启动浏览器
+    https: false,
+    open: true
   },
+
   chainWebpack: config => {
-    config
-      .node.set('fs', 'empty').end()
-      .resolve.alias.set('cesium', path.resolve(__dirname, cesiumSource)).end().end()
+    config.node
+      .set("fs", "empty")
+      .end()
+      .resolve.alias.set("cesium", path.resolve(__dirname, cesiumSource))
+      .set("mars-map", path.resolve(__dirname, "./src/components/mars-map"))
+      .set("mars-ui", path.resolve(__dirname, "./src/components/mars-ui"))
+      .end()
+      .end()
       .amd({
         toUrlUndefined: true
       })
-      .module
-      .set('unknownContextCritical', false)
+      .module.set("unknownContextCritical", false)
       .rule()
-      .include
-      .add(path.resolve(__dirname, cesiumSource))
+      .include.add(path.resolve(__dirname, cesiumSource))
       .end()
       .post()
       .pre()
       .test(/\.js$/)
-      .use('strip')
-      .loader('strip-pragma-loader')
+      .use("strip")
+      .loader("strip-pragma-loader")
       .options({
         pragmas: {
           debug: false
         }
       })
       .end()
-      .end()
+      .end();
   },
-  configureWebpack: config => {
-    let plugins = [];
-    if (process.env.NODE_ENV === 'production') {
-      plugins = [
-        new webpack.DefinePlugin({
-          'CESIUM_BASE_URL': JSON.stringify('static')
-        }),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Assets'), to: 'static/Assets' }]),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'ThirdParty'), to: 'static/ThirdParty' }]),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: 'static/Widgets' }]),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, cesiumWorkers), to: 'static/Workers' }]),
-      ]
+
+  configureWebpack: () => {
+    if (process.env.NODE_ENV === "production") {
+      return {
+        plugins: [
+          new CompressionPlugin({
+            test: /\.js$|\.html$|\.css/,
+            threshold: 10240,
+            deleteOriginalAssets: false
+          }),
+          new webpack.DefinePlugin({ CESIUM_BASE_URL: JSON.stringify("static") }),
+          new CopyWebpackPlugin([{ from: path.join(cesiumSource, "Assets"), to: "static/Assets" }]),
+          new CopyWebpackPlugin([{ from: path.join(cesiumSource, "ThirdParty"), to: "static/ThirdParty" }]),
+          new CopyWebpackPlugin([{ from: path.join(cesiumSource, "Widgets"), to: "static/Widgets" }]),
+          new CopyWebpackPlugin([{ from: path.join(cesiumSource, cesiumWorkers), to: "static/Workers" }])
+          // new BundleAnalyzerPlugin()
+        ]
+      };
     } else {
-      plugins = [
-        new webpack.DefinePlugin({
-          'CESIUM_BASE_URL': JSON.stringify('')
-        }),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Assets'), to: 'Assets' }]),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'ThirdParty'), to: 'ThirdParty' }]),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: 'Widgets' }]),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, cesiumWorkers), to: 'Workers' }]),
-      ]
-    }
-    return {
-      plugins: plugins
+      return {
+        devtool: "source-map",
+        plugins: [
+          new webpack.DefinePlugin({ CESIUM_BASE_URL: JSON.stringify("") }),
+          new CopyWebpackPlugin([
+            { from: path.join("./public", "data"), to: "data" },
+            { from: path.join(cesiumSource, "Assets"), to: "Assets" },
+            { from: path.join(cesiumSource, "ThirdParty"), to: "ThirdParty" },
+            { from: path.join(cesiumSource, "Widgets"), to: "Widgets" },
+            { from: path.join(cesiumSource, cesiumWorkers), to: "Workers" }
+          ])
+        ]
+      };
     }
   }
-}
+};

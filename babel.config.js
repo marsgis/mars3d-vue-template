@@ -1,13 +1,20 @@
 module.exports = {
   presets: [
-    '@vue/app'
+    '@vue/cli-plugin-babel/preset'
   ],
   plugins: [
     [
       '@babel/plugin-transform-modules-commonjs',
       {
-        allowTopLevelThis: true,
-      },
+        allowTopLevelThis: true
+      }
     ],
-  ],
-}
+    [
+      "component",
+      {
+        "libraryName": "element-ui",
+        "styleLibraryName": "theme-chalk"
+      }
+    ]
+  ]
+};

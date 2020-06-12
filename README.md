@@ -38,7 +38,7 @@ import mars3d from "./mars3d/mars3d";
  
  
 ### 更新项目
- 此脚手架中类库不保证是最新版本，请您自行拷贝交付资料中任意包下的 lib\mars3d\ 覆盖至: src\map\mars3d\ 目录下
+ 此脚手架中类库不保证是最新版本，请您自行拷贝交付资料中任意包下的 `lib\mars3d\`(需要import版本) 覆盖至: `src\components\mars-map\mars3d\` 目录下
  
 
 ### 与[mars3d-simple-vue](https://github.com/marsgis/mars3d-simple-vue)仓库的区别
@@ -47,4 +47,4 @@ import mars3d from "./mars3d/mars3d";
 
 ## 版权说明
   本项目主要是为了展示[Mars3D](http://cesium.marsgis.cn)的项目应用，仅限大家学习之用，如需用于商业项目，请联系购买[火星科技](http://cesium.marsgis.cn)SDK授权。
- 并且Mars3D-SDK类库并未开源（即`src\map\mars3d\`）,内部有作者公司logo及时效限制。
+ 并且Mars3D-SDK类库并未开源（即`src\components\mars-map\mars3d\`）,内部有作者公司logo及时效限制。
