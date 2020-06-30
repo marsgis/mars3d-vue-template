@@ -40,6 +40,19 @@ import mars3d from "./mars3d/mars3d";
 ### 更新项目
  此脚手架中类库不保证是最新版本，请您自行拷贝交付资料中任意包下的 `lib\mars3d\`(需要import版本) 覆盖至: `src\components\mars-map\mars3d\` 目录下
  
+ 
+### 切换Cesium为火星修改版本步骤
+ 1. 拷贝交付资料内`lib/cesiumjs/Cesium/`放在public目录下的相同目录下，如`public/lib/cesiumjs/Cesium/`
+ 2. 修改`public\index.html` ,取消head内的注释
+ 3. 修改`src\components\mars-map\mars3d\mars3d.js` 最后的方法体内，参考注释改为下面所示
+
+```javascript
+ //var Cesium = require("cesium/Cesium")  //使用原生Cesium，通过npm安装
+ var Cesium = window.Cesium	//使用火星科技修改过的Cesium，通过index.html的head引入
+```
+
+
+
 
 ### 与[mars3d-simple-vue](https://github.com/marsgis/mars3d-simple-vue)仓库的区别
 1. 当前是import方式引入lib的（包含mars3d），而 mars3d-simple-vue是head静态资源引入。
