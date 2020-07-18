@@ -16,16 +16,16 @@
         "contextmenu":true,  
         "mouseZoom": true,
         "location": {
-      "fps": true,
-            "format": "<div>经度:{x}</div> <div>纬度:{y}</div> <div>海拔：{z}米</div> <div>方向：{heading}度</div> <div>视高：{height}米</div>",
-            "crs": ""
+            "fps":true,
+            "format":"<div>经度:{x}</div> <div>纬度:{y}</div> <div>海拔：{z}米</div> <div>方向：{heading}度</div> <div>俯仰角：{pitch}度</div>  <div>视高：{height}米</div>",
+            "crs":""
         },
         "navigation": {
           "legend": { "left": "100px", "bottom": "-1px" },
           "compass": { "bottom": "200px", "right": "2px" }
         },
         "terrain": {
-            "url": "http://data.marsgis.cn/terrain",
+            "url": "http://data.marsgis.cn/terrain", 
             "visible": true
         },
         "basemaps": [
@@ -53,12 +53,16 @@
             {
                 "name": "天地图卫星",
                 "icon": "img/basemaps/tdt_img.png",
-                "type": "group",
-                "layers": [
-                    { "name": "底图", "type": "www_tdt", "layer": "img_d", "key": ["6c99c7793f41fccc4bd595b03711913e" ] },
-                    { "name": "注记", "type": "www_tdt", "layer": "img_z", "key": [  "56b81006f361f6406d0e940d2f89a39c" ] }
-                ] 
-            }, 
+                "type": "www_tdt",
+                "layer": "img_d",
+                "key": [
+                    "313cd4b28ed520472e8b43de00b2de56",
+                    "83b36ded6b43b9bc81fbf617c40b83b5",
+                    "0ebd57f93a114d146a954da4ecae1e67",
+                    "6c99c7793f41fccc4bd595b03711913e",
+                    "56b81006f361f6406d0e940d2f89a39c"
+                ]
+            },
             {
                 "name": "天地图电子",
                 "icon": "img/basemaps/tdt_vec.png",
@@ -74,60 +78,81 @@
                 "icon": "img/basemaps/osm.png",
                 "url": "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 "subdomains": "abc"
-            },
+            }, 
             {
                 "name": "离线地图  (供参考)",
-                "type": "xyz",
-                "icon": "img/basemaps/mapboxSatellite.png",
-                "url": "http://data.marsgis.cn/maptile/wgs3857img/{z}/{x}/{y}.jpg", 
-                "rectangle": { "xmin": -180, "xmax": 180, "ymin": -85, "ymax": 85 }
+                "type": "group",
+                "icon": "img/basemaps/google_img.png",
+                "layers": [
+                    {        
+                        "name": "全球",                        
+                        "type": "xyz",
+                        "url": "http://data.marsgis.cn/maptile/wgs3857img/{z}/{x}/{y}.jpg", 
+                        "minimumLevel": 0, 
+                        "maximumLevel": 9
+                    },
+                    {
+                        "name": "中国",
+                        "type": "xyz", 
+                        "url": "http://data.marsgis.cn/maptile/wgs3857img/{z}/{x}/{y}.jpg", 
+                        "minimumTerrainLevel": 10,
+                        "minimumLevel": 10, 
+                        "maximumLevel": 12,
+                        "rectangle": { "xmin": 69.706929, "xmax": 136.560941, "ymin": 15.831038, "ymax": 52.558005 }
+                    },
+                    {
+                        "name": "具体项目(如合肥)",
+                        "type": "xyz", 
+                        "url": "http://data.marsgis.cn/maptile/wgs3857img/{z}/{x}/{y}.jpg", 
+                        "minimumTerrainLevel": 12,
+                        "minimumLevel": 12, 
+                        "maximumLevel": 18,
+                        "rectangle": { "xmin": 116.33236, "xmax": 118.183557, "ymin": 31.143784, "ymax": 32.565035 }
+                    }
+                ]
             },
             {
                 "name": "单张图片  (本地离线)",
                 "icon": "img/basemaps/offline.png",
                 "type": "image",
-                "url": "img/world/world.jpg"
-            }
+                "url": "img/tietu/world.jpg" 
+            }   
         ],
-        "operationallayers": [
-            { 
-                "type": "3dtiles",
-                "name": "县城社区",
-                "url": "http://data.marsgis.cn/3dtiles/qx-shequ/tileset.json",
-                "maximumScreenSpaceError": 2,
-                "maximumMemoryUsage": 8192,
-                "dynamicScreenSpaceError": true,
-                "cullWithChildrenBounds": false,
-                "luminanceAtZenith": 0.6,
-                "offset": {
-                    "z": 3
-                },
-                "center": {
-                    "y": 28.440864,
-                    "x": 119.486477,
-                    "z": 588.23,
-                    "heading": 268.6,
-                    "pitch": -37.8,
-                    "roll": 359.8
-                }
+        "operationallayers": [ 
+            {
+                "name": "行政区划界线",
+                "type": "xyz", 
+                "url": "https://t{s}.tianditu.gov.cn/DataServer?T=ibo_w&x={x}&y={y}&l={z}&tk=56b81006f361f6406d0e940d2f89a39c",
+                "subdomains": "01234567",
+                "maximumLevel": 10,
+                "visible": true
+            }, 
+            {
+                "pid": 10,
+                "name": "天地图注记",
+                "type": "www_tdt",
+                "layer": "img_z",
+                "key": [
+                  "313cd4b28ed520472e8b43de00b2de56",
+                  "83b36ded6b43b9bc81fbf617c40b83b5",
+                  "0ebd57f93a114d146a954da4ecae1e67",
+                  "6c99c7793f41fccc4bd595b03711913e",
+                  "56b81006f361f6406d0e940d2f89a39c"
+                ],
+                "visible": true
             },
             {
                 "type": "3dtiles",
                 "name": "合肥市区",
-                "url": "http://data.marsgis.cn/3dtiles/jzw-hefei/tileset.json",
-                "showClickFeature": true,
+                "url": "http://data.marsgis.cn/3dtiles/jzw-hefei/tileset.json", 
+                "showClickFeature":true,
                 "popup": [
-                    {
-                        "field": "name",
-                        "name": "名称"
-                    },
-                    {
-                        "field": "floor",
-                        "name": "楼层"
-                    }
+                    { "field": "name", "name": "名称" },
+                    { "field": "floor", "name": "楼层" }
                 ],
-                "visible": false
+                "visible":true
             }
         ]
     }
+
 }
