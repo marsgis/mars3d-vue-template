@@ -12,7 +12,7 @@ import mars3d from "./mars3d/mars3d";
  
 
 ## 运行效果 
- [在线Demo](http://cesium.marsgis.cn/project/vue-cli/index.html)  
+ [在线Demo](http://cesium.marsgis.cn/project/vue-cli/)  
 
  ![image](http://cesium.marsgis.cn/project/img/vue-cli.jpg)
  
