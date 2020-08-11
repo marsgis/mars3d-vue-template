@@ -73,7 +73,7 @@ export default {
     }
   },
 
-  beforeDestory() {
+  beforeDestroy() {
     this[`viewer${this.mapKey}`].mars.destroy();
     this[`viewer${this.mapKey}`].destroy();
     delete this[`viewer${this.mapKey}`];
@@ -95,6 +95,7 @@ export default {
 
     initMars3d(options) {
       if (this[`$viewer${this.mapKey}`]) return;
+      
       const viewer = mars3d.createMap({
         id: `marsgis-container${this.mapKey ? `-${this.mapKey}` : ''}`,
         data: options.map3d,
