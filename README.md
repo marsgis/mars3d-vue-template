@@ -42,15 +42,7 @@ import mars3d from "./mars3d/mars3d";
  
  
 ### 切换Cesium为火星修改版本步骤
- 1. 拷贝交付资料内`lib/cesiumjs/Cesium/`放在public目录下的相同目录下，如`public/lib/cesiumjs/Cesium/`
- 2. 修改`public\index.html` ,取消head内的注释
- 3. 修改`src\components\mars-map\mars3d\mars3d.js` 最后的方法体内，参考注释改为下面所示
-
-```javascript
- //var Cesium = require("cesium/Cesium")  //使用原生Cesium，通过npm安装
- var Cesium = window.Cesium	//使用火星科技修改过的Cesium，通过index.html的head引入
-```
-
+ 1. 请使用  [mars3d-vue-cli2](https://github.com/marsgis/mars3d-vue-cli2)仓库，代码基本与本仓库相同，就Cesium的引入方式不一样。
 
 
 
