@@ -20,7 +20,7 @@ import './mars3d/mars3d.css';
 
 Vue.prototype.$mars3d = mars3d;
 
-//为了方便使用,可以取消注释，按下面这样操作
+// 为了方便使用,可以取消注释，按下面这样操作
 // window.Cesium =Cesium
 // window.mars3d =mars3d
 
@@ -95,7 +95,7 @@ export default {
 
     initMars3d(options) {
       if (this[`viewer${this.mapKey}`]) return;
-      
+
       const viewer = mars3d.createMap({
         id: `marsgis-container${this.mapKey ? `-${this.mapKey}` : ''}`,
         data: options.map3d,
@@ -105,40 +105,41 @@ export default {
 
       // 汉化
       loadCesiumZH();
- 
+
       // Cesium 1.61以后会默认关闭反走样，对于桌面端而言还是开启得好，
       viewer.scene.postProcessStages.fxaa.enabled = true;
 
-      //鼠标滚轮放大的步长参数
+      // 鼠标滚轮放大的步长参数
       viewer.scene.screenSpaceCameraController._zoomFactor = 2.0;
 
-      //IE浏览器优化
-      if (window.navigator.userAgent.toLowerCase().indexOf("msie") >= 0) {
-        viewer.targetFrameRate = 20;        //限制帧率
-        viewer.requestRenderMode = true;    //取消实时渲染
+      // IE浏览器优化
+      if (window.navigator.userAgent.toLowerCase().indexOf('msie') >= 0) {
+        viewer.targetFrameRate = 20; // 限制帧率
+        viewer.requestRenderMode = true; // 取消实时渲染
       }
-
 
       // 禁用默认的实体双击动作。
       viewer.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK);
       viewer.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_CLICK);
 
-      //二三维切换不用动画
-      if (viewer.sceneModePicker)
-        viewer.sceneModePicker.viewModel.duration = 0.0;
+      // 二三维切换不用动画
+      if (viewer.sceneModePicker) { viewer.sceneModePicker.viewModel.duration = 0.0; }
 
-      viewer.mars.click = () => {
-        // 触发 document 上的事件
-        document.dispatchEvent(new Event('mousedown'));
-        document.dispatchEvent(new Event('click'));
-      };
       this[`viewer${this.mapKey}`] = viewer;
 
       // 挂载到全局对象下，所有组件通过this.$viewer访问
-
       Vue.prototype[`$viewer${this.mapKey}`] = viewer;
       Vue.prototype.$Cesium = Cesium;
       console.log('>>>>> 地图创建成功 >>>>');
+
+      // 绑定对alert的处理，右键弹出信息更美观。
+      window.haoutil = window.haoutil || {};
+      window.haoutil.msg = (msg) => {
+        this.$message.success(msg);
+      };
+      window.haoutil.alert = (msg) => {
+        this.$message.success(msg);
+      };
 
       this.$emit('onload', viewer);
     }
