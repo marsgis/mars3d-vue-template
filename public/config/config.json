@@ -6,18 +6,20 @@
         "infoBox": true,
         "vrButton": false,
         "fullscreenButton": false,
+        "animation": false,        
+        "timeline": false,        
         "geocoder": false,
         "baseLayerPicker": true,
         "showRenderLoopErrors": true,
         "center": { "y": 31.686288, "x": 117.229619, "z": 11333.9, "heading": 359.2, "pitch": -39.5, "roll": 360 },
         "minzoom": 1,
-        "maxzoom": 20000000,
+        "maxzoom": 50000000,
         "style": { "atmosphere": true, "lighting": false, "fog": false, "testTerrain": false },     
         "contextmenu":true,  
         "mouseZoom": true,
         "location": {
             "fps":true,
-            "format":"<div>经度:{x}</div> <div>纬度:{y}</div> <div>海拔：{z}米</div> <div>方向：{heading}度</div> <div>俯仰角：{pitch}度</div>  <div>视高：{height}米</div>",
+            "format":"<div>经度:{x}</div> <div>纬度:{y}</div> <div>海拔：{z}米</div> <div>层级：{level}</div> <div>方向：{heading}度</div> <div>俯仰角：{pitch}度</div> <div>视高：{height}米</div>",          
             "crs":""
         },
         "navigation": {
