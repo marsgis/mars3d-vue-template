@@ -42,7 +42,7 @@ export default {
           return Promise.resolve(res.data);
         });
     },
-    //添加示例点数据  
+    //添加示例点数据
     addPointToMap(viewer) {
       this.getPointData().then(data => {
         var dataSource = new Cesium.CustomDataSource();
@@ -57,9 +57,9 @@ export default {
             position: position,
             point: {
               //像素点
-              color: new Cesium.Color.fromCssColorString("#3388ff"),
+              color: Cesium.Color.fromCssColorString("#3388ff"),
               pixelSize: 10,
-              outlineColor: new Cesium.Color.fromCssColorString("#ffffff"),
+              outlineColor: Cesium.Color.fromCssColorString("#ffffff"),
               outlineWidth: 2,
               scaleByDistance: new Cesium.NearFarScalar(1000, 1, 1000000, 0.1)
             },
@@ -80,7 +80,7 @@ export default {
             },
             data: item,
             click: (entity)=> {
-              //单击回调 
+              //单击回调
               this.$message({message: "您单击了：" + entity.data.JC})
             }
           });
