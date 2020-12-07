@@ -50,6 +50,7 @@ import mars3d from "./mars3d/mars3d";
 1. 当前是import方式引入lib的（包含mars3d），而 mars3d-simple-vue是head静态资源引入。
 2. 当前仓库使用的是npm原生的Cesium库。
 
+
 ## 版权说明
-  本项目主要是为了展示[Mars3D](http://cesium.marsgis.cn)的项目应用，仅限大家学习之用，如需用于商业项目，请联系购买[火星科技](http://cesium.marsgis.cn)SDK授权。
- 并且Mars3D-SDK类库并未开源（即`src\components\mars-map\mars3d\`）,内部有作者公司logo及时效限制。
+1. 当前[Mars3D](http://cesium.marsgis.cn)免费版本可以免费无限制使用.
+2. 如有更高需求或商业应用，请联系购买[火星科技](http://cesium.marsgis.cn)进行SDK授权(去除logo、添加授权信息等)。 

@@ -1,4 +1,4 @@
-// vue.config.js 配置说明 
+// vue.config.js 配置说明
 // 这里只列一部分，具体配置参考官方文档https://cli.vuejs.org/zh/config/#css-loaderoptions
 
 const path = require("path");

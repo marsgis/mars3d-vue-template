@@ -73,7 +73,7 @@ export default {
     }
   },
 
-  beforeDestroy() {
+  destroy() {
     this[`viewer${this.mapKey}`].mars.destroy();
     this[`viewer${this.mapKey}`].destroy();
     delete this[`viewer${this.mapKey}`];
