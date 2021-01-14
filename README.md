@@ -8,7 +8,7 @@ import * as Cesium from "cesium/Cesium";
 import mars3d from "./mars3d/mars3d";
 ```
 
- 其他技术栈，请参考 [Mars3D开源导航](https://github.com/marsgis/MarsGIS-for-Cesium)
+ 其他技术栈，请参考 [Mars3D开源导航](https://github.com/marsgis/mars3d)
  
 
 ## 运行效果 

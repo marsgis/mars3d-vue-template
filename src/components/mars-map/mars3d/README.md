@@ -8,7 +8,7 @@
 ## 相关网站
 [产品介绍手册](http://cesium.marsgis.cn/docs/file/cpjs.pdf)  
 [Mars3D官网](http://cesium.marsgis.cn)  
-[GitHub开源](https://github.com/marsgis/MarsGIS-for-Cesium)
+[GitHub开源](https://github.com/marsgis/mars3d)
 
  
 
