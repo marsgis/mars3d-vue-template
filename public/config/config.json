@@ -43,14 +43,14 @@
                 "icon": "img/basemaps/esriWorldImagery.png",
                 "type": "arcgis",
                 "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
-                "enablePickFeatures": false
+                "enablePickFeatures": false,
+                "visible": true
             },
             {
                 "name": "微软卫星",
                 "icon": "img/basemaps/bingAerial.png",
                 "type": "www_bing",
-                "layer": "Aerial",
-                "visible": true
+                "layer": "Aerial"
             },
             {
                 "name": "天地图卫星",
