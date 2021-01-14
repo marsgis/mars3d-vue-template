@@ -36,8 +36,7 @@
                 "icon": "img/basemaps/google_img.png",
                 "type": "www_google",
                 "crs": "wgs84",
-                "layer": "img_d",
-                "visible": true
+                "layer": "img_d"
             },
             {
                 "name": "ArcGIS卫星",
@@ -50,20 +49,15 @@
                 "name": "微软卫星",
                 "icon": "img/basemaps/bingAerial.png",
                 "type": "www_bing",
-                "layer": "Aerial"
+                "layer": "Aerial",
+                "visible": true
             },
             {
                 "name": "天地图卫星",
                 "icon": "img/basemaps/tdt_img.png",
                 "type": "www_tdt",
                 "layer": "img_d",
-                "key": [
-                    "313cd4b28ed520472e8b43de00b2de56",
-                    "83b36ded6b43b9bc81fbf617c40b83b5",
-                    "0ebd57f93a114d146a954da4ecae1e67",
-                    "6c99c7793f41fccc4bd595b03711913e",
-                    "56b81006f361f6406d0e940d2f89a39c"
-                ]
+                "key": [  "313cd4b28ed520472e8b43de00b2de56"    ]
             },
             {
                 "name": "天地图电子",
