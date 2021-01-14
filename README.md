@@ -42,12 +42,12 @@ import mars3d from "./mars3d/mars3d";
  
  
 ### 切换Cesium为火星修改版本步骤
- 1. 请使用  [mars3d-vue-cli2](https://github.com/marsgis/mars3d-vue-cli2)仓库，代码基本与本仓库相同，就Cesium的引入方式不一样。
+ 1. 请使用  [mars3d-vue-cli-cdn](https://github.com/marsgis/mars3d-vue-cli-cdn)仓库，代码基本与本仓库相同，就Cesium的引入方式不一样。
 
 
 
-### 与[mars3d-simple-vue](https://github.com/marsgis/mars3d-simple-vue)仓库的区别
-1. 当前是import方式引入lib的（包含mars3d），而 mars3d-simple-vue是head静态资源引入。
+### 与[mars3d-vue-project](https://github.com/marsgis/mars3d-vue-project)仓库的区别
+1. 当前是import方式引入lib的（包含mars3d），而 mars3d-vue-project是head静态资源引入。
 2. 当前仓库使用的是npm原生的Cesium库。
 
 
