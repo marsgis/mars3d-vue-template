@@ -8,13 +8,6 @@ module.exports = {
       {
         allowTopLevelThis: true
       }
-    ],
-    [
-      "component",
-      {
-        "libraryName": "element-ui",
-        "styleLibraryName": "theme-chalk"
-      }
     ]
   ]
-};
+}

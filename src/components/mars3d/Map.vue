@@ -1,31 +1,21 @@
 <template>
-  <div :id="`marsgis-container${mapKey ? '-' + mapKey : ''}`"
+  <div :id="`mars3d-container${mapKey}`"
     :class="['mars3d-container', customClass, { 'mars3d-container-compare-rh' : compare }]"></div>
 </template>
 
 <script>
-import Vue from 'vue';
-import * as Cesium from 'cesium/Cesium';
-import axios from 'axios';
-import mars3d from './mars3d/mars3d';
+import Vue from 'vue'
 
-// 导航球
-import './plugins/navigation/mars3d-navigation.css';
-import './plugins/navigation/mars3d-navigation';
+// 使用免费开源版本
+import 'mars3d/dist/mars3d.css'
+import * as mars3d from 'mars3d'
 
-import { loadCesiumZH } from './plugins/class/cesium-zh';
-
-import 'cesium/Widgets/widgets.css';
-import './mars3d/mars3d.css';
-
-Vue.prototype.$mars3d = mars3d;
-
-// 为了方便使用,可以取消注释，按下面这样操作
-// window.Cesium =Cesium
-// window.mars3d =mars3d
+// 为了方便使用,绑定到原型链，在其他vue文件，直接 this.mars3d 来使用
+Vue.prototype.mars3d = mars3d
+Vue.prototype.Cesium = mars3d.Cesium
 
 export default {
-  name: 'CesiumViewer',
+  name: 'mars3dViewer',
 
   props: {
     // 初始化配置参数
@@ -61,94 +51,60 @@ export default {
 
   mounted() {
     if (this.appendToBody) {
-      document.body.appendChild(this.$el);
+      document.body.appendChild(this.$el)
     }
 
     if (this.mapKey) {
-      this.initMars3d(this.options);
+      this.initMars3d(this.options)
     } else {
-      this.getMapConfig(this.url).then(data => {
-        this.initMars3d(data);
-      });
+      mars3d.Resource.fetchJson({ url: this.url }).then((data) => {
+        this.initMars3d(data.map3d)// 构建地图
+      })
     }
   },
 
   destroy() {
-    this[`viewer${this.mapKey}`].mars.destroy();
-    this[`viewer${this.mapKey}`].destroy();
-    delete this[`viewer${this.mapKey}`];
+    this[`map${this.mapKey}`].destroy()
+    delete this[`map${this.mapKey}`]
   },
 
   methods: {
-    getMapConfig(url) {
-      return new Promise((resolve, reject) => {
-        axios
-          .get(url)
-          .then(res => {
-            resolve(res.data);
-          })
-          .then(error => {
-            reject(error);
-          });
-      });
-    },
-
     initMars3d(options) {
-      if (this[`viewer${this.mapKey}`]) return;
+      if (this[`map${this.mapKey}`]) return
 
-      const viewer = mars3d.createMap({
-        id: `marsgis-container${this.mapKey ? `-${this.mapKey}` : ''}`,
-        data: options.map3d,
-        serverURL: options.serverURL,
+      const mapOptions = {
+        ...options,
         ...this.options
-      });
-
-      // 汉化
-      loadCesiumZH();
-
-      // Cesium 1.61以后会默认关闭反走样，对于桌面端而言还是开启得好，
-      viewer.scene.postProcessStages.fxaa.enabled = true;
-
-      // 鼠标滚轮放大的步长参数
-      viewer.scene.screenSpaceCameraController._zoomFactor = 2.0;
-
-      // IE浏览器优化
-      if (window.navigator.userAgent.toLowerCase().indexOf('msie') >= 0) {
-        viewer.targetFrameRate = 20; // 限制帧率
-        viewer.requestRenderMode = true; // 取消实时渲染
       }
 
-      // 禁用默认的实体双击动作。
-      viewer.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK);
-      viewer.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_CLICK);
+      // 创建三维地球场景
+      var map = new mars3d.Map(`mars3d-container${this.mapKey}`, mapOptions)
 
-      // 二三维切换不用动画
-      if (viewer.sceneModePicker) { viewer.sceneModePicker.viewModel.duration = 0.0; }
+      this[`map${this.mapKey}`] = map
 
-      this[`viewer${this.mapKey}`] = viewer;
+      console.log('>>>>> 地图创建成功 >>>>')
 
-      // 挂载到全局对象下，所有组件通过this.$viewer访问
-      Vue.prototype[`$viewer${this.mapKey}`] = viewer;
-      Vue.prototype.$Cesium = Cesium;
-      console.log('>>>>> 地图创建成功 >>>>');
+      // 挂载到全局对象下，所有组件通过 this.map 访问
+      // Vue.prototype[`map${this.mapKey}`] = map
 
       // 绑定对alert的处理，右键弹出信息更美观。
-      window.haoutil = window.haoutil || {};
+      window.haoutil = window.haoutil || {}
       window.haoutil.msg = (msg) => {
-        this.$message.success(msg);
-      };
+        this.$message.success(msg)
+      }
       window.haoutil.alert = (msg) => {
-        this.$message.success(msg);
-      };
+        this.$message.success(msg)
+      }
 
-      this.$emit('onload', viewer);
+      // 抛出事件
+      this.$emit('onload', map)
     }
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="less">
+<style >
 .mars3d-container {
   height: 100%;
   overflow: hidden;
