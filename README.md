@@ -22,7 +22,46 @@
  ![image](http://mars3d.cn/project/vue-template/screenshot.jpg)
  
 
+  
+## 如何集成到自己已有的项目中
+1. ### 安装mars3d依赖包
+```bash
+npm install mars3d   //或  cnpm install mars3d   或  yarn add mars3d
+```
 
+2. ### 拷贝文件
+ > 场景配置文件：`public\config\config.json`
+
+ > 组件定义文件：`src\components\mars3d\Map.vue`
+
+
+3. ### 配置vue.config.js 
+
+```js
+// vue.config.js  
+const path = require('path')
+const CopywebpackPlugin = require('copy-webpack-plugin')
+const cesiumSource = 'node_modules/mars3d-cesium/Build/Cesium/'
+
+//拷贝cesium相关资源
+plugins = [
+    new webpack.DefinePlugin({
+        CESIUM_BASE_URL: JSON.stringify('static')
+    }),
+    new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Workers'), to: 'static/Workers' }]),
+    new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Assets'), to: 'static/Assets' }]),
+    new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'ThirdParty'), to: 'static/ThirdParty' }]),
+    new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: 'static/Widgets' }])
+]
+```
+
+4. ### 创建地球 
+ 参考 `src\views\Index.vue`文件引入Map组件和构造创建地球，主要关注下下面代码处
+```js
+<Map :url="configUrl" @onload="onMapload" />
+
+import Map from '../components/mars3d/Map.vue'
+```
 
 
 ## Mars3D 是什么 
