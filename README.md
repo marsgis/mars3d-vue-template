@@ -1,5 +1,5 @@
 # Mars3D最简项目模版 - Vue版
-    Mars3D三维地球平台软件，在`Vue技术栈下`的最简的应用项目模版。
+    Mars3D三维地球平台软件，在`Vue技术栈下`的最简的应用项目模版，基于vueCli 4.x 
    
 
  > 其他技术栈，请参考： [https://github.com/marsgis/mars3d](https://github.com/marsgis/mars3d)
@@ -36,10 +36,9 @@ npm install mars3d   //或  cnpm install mars3d   或  yarn add mars3d
 
 
 3. ### 配置vue.config.js 
-
+当前仓库是基于 vueCli 4.x 
 ```js
-// vue.config.js  
-const path = require('path')
+// vue.config.js  添加下面配置  
 const CopywebpackPlugin = require('copy-webpack-plugin')
 const cesiumSource = 'node_modules/mars3d-cesium/Build/Cesium/'
 
@@ -54,6 +53,44 @@ plugins = [
     new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: 'static/Widgets' }])
 ]
 ```
+如果是 vueCli 3.x 时，参考下面配置plugins 
+
+```js
+// vue.config.js 添加下面配置
+
+const CopywebpackPlugin = require('copy-webpack-plugin')
+const cesiumSource = 'node_modules/mars3d-cesium/Build/Cesium/'
+
+module.exports = {
+  //已忽略其他配置
+  configureWebpack: config => {
+    let plugins = [];
+    if (process.env.NODE_ENV === 'production') {
+      plugins = [
+        new webpack.DefinePlugin({
+          'CESIUM_BASE_URL': JSON.stringify('static')
+        }),
+        new CopywebpackPlugin([{ from: path.join(cesiumSource, cesiumWorkers), to: 'static/Workers' }]),
+        new CopywebpackPlugin([{ from: path.join(cesiumSource, 'Assets'), to: 'static/Assets' }]),
+        new CopywebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: 'static/Widgets' }]),
+      ]
+    } else {
+      plugins = [
+        new webpack.DefinePlugin({
+          'CESIUM_BASE_URL': JSON.stringify('')
+        }),
+        new CopywebpackPlugin([{ from: path.join(cesiumSource, cesiumWorkers), to: 'Workers' }]),
+        new CopywebpackPlugin([{ from: path.join(cesiumSource, 'Assets'), to: 'Assets' }]),
+        new CopywebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: 'Widgets' }]),
+      ]
+    }
+    return {
+      plugins: plugins
+    }
+  },
+}
+```
+
 
 4. ### 创建地球 
  参考 `src\views\Index.vue`文件引入Map组件和构造创建地球，主要关注下下面代码处
@@ -62,7 +99,11 @@ plugins = [
 
 import Map from '../components/mars3d/Map.vue'
 ```
-
+5. ### 常见问题
+ 运行报错时，请检查相关版本是否有冲突，比如webpack 4.43.0与copy-webpack-plugin 7.0.0 会出问题
+  >1. 检查webpack和copy-webpack-plugin版本兼容问题
+  >2. 检查webpack和copy-webpack-plugin与node、npm的版本兼容问题
+ 
 
 ## Mars3D 是什么 
 > `Mars3D三维地球平台软件` 是[火星科技](http://marsgis.cn/)团队研发的二三维一体的WebGIS地图开发平台，是火星科技团队成员多年GIS开发和Cesium使用的技术沉淀。基于[Cesium](https://cesium.com/cesiumjs/)开源库和现代Web技术栈全新构建，该平台框架优化了Cesium的使用方式和增添了更多高级功能。集成了领先的开源地图库、可视化库，提供了全新的三维大数据可视化、实时流数据可视化功能，通过本产品可快速实现浏览器和移动端上美观、流畅的三维地图呈现与空间分析。
