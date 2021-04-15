@@ -82,31 +82,35 @@ export default {
       const graphic = new this.mars3d.graphic.LabelEntity({
         position: new this.mars3d.LatLngPoint(116.1, 31.0, 1000),
         style: {
-          text: 'this.mars3d三维地球平台软件',
-          font: 'normal small-caps normal 28px 楷体',
-          style: this.Cesium.LabelStyle.FILL_AND_OUTLINE,
-          fillColor: this.Cesium.Color.fromCssColorString('#003da6'),
-          outlineColor: this.Cesium.Color.fromCssColorString('#bfbfbf'),
+          text: 'Mars3D三维地球平台软件',
+          font_size: 25,
+          font_family: '楷体',
+          color: '#003da6',
+          outline: true,
+          outlineColor: '#bfbfbf',
           outlineWidth: 2,
           horizontalOrigin: this.Cesium.HorizontalOrigin.CENTER,
           verticalOrigin: this.Cesium.VerticalOrigin.BOTTOM,
-          disableDepthTestDistance: Number.POSITIVE_INFINITY // 一直显示，不被地形等遮挡(会穿过地球被透视)
+          visibleDepth: false
         }
       })
       graphicLayer.addGraphic(graphic)
     },
+
     addGraphic_e02(graphicLayer) {
       const graphic = new this.mars3d.graphic.PointEntity({
         position: [116.2, 31.0, 1000],
         style: {
           color: '#ff0000',
           pixelSize: 10,
+          outline: true,
           outlineColor: '#ffffff',
           outlineWidth: 2
         }
       })
       graphicLayer.addGraphic(graphic)
     },
+
     addGraphic_e03(graphicLayer) {
       const graphic = new this.mars3d.graphic.BillboardEntity({
         name: '贴地图标',
@@ -121,13 +125,14 @@ export default {
       })
       graphicLayer.addGraphic(graphic)
     },
+
     addGraphic_e04(graphicLayer) {
       const graphic = new this.mars3d.graphic.PlaneEntity({
         position: new this.mars3d.LatLngPoint(116.4, 31.0, 1000),
         style: {
           plane: new this.Cesium.Plane(this.Cesium.Cartesian3.UNIT_Z, 0.0),
           dimensions: new this.Cesium.Cartesian2(4000.0, 4000.0),
-          material: new this.Cesium.ImageMaterialProperty({
+          material: this.mars3d.MaterialUtil.createMaterialProperty(this.mars3d.MaterialType.Image, {
             image: 'http://mars3d.cn/example/img/textures/movingRiver.png',
             transparent: true
           })
@@ -135,6 +140,8 @@ export default {
       })
       graphicLayer.addGraphic(graphic)
     },
+
+    //
     addGraphic_e05(graphicLayer) {
       const graphic = new this.mars3d.graphic.BoxEntity({
         position: new this.mars3d.LatLngPoint(116.5, 31.0, 1000),
@@ -150,6 +157,7 @@ export default {
       })
       graphicLayer.addGraphic(graphic)
     },
+
     addGraphic_e06(graphicLayer) {
       const graphic = new this.mars3d.graphic.CircleEntity({
         position: [116.1, 30.9, 1000],
@@ -166,6 +174,7 @@ export default {
       })
       graphicLayer.addGraphic(graphic)
     },
+
     addGraphic_e07(graphicLayer) {
       const graphic = new this.mars3d.graphic.CylinderEntity({
         position: [116.2, 30.9, 1000],
@@ -180,6 +189,8 @@ export default {
       })
       graphicLayer.addGraphic(graphic)
     },
+
+    //
     addGraphic_e08(graphicLayer) {
       const graphic = new this.mars3d.graphic.EllipsoidEntity({
         position: new this.mars3d.LatLngPoint(116.3, 30.9, 1000),
@@ -192,19 +203,20 @@ export default {
       })
       graphicLayer.addGraphic(graphic)
     },
+
     addGraphic_e09(graphicLayer) {
       const graphic = new this.mars3d.graphic.ModelEntity({
         name: '消防员',
         position: [116.4, 30.9, 1000],
         style: {
-          url:
-            'http://data.marsgis.cn/gltf/mars/firedrill/xiaofangyuan-run.gltf',
+          url: 'http://data.marsgis.cn/gltf/mars/firedrill/xiaofangyuan-run.gltf',
           scale: 16,
           minimumPixelSize: 100
         }
       })
       graphicLayer.addGraphic(graphic)
     },
+
     addGraphic_e10(graphicLayer) {
       const graphic = new this.mars3d.graphic.PolylineEntity({
         positions: [
@@ -217,9 +229,9 @@ export default {
           color: '#3388ff'
         }
       })
-      graphicLayer.addGraphic(graphic)
-      // graphic.addTo(graphicLayer)  //还可以另外一种写法,看个人习惯选用，内部都一样
+      graphicLayer.addGraphic(graphic) // 还可以另外一种写法: graphic.addTo(graphicLayer)
     },
+
     addGraphic_e11(graphicLayer) {
       const graphic = new this.mars3d.graphic.PolylineVolumeEntity({
         positions: [
@@ -234,9 +246,9 @@ export default {
           opacity: 0.9
         }
       })
-      graphicLayer.addGraphic(graphic)
-      // graphic.addTo(graphicLayer)  //还可以另外一种写法,看个人习惯选用，内部都一样
+      graphicLayer.addGraphic(graphic) // 还可以另外一种写法: graphic.addTo(graphicLayer)
     },
+
     addGraphic_e12(graphicLayer) {
       const graphic = new this.mars3d.graphic.CorridorEntity({
         positions: [
@@ -250,9 +262,9 @@ export default {
           color: '#3388ff'
         }
       })
-      graphicLayer.addGraphic(graphic)
-      // graphic.addTo(graphicLayer)  //还可以另外一种写法,看个人习惯选用，内部都一样
+      graphicLayer.addGraphic(graphic) // 还可以另外一种写法: graphic.addTo(graphicLayer)
     },
+
     addGraphic_e13(graphicLayer) {
       const graphic = new this.mars3d.graphic.WallEntity({
         positions: [
@@ -265,17 +277,17 @@ export default {
           closure: true,
           diffHeight: 500,
           // 动画线材质
-          material: new this.mars3d.material.LineFlowMaterialProperty({
+          material: this.mars3d.MaterialUtil.createMaterialProperty(this.mars3d.MaterialType.LineFlow, {
             image: 'http://mars3d.cn/example/img/textures/fence.png',
-            color: this.Cesium.Color.fromCssColorString('#00ff00'),
-            speed: 10, // 速度，建议取值范围1-100
+            color: '#00ff00',
+            speed: 10,
             axisY: true
           })
         }
       })
-      graphicLayer.addGraphic(graphic)
-      // graphic.addTo(graphicLayer)  //还可以另外一种写法,看个人习惯选用，内部都一样
+      graphicLayer.addGraphic(graphic) // 还可以另外一种写法: graphic.addTo(graphicLayer)
     },
+
     addGraphic_e14(graphicLayer) {
       const graphic = new this.mars3d.graphic.RectangleEntity({
         positions: [
@@ -291,8 +303,7 @@ export default {
           outlineColor: '#ffffff'
         }
       })
-      graphicLayer.addGraphic(graphic)
-      // graphic.addTo(graphicLayer)  //还可以另外一种写法,看个人习惯选用，内部都一样
+      graphicLayer.addGraphic(graphic) // 还可以另外一种写法: graphic.addTo(graphicLayer)
     },
 
     addGraphic_e15(graphicLayer) {
@@ -304,20 +315,18 @@ export default {
           [116.472468, 30.823091, 677.39]
         ],
         style: {
-          material: new this.mars3d.material.WaterMaterialProperty({
-            // 图片材质
+          material: this.mars3d.MaterialUtil.createMaterialProperty(this.mars3d.MaterialType.Water, {
             normalMap: 'http://mars3d.cn/example/img/textures/waterNormals.jpg', // 水正常扰动的法线图
             frequency: 8000.0, // 控制波数的数字。
             animationSpeed: 0.02, // 控制水的动画速度的数字。
             amplitude: 5.0, // 控制水波振幅的数字。
             specularIntensity: 0.8, // 控制镜面反射强度的数字。
-            baseWaterColor: this.Cesium.Color.fromCssColorString('#006ab4'), // rgba颜色对象基础颜色的水。#00ffff,#00baff,#006ab4
-            blendColor: this.Cesium.Color.fromCssColorString('#006ab4') // 从水中混合到非水域时使用的rgba颜色对象。
+            baseWaterColor: '#006ab4', // rgba颜色对象基础颜色的水。#00ffff,#00baff,#006ab4
+            blendColor: '#006ab4' // 从水中混合到非水域时使用的rgba颜色对象。
           })
         }
       })
-      graphicLayer.addGraphic(graphic)
-      // graphic.addTo(graphicLayer)  //还可以另外一种写法,看个人习惯选用，内部都一样
+      graphicLayer.addGraphic(graphic) // 还可以另外一种写法: graphic.addTo(graphicLayer)
     }
   }
 }

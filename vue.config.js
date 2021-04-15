@@ -46,7 +46,7 @@ module.exports = {
           {
             test: /\.js$/,
             enforce: 'pre',
-            // include: path.resolve(__dirname, 'node_modules/mars3d-cesium/Source'),
+            include: path.resolve(__dirname, 'node_modules/mars3d-cesium/Source'),
             sideEffects: false,
             use: [
               {
