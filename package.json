@@ -11,7 +11,7 @@
   "dependencies": {
     "@turf/turf": "^6.3.0",
     "core-js": "^3.6.4",
-    "mars3d": "^3.0.20",
+    "mars3d": "^3.0.21",
     "mars3d-esri": "^3.0.3",
     "mars3d-navigation": "^3.0.0",
     "vue": "^2.6.11",
