@@ -47,17 +47,7 @@ module.exports = {
             test: /\.js$/,
             enforce: 'pre',
             include: path.resolve(__dirname, 'node_modules/mars3d-cesium/Source'),
-            sideEffects: false,
-            use: [
-              {
-                loader: 'strip-pragma-loader',
-                options: {
-                  pragmas: {
-                    debug: false
-                  }
-                }
-              }
-            ]
+            sideEffects: false
           }
         ]
       },
