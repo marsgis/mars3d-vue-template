@@ -96,13 +96,13 @@ export default {
       // Vue.prototype[`map${this.mapKey}`] = map
 
       // 绑定对alert的处理，右键弹出信息更美观。
-      window.haoutil = window.haoutil || {}
-      window.haoutil.msg = (msg) => {
-        this.$message.success(msg)
-      }
-      window.haoutil.alert = (msg) => {
-        this.$message.success(msg)
-      }
+      // window.haoutil = window.haoutil || {}
+      // window.haoutil.msg = (msg) => {
+      //   this.$message.success(msg)
+      // }
+      // window.haoutil.alert = (msg) => {
+      //   this.$message.success(msg)
+      // }
 
       // 抛出事件
       this.$emit('onload', map)

@@ -39,7 +39,7 @@ npm install mars3d   //或  cnpm install mars3d   或  yarn add mars3d
 当前仓库是基于 vueCli 4.x 
 ```js
 // vue.config.js  添加下面配置  
-const CopywebpackPlugin = require('copy-webpack-plugin')
+const CopywebpackPlugin = require('copy-webpack-plugin') 
 const cesiumSource = 'node_modules/mars3d-cesium/Build/Cesium/'
 
 //拷贝cesium相关资源
@@ -58,30 +58,32 @@ plugins = [
 ```js
 // vue.config.js 添加下面配置
 
-const CopywebpackPlugin = require('copy-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin') 
 const cesiumSource = 'node_modules/mars3d-cesium/Build/Cesium/'
 
 module.exports = {
   //已忽略其他配置
   configureWebpack: config => {
-    let plugins = [];
+    let plugins = []
     if (process.env.NODE_ENV === 'production') {
       plugins = [
         new webpack.DefinePlugin({
-          'CESIUM_BASE_URL': JSON.stringify('static')
+          CESIUM_BASE_URL: JSON.stringify('static')
         }),
-        new CopywebpackPlugin([{ from: path.join(cesiumSource, cesiumWorkers), to: 'static/Workers' }]),
-        new CopywebpackPlugin([{ from: path.join(cesiumSource, 'Assets'), to: 'static/Assets' }]),
-        new CopywebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: 'static/Widgets' }]),
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Workers'), to: 'static/Workers' }]),
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Assets'), to: 'static/Assets' }]),
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'ThirdParty'), to: 'static/ThirdParty' }]),
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: 'static/Widgets' }])
       ]
     } else {
       plugins = [
         new webpack.DefinePlugin({
-          'CESIUM_BASE_URL': JSON.stringify('')
+          CESIUM_BASE_URL: JSON.stringify('')
         }),
-        new CopywebpackPlugin([{ from: path.join(cesiumSource, cesiumWorkers), to: 'Workers' }]),
-        new CopywebpackPlugin([{ from: path.join(cesiumSource, 'Assets'), to: 'Assets' }]),
-        new CopywebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: 'Widgets' }]),
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Workers'), to: 'Workers' }]),
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Assets'), to: 'Assets' }]),
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'ThirdParty'), to: 'ThirdParty' }]),
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: 'Widgets' }])
       ]
     }
     return {
