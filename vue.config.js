@@ -1,5 +1,5 @@
-const webpack = require('webpack')
 const path = require('path')
+const webpack = require('webpack')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const cesiumSource = 'node_modules/mars3d-cesium/Build/Cesium/'
