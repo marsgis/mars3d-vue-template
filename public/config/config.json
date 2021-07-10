@@ -26,7 +26,8 @@
         "enableTranslate": true,
         "enableTilt": true,
         "enableZoom": true,
-        "enableCollisionDetection": true
+        "enableCollisionDetection": true,
+        "minimumCollisionTerrainHeight": 15000
       }
     },
     "control": {
@@ -41,30 +42,31 @@
       "infoBox": false,
       "geocoder": false,
       "geocoderConfig": { "key": ["ae29a37307840c7ae4a785ac905927e0"] },
+      "selectionIndicator":false,
 
       "defaultContextMenu": true,
       "mouseDownView": true,
       "compass": { "bottom": "240px", "right": "2px" },
-      "distanceLegend": { "left": "100px", "bottom": "2px" },
+      "distanceLegend": { "left": "100px", "bottom": "0px" },
       "locationBar": {
         "fps": true,
-        "template": "<div>经度:{lng}</div> <div>纬度:{lat}</div> <div>海拔：{alt}米</div> <div>层级：{level}</div><div>方向：{heading}度</div> <div>俯仰角：{pitch}度</div><div>视高：{cameraHeight}米</div>"
+        "template": "<div>经度:{lng}</div> <div>纬度:{lat}</div><div>海拔：{alt}米</div> <div>层级：{level}</div><div>方向：{heading}度</div> <div>俯仰角：{pitch}度</div><div>视高：{cameraHeight}米</div>"
       }
     },
     "terrain": {
-      "url": "//data.marsgis.cn/terrain",
+      "url": "//data.mars3d.cn/terrain",
       "show": true
     },
     "basemaps": [
       { "id": 10, "name": "地图底图", "type": "group" },
       {
+        "id": 2021,
         "pid": 10,
         "name": "天地图影像",
         "icon": "http://mars3d.cn/example/img/basemaps/tdt_img.png",
         "type": "tdt",
         "layer": "img_d",
-        "key": ["9ae78c51a0a28f06444d541148496e36"],
-        "show": true
+        "key": ["9ae78c51a0a28f06444d541148496e36"]
       },
       {
         "pid": 10,
@@ -77,7 +79,6 @@
         ]
       },
       {
-        "id": 2021,
         "pid": 10,
         "name": "高德影像",
         "type": "group",
@@ -119,7 +120,8 @@
         "layers": [
           { "name": "底图", "type": "tencent", "layer": "img_d" },
           { "name": "注记", "type": "tencent", "layer": "img_z" }
-        ]
+        ],
+        "show": true
       },
       {
         "pid": 10,
@@ -184,7 +186,7 @@
         "name": "离线地图  (供参考)",
         "type": "xyz",
         "icon": "http://mars3d.cn/example/img/basemaps/mapboxSatellite.png",
-        "url": "http://data.marsgis.cn/maptile/googleImg/{z}/{x}/{y}.jpg",
+        "url": "//data.mars3d.cn/tile/googleImg/{z}/{x}/{y}.jpg",
         "minimumLevel": 1,
         "maximumLevel": 18,
         "minimumTerrainLevel": 1,
@@ -196,7 +198,7 @@
         "name": "单张图片 (本地离线)",
         "icon": "http://mars3d.cn/example/img/basemaps/offline.png",
         "type": "image",
-        "url": "http://mars3d.cn/example/img/tietu/world.jpg"
+        "url": "//data.mars3d.cn/file/img/world/world.jpg"
       }
     ],
     "layers": [
@@ -208,7 +210,7 @@
         "url": "https://t{s}.tianditu.gov.cn/DataServer?T=ibo_w&x={x}&y={y}&l={z}&tk=9ae78c51a0a28f06444d541148496e36",
         "subdomains": "01234567",
         "maximumLevel": 10,
-        "show": true
+        "show": false
       },
       {
         "pid":20,
@@ -226,7 +228,7 @@
         "layer": "time",
         "minimumTerrainLevel": 4,
         "minimumLevel": 4,
-        "proxy": "http://data.marsgis.cn/proxy/"
+        "proxy": "//server.mars3d.cn/proxy/"
       },
       {
         "pid":30,

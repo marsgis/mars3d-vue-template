@@ -82,7 +82,7 @@ export default {
       const graphic = new this.mars3d.graphic.LabelEntity({
         position: new this.mars3d.LatLngPoint(116.1, 31.0, 1000),
         style: {
-          text: 'Mars3D三维地球平台软件',
+          text: 'Mars3D平台',
           font_size: 25,
           font_family: '楷体',
           color: '#003da6',
@@ -209,7 +209,7 @@ export default {
         name: '消防员',
         position: [116.4, 30.9, 1000],
         style: {
-          url: 'http://data.marsgis.cn/gltf/mars/firedrill/xiaofangyuan-run.gltf',
+          url: 'http://data.mars3d.cn/gltf/mars/firedrill/xiaofangyuan-run.gltf',
           scale: 16,
           minimumPixelSize: 100
         }
