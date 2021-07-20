@@ -10,7 +10,9 @@
     <!-- <title><%= htmlWebpackPlugin.options.title %></title> -->
     <title> Mars3D最简项目模版 - Vue版</title>
 
-    <!---如果需要切换至自定义版本cesium时，取消下面注释 并拷贝ceisum到public目录下-->
+    <script>
+        window.basePathUrl = '<%= BASE_URL %>' //标识config、widgets所在的目录
+    </script>
     <!-- <script type="text/javascript" >
       window.CESIUM_BASE_URL ="<%= BASE_URL %>lib/Cesium/"
     </script>

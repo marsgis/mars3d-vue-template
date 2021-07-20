@@ -15,8 +15,9 @@ export default {
   },
 
   data() {
+    const basePathUrl = window.basePathUrl || ''
     return {
-      configUrl: 'config/config.json'
+      configUrl: basePathUrl + 'config/config.json'
     }
   },
 
