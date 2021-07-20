@@ -11,7 +11,7 @@
   "dependencies": {
     "@turf/turf": "^6.3.0",
     "core-js": "^3.12.0",
-    "mars3d": "^3.0.30", 
+    "mars3d": "^3.0.31", 
     "vue": "^2.6.12",
     "vue-router": "^3.5.1",
     "vuex": "^3.6.2"
