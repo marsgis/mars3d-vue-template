@@ -107,8 +107,14 @@ import Map from '../components/mars3d/Map.vue'
   >2. 检查webpack和copy-webpack-plugin与node、npm的版本兼容问题
  
 
-6. ### 如果您购买了授权版本，可以参考下面仓库来集成非npm版本的mars3d库。
+6. ### 如果您集成中遇到各种奇怪问题无法解决，可以切换至下面模版进行使用（更简单易用）
+   最简项目(CDN版)[https://github.com/muyao1987/mars3d-vue-template-cdn](https://github.com/muyao1987/mars3d-vue-template-cdn)    `非npm引入Cesium和mars3d`
+
+
+7. ### 如果您购买了授权版本，可以参考下面仓库来集成非npm版本的mars3d库。
    最简项目(本地版)[https://gitee.com/marsgis/mars3d-vue-template-local](https://gitee.com/marsgis/mars3d-vue-template-local)    `mars3d库非npm引入`
+
+
 
 ## Mars3D 是什么 
 >  `Mars3D平台` 是[火星科技](http://marsgis.cn/)研发的一款基于 WebGL 技术实现的三维客户端开发平台，基于[Cesium](https://cesium.com/cesiumjs/)优化提升与B/S架构设计，支持多行业扩展的轻量级高效能GIS开发平台，能够免安装、无插件地在浏览器中高效运行，并可快速接入与使用多种GIS数据和三维模型，呈现三维空间的可视化，完成平台在不同行业的灵活应用。
