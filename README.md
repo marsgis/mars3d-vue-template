@@ -108,7 +108,7 @@ import Map from '../components/mars3d/Map.vue'
  
 
 6. ### 如果您集成中遇到各种奇怪问题无法解决，可以切换至下面模版进行使用（更简单易用）
-   最简项目(CDN版)[https://github.com/muyao1987/mars3d-vue-template-cdn](https://github.com/muyao1987/mars3d-vue-template-cdn)    `非npm引入Cesium和mars3d`
+   最简项目(CDN版)[https://github.com/marsgis/mars3d-vue-template-cdn](https://github.com/marsgis/mars3d-vue-template-cdn)    `非npm引入Cesium和mars3d`
 
 
 7. ### 如果您购买了授权版本，可以参考下面仓库来集成非npm版本的mars3d库。
