@@ -36,6 +36,7 @@ npm install mars3d   //或  cnpm install mars3d   或  yarn add mars3d
 
 
 3. ### 配置vue.config.js 
+
 当前仓库是基于 vueCli 4.x 
 ```js
 // vue.config.js  添加下面配置  
@@ -93,6 +94,20 @@ module.exports = {
 }
 ```
 
+#### 不配置vue.config.js时，直接引入外部Cesium库
+如果您在上面第3步骤集成中遇到各种奇怪问题无法解决，大部分是vue.config的配置问题时。
+可以直接在html中使用script引入的Cesium库 ，该方式不需要修改 `vue.config`  
+从官网下载的SDK中拷贝Cesium放在`public\lib\Cesium\`下,并取消`public\index.html`中的下面注释
+```html
+<script type="text/javascript" >
+  window.CESIUM_BASE_URL ="<%= BASE_URL %>lib/Cesium/"
+</script>
+<link rel="stylesheet" href="<%= BASE_URL %>lib/Cesium/Widgets/widgets.css">
+<script type="text/javascript" src="<%= BASE_URL %>lib/Cesium/Cesium.js"></script>
+```
+
+
+
 
 4. ### 创建地球 
  参考 `src\views\Index.vue`文件引入Map组件和构造创建地球，主要关注下下面代码处
@@ -105,7 +120,7 @@ import Map from '../components/mars3d/Map.vue'
  运行报错时，请检查相关版本是否有冲突，比如webpack 4.43.0与copy-webpack-plugin 7.0.0 会出问题
   >1. 检查webpack和copy-webpack-plugin版本兼容问题
   >2. 检查webpack和copy-webpack-plugin与node、npm的版本兼容问题
- 
+
 
 6. ### 如果您集成中遇到各种奇怪问题无法解决，可以切换至下面模版进行使用（更简单易用）
    最简项目(CDN版)[https://github.com/marsgis/mars3d-vue-template-cdn](https://github.com/marsgis/mars3d-vue-template-cdn)    `非npm引入Cesium和mars3d`
