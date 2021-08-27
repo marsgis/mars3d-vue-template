@@ -67,14 +67,16 @@ export default {
     }
   },
 
-  destroy() {
+  beforeDestroy () {
     this[`map${this.mapKey}`].destroy()
     delete this[`map${this.mapKey}`]
   },
 
   methods: {
     initMars3d(options) {
-      if (this[`map${this.mapKey}`]) return
+      if (this[`map${this.mapKey}`]){
+         this[`map${this.mapKey}`].destroy()
+      }
 
       const mapOptions = {
         ...options,
