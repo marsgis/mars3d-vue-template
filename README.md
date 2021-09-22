@@ -69,22 +69,22 @@ module.exports = {
     if (process.env.NODE_ENV === 'production') {
       plugins = [
         new webpack.DefinePlugin({
-          CESIUM_BASE_URL: JSON.stringify('static')
+          CESIUM_BASE_URL: JSON.stringify('./static')
         }),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Workers'), to: 'static/Workers' }]),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Assets'), to: 'static/Assets' }]),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'ThirdParty'), to: 'static/ThirdParty' }]),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: 'static/Widgets' }])
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Workers'), to: './static/Workers' }]),
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Assets'), to: './static/Assets' }]),
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'ThirdParty'), to: './static/ThirdParty' }]),
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: './static/Widgets' }])
       ]
     } else {
       plugins = [
         new webpack.DefinePlugin({
           CESIUM_BASE_URL: JSON.stringify('')
         }),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Workers'), to: 'Workers' }]),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Assets'), to: 'Assets' }]),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'ThirdParty'), to: 'ThirdParty' }]),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: 'Widgets' }])
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Workers'), to: './Workers' }]),
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Assets'), to: './Assets' }]),
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'ThirdParty'), to: './ThirdParty' }]),
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: './Widgets' }])
       ]
     }
     return {
@@ -94,6 +94,15 @@ module.exports = {
 }
 ```
 
+#### 不配置vue.config.js时，直接引入CDN的Cesium库
+如果您在上面第3步骤集成中遇到各种奇怪问题无法解决，大部分是vue.config的配置问题时。 
+修改`public\index.html`中的下面注释
+```html
+<link href="https://cdn.jsdelivr.net/npm/mars3d-cesium/Build/Cesium/Widgets/widgets.css" rel="stylesheet"   type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/mars3d-cesium/Build/Cesium/Cesium.js"  type="text/javascript"></script>
+<script src="https://unpkg.com/@turf/turf/turf.min.js" type="text/javascript" ></script>
+```
+ 
 #### 不配置vue.config.js时，直接引入外部Cesium库
 如果您在上面第3步骤集成中遇到各种奇怪问题无法解决，大部分是vue.config的配置问题时。
 可以直接在html中使用script引入的Cesium库 ，该方式不需要修改 `vue.config`  
