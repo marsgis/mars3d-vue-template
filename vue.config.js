@@ -21,22 +21,22 @@ module.exports = {
     if (process.env.NODE_ENV === 'production') {
       plugins = [
         new webpack.DefinePlugin({
-          CESIUM_BASE_URL: JSON.stringify('static')
+          CESIUM_BASE_URL: JSON.stringify('./static')
         }),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Workers'), to: 'static/Workers' }]),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Assets'), to: 'static/Assets' }]),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'ThirdParty'), to: 'static/ThirdParty' }]),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: 'static/Widgets' }])
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Workers'), to: './static/Workers' }]),
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Assets'), to: './static/Assets' }]),
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'ThirdParty'), to: './static/ThirdParty' }]),
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: './static/Widgets' }])
       ]
     } else {
       plugins = [
         new webpack.DefinePlugin({
-          CESIUM_BASE_URL: JSON.stringify('')
+          CESIUM_BASE_URL: JSON.stringify('./')
         }),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Workers'), to: 'Workers' }]),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Assets'), to: 'Assets' }]),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'ThirdParty'), to: 'ThirdParty' }]),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: 'Widgets' }])
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Workers'), to: './Workers' }]),
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Assets'), to: './Assets' }]),
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'ThirdParty'), to: './ThirdParty' }]),
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: './Widgets' }])
       ]
     }
     return {
