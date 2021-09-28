@@ -49,7 +49,7 @@
     "gis"
   ],
   "author": "火星科技",
-  "license": "LGPL",
+  "license": "Apache-2.0",
   "homepage": "http://mars3d.cn",
   "eslintConfig": {
     "root": true,
