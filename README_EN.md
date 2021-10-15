@@ -45,7 +45,7 @@ Mars3D platform, the simplest application project template under the 'Vue techno
 ## How to integrate into your existing projects
 1. ### nstall the Mars3D dependency package
 ```bash
-npm install mars3d   //或  cnpm install mars3d   或  yarn add mars3d
+npm install mars3d   //  or yarn add mars3d
 ```
 
 2. ### Copy files
@@ -138,7 +138,7 @@ Refer to the   `src\views\Index.vue` file to introduce the Map component and con
 
 import Map from '../components/mars3d/Map.vue'
 ```
-5. ### 常见问题
+5. ### Q&A
 When running an error, please check whether there is any conflict between the related versions, such as webpack 4.43.0 and copy-webpack-plugin 7.0.0
 
   >1. Check the compatibility between webpack and copy-webpack-plugin versions
@@ -163,9 +163,4 @@ When running an error, please check whether there is any conflict between the re
 - Mars3D official website: [http://mars3d.cn](http://mars3d.cn)
 
 - Making navigation list: [https://github.com/marsgis/mars3d] (https://github.com/marsgis/mars3d)
-
-## copyright
-
-1. Any 'person or organization' may use it 'free and unlimited' subject to compliance with Mars3D requirements.
-
-2. For personalization and customization, please contact Mars Technologies (http://mars3d.cn) for paid service.
+ 
