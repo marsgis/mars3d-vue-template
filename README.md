@@ -1,10 +1,30 @@
 # Mars3D最简项目模版 - Vue版
-    Mars3D平台，在`Vue技术栈下`的最简的应用项目模版，基于vueCli 4.x 
-   
 
+
+
+<p>
+<a target="_black" href="https://github.com/marsgis/mars3d">
+<img alt="GitHub stars" src="https://img.shields.io/github/stars/marsgis/mars3d?style=flat&logo=github">
+</a>
+<a target="_black" href="https://github.com/marsgis/mars3d">
+<img alt="GitHub forks" src="https://img.shields.io/github/forks/marsgis/mars3d?style=flat&logo=github">
+</a>
+<a target="_black" href="https://www.npmjs.com/package/mars3d">
+<img alt="Npm downloads" src="https://img.shields.io/npm/dt/mars3d?style=flat&logo=npm">
+</a>
+<a target="_black" href="https://www.npmjs.com/package/mars3d">
+<img alt="Npm version" src="https://img.shields.io/npm/v/mars3d.svg?style=flat&logo=npm&label=version"/>
+</a>
+</p>
+
+[**中文**](./README.md) | [**English**](./README_EN.md)
+
+
+  Mars3D平台，在`Vue技术栈下`的最简的应用项目模版，基于vueCli 4.x 
+    
  > 其他技术栈，请参考： [https://github.com/marsgis/mars3d](https://github.com/marsgis/mars3d)
- 
-  
+
+
 ## 运行命令
  
 ### 首次运行前安装依赖
@@ -81,10 +101,10 @@ module.exports = {
         new webpack.DefinePlugin({
           CESIUM_BASE_URL: JSON.stringify('')
         }),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Workers'), to: './Workers' }]),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Assets'), to: './Assets' }]),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'ThirdParty'), to: './ThirdParty' }]),
-        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: './Widgets' }])
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Workers'), to: 'Workers' }]),
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Assets'), to: 'Assets' }]),
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'ThirdParty'), to: 'ThirdParty' }]),
+        new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: 'Widgets' }])
       ]
     }
     return {
@@ -93,7 +113,6 @@ module.exports = {
   },
 }
 ```
-
 #### 不配置vue.config.js时，直接引入CDN的Cesium库
 如果您在上面第3步骤集成中遇到各种奇怪问题无法解决，大部分是vue.config的配置问题时。 
 修改`public\index.html`中的下面注释
@@ -102,8 +121,7 @@ module.exports = {
 <script src="https://cdn.jsdelivr.net/npm/mars3d-cesium/Build/Cesium/Cesium.js"  type="text/javascript"></script>
 <script src="https://unpkg.com/@turf/turf/turf.min.js" type="text/javascript" ></script>
 ```
- 
-#### 不配置vue.config.js时，直接引入外部Cesium库
+ #### 不配置vue.config.js时，直接引入外部Cesium库
 如果您在上面第3步骤集成中遇到各种奇怪问题无法解决，大部分是vue.config的配置问题时。
 可以直接在html中使用script引入的Cesium库 ，该方式不需要修改 `vue.config`  
 从官网下载的SDK中拷贝Cesium放在`public\lib\Cesium\`下,并取消`public\index.html`中的下面注释
@@ -153,4 +171,4 @@ import Map from '../components/mars3d/Map.vue'
 
 ## 版权说明
 1. 任何`个人或组织`可以在遵守Mars3D相关要求下`免费无限制`使用。
-2. 如有`个性化需求`或`商业应用`，请联系[火星科技](http://mars3d.cn)购买。
+2. 如有个性化和定制需求，请联系[火星科技](http://mars3d.cn)提供付费服务。
