@@ -162,5 +162,5 @@ When running an error, please check whether there is any conflict between the re
 ### Related websites
 - Mars3D official website: [http://mars3d.cn](http://mars3d.cn)
 
-- Making navigation list: [https://github.com/marsgis/mars3d] (https://github.com/marsgis/mars3d)
+- Making navigation list: [https://github.com/marsgis/mars3d](https://github.com/marsgis/mars3d)
  
