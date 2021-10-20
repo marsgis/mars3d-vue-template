@@ -2,31 +2,22 @@
   <div :id="withKeyId" class="mars3d-container mars3d-container-compare-rh"></div>
 </template>
 <script setup lang="ts">
-import { onMounted, computed, onBeforeUnmount } from 'vue'
-/**
- * 使用免费开源版本
- * import 'mars3d/dist/mars3d.css'
- * import * as mars3d from 'mars3d'
- * 为了方便演示统一在此处加载资源，可能会影响您实际项目打包体积，请根据项目实际需要管理相关依赖
- */
-import 'mars3d/dist/mars3d.css'
-import * as mars3d from 'mars3d'
+import { onMounted, computed, onBeforeUnmount, getCurrentInstance } from 'vue'
+
+const instance = getCurrentInstance()
+const mars3d = instance?.appContext.config.globalProperties.mars3d
 
 // props选项
-const props = defineProps({
-  url: {
-    type: String,
-    default: ''
-  },
-  mapKey: {
-    type: String,
-    default: ''
-  },
-  options: {
-    type: Object,
-    default: () => ({})
-  }
+const props = withDefaults(defineProps<{
+  url: string
+  mapKey?: string
+  options: object
+}>(), {
+  url: '',
+  mapKey: '',
+  options: () => ({})
 })
+
 // 用于存放组件实例
 let mapviewer:any = null
 
