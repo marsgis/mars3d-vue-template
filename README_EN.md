@@ -1,4 +1,4 @@
-# Mars3D Vue template
+# Mars3D Vue3 template
  [**English**](./README_EN.md) |[**中文**](./README.md) 
 
 <p>

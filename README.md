@@ -1,4 +1,4 @@
-# Mars3D项目模版 - Vue版
+# Mars3D项目模版 - Vue3版
 
  [**English**](./README_EN.md) |[**中文**](./README.md) 
 
