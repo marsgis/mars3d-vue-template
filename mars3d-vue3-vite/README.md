@@ -1,11 +1,63 @@
-# Vue 3 + Typescript + Vite1111
+<p align="center">
+<img src="https://mars3d.cn/static/img/logo.png" width="100px" />
+</p>
+<p align="center">基于Vue + vite的mars3d开发模板</p>
 
-This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+### 环境配置
 
-## Recommended IDE Setup
+1. 推荐使用 Visual Studio Code 编辑器
+2. 推荐安装 ESlint、Volar 插件（如果已经安装Vetur插件，需要禁用）并将格式化工具设置为eslint （settings.json配置如下）
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+```json
+"[vue]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+},
+"[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+},
+"[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+},
+```
 
-## Type Support For `.vue` Imports in TS
+### 项目安装
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
+```
+npm i
+```
+
+### 启动开发环境
+
+```
+npm run dev
+```
+
+### 打包构建
+
+```
+npm run build
+```
+
+### 使用 mars3d
+
+```javascript
+// script
+
+import MarsMap from "@comp/MarsMap/index.vue";
+```
+
+```html
+<!-- template -->
+
+<MarsMap url="config/config.json" map-key="yourkey" @onload="loadHandler" />
+```
+
+### 访问 mars3d 和 Cesium 实例
+
+项目中已经将 mars3d 和 Cesium 实例挂载到 globalProperties，通过如下方式获取
+
+```javascript
+const instance = getCurrentInstance()
+const mars3d = instance?.appContext.config.globalProperties.mars3d;
+const Cesium = instance?.appContext.config.globalProperties.Cesium;
+```

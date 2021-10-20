@@ -1,5 +1,5 @@
 <template>
-  <MarsMap :url="configUrl" map-key="test" ref="marsMapRef" @onload="marsOnload"/>
+  <MarsMap :url="configUrl" map-key="test" @onload="marsOnload"/>
 </template>
 
 <script setup lang="ts">
