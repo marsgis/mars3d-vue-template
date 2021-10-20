@@ -27,7 +27,7 @@ For 'Vue 2.x' technology stack development, please refer to[mars3d-vue2-template
   
 | Directory  |Mars3D |Cesium  |   Instructions  | 
 |  ----  |----  | ----| ----  |
-|[mars3d-vue3](./mars3d-vue3/README.md)	|npm |npm  | [Recommended] Standard vue2 project template| 
+|[mars3d-vue3-vite](./mars3d-vue3-vite/README.md)	|npm |npm  | [Recommended] Standard vue3 project template| 
 
 
 

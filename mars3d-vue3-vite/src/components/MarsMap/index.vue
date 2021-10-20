@@ -1,0 +1,218 @@
+<template>
+  <div :id="withKeyId" class="mars3d-container mars3d-container-compare-rh"></div>
+</template>
+<script setup lang="ts">
+import { onMounted, computed, onBeforeUnmount } from 'vue'
+/**
+ * 使用免费开源版本
+ * import 'mars3d/dist/mars3d.css'
+ * import * as mars3d from 'mars3d'
+ * 为了方便演示统一在此处加载资源，可能会影响您实际项目打包体积，请根据项目实际需要管理相关依赖
+ */
+import 'mars3d/dist/mars3d.css'
+import * as mars3d from 'mars3d'
+
+// props选项
+const props = defineProps({
+  url: {
+    type: String,
+    default: ''
+  },
+  mapKey: {
+    type: String,
+    default: ''
+  },
+  options: {
+    type: Object,
+    default: () => ({})
+  }
+})
+// 用于存放组件实例
+let mapviewer:any = null
+
+// 使用用户传入的 mapKey 拼接生成 withKeyId 作为当前显示容器的id
+const withKeyId = computed(() => `mars3d-container-${props.mapKey}`)
+
+onMounted(() => {
+  // 获取配置
+  mars3d.Resource.fetchJson({ url: props.url }).then((data: any) => {
+    initMars3d({
+      // 合并配置项
+      ...props.options,
+      ...data.map3d
+    })
+  })
+})
+
+// onload事件将在地图渲染后触发
+const emit = defineEmits(['onload'])
+const initMars3d = (option: object) => {
+  mapviewer = new mars3d.Map(withKeyId.value, option)
+  emit('onload', mapviewer)
+}
+
+// 组件卸载之前销毁mars3d实例
+onBeforeUnmount(() => {
+  mapviewer?.destroy()
+})
+
+</script>
+
+<style lang="scss">
+.mars3d-container {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 重写Cesium的css */
+
+/**cesium按钮背景色*/
+.cesium-button {
+  background-color: #3f4854;
+  color: #e6e6e6;
+  fill: #e6e6e6;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  line-height: 32px;
+}
+
+.cesium-viewer-geocoderContainer .cesium-geocoder-input {
+  background-color: rgba(63, 72, 84, 0.7);
+}
+
+.cesium-viewer-geocoderContainer .cesium-geocoder-input:focus {
+  background-color: rgba(63, 72, 84, 0.9);
+}
+
+.cesium-viewer-geocoderContainer .search-results {
+  background-color: #3f4854;
+}
+
+.cesium-geocoder-searchButton {
+  background-color: #3f4854;
+}
+
+.cesium-infoBox-title {
+  background-color: #3f4854;
+}
+
+.cesium-infoBox {
+  background: rgba(63, 72, 84, 0.9);
+}
+
+.cesium-toolbar-button img {
+  height: 100%;
+}
+
+.cesium-performanceDisplay-defaultContainer {
+  top: auto;
+  bottom: 35px;
+  right: 50px;
+}
+.cesium-performanceDisplay-ms,
+.cesium-performanceDisplay-fps {
+  color: #fff;
+}
+
+/**cesium工具栏位置*/
+.cesium-viewer-toolbar {
+  top: auto;
+  left: auto;
+  right: 12px;
+  bottom: 35px;
+}
+
+.cesium-viewer-toolbar > .cesium-toolbar-button,
+.cesium-navigationHelpButton-wrapper,
+.cesium-viewer-geocoderContainer {
+  margin-bottom: 5px;
+  float: right;
+  clear: both;
+  text-align: center;
+}
+
+.cesium-baseLayerPicker-dropDown {
+  bottom: 0;
+  right: 40px;
+  max-height: 700px;
+  margin-bottom: 5px;
+}
+
+.cesium-navigation-help {
+  top: auto;
+  bottom: 0;
+  right: 40px;
+  transform-origin: right bottom;
+}
+
+.cesium-sceneModePicker-wrapper {
+  width: auto;
+}
+
+.cesium-sceneModePicker-wrapper .cesium-sceneModePicker-dropDown-icon {
+  float: left;
+  margin: 0 3px;
+}
+
+.cesium-viewer-geocoderContainer .search-results {
+  left: 0;
+  right: 40px;
+  width: auto;
+  z-index: 9999;
+}
+
+.cesium-infoBox-title {
+  background-color: #3f4854;
+}
+
+.cesium-infoBox {
+  top: 50px;
+  background: rgba(63, 72, 84, 0.9);
+}
+
+/**左下工具栏菜单*/
+.toolbar-dropdown-menu-div {
+  background: rgba(43, 44, 47, 0.8);
+  border: 1px solid #2b2c2f;
+  z-index: 991;
+  position: absolute;
+  right: 60px;
+  bottom: 40px;
+  display: none;
+}
+
+.toolbar-dropdown-menu {
+  min-width: 110px;
+  padding: 0;
+}
+.toolbar-dropdown-menu > li {
+  padding: 0 3px;
+  margin: 2px 0;
+}
+.toolbar-dropdown-menu > li > a {
+  color: #edffff;
+  display: block;
+  padding: 4px 10px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.6;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.toolbar-dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: #fff;
+  background-color: #444d59;
+}
+
+.toolbar-dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  color: #fff;
+  background-color: #444d59;
+}
+
+.toolbar-dropdown-menu i {
+  padding-right: 5px;
+}
+</style>

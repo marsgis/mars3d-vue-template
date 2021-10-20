@@ -1,0 +1,60 @@
+{
+  "name": "mars3d-vue3-vite",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "serve": "vite preview",
+    "lint": "eslint ./src/**/*.{js,jsx,vue,ts,tsx} --fix",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "mars3d": "^3.1.8",
+    "vue": "^3.2.16"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.1",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "@vitejs/plugin-vue": "^1.9.3",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-vue": "^7.19.1",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.2.3",
+    "sass": "^1.43.2",
+    "typescript": "^4.4.3",
+    "vite": "^2.6.4",
+    "vite-plugin-eslint": "^1.3.0",
+    "vite-plugin-mars3d": "^1.0.0",
+    "vue-tsc": "^0.3.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "npm run lint"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marsgis/mars3d-vue-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marsgis/mars3d-vue-template/issues",
+    "email": "wh@marsgis.cn"
+  },
+  "keywords": [
+    "marsgis",
+    "mars3d",
+    "cesium",
+    "vue",
+    "vue2",
+    "gis",
+    "webgis"
+  ],
+  "author": "火星科技",
+  "license": "Apache-2.0",
+  "homepage": "http://mars3d.cn"
+}
