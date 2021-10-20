@@ -1,7 +1,13 @@
 ﻿{
   "map3d": {
     "scene": {
-      "center": { "lat": 30.526361, "lng": 116.335987, "alt": 45187, "heading": 0, "pitch": -45 },
+      "center": {
+        "lat": 35.317409,
+        "lng": 106.168622,
+        "alt": 23138,
+        "heading": 187,
+        "pitch": -51
+      },
       "scene3DOnly": false,
       "shadows": false,
       "removeDblClick": true,
@@ -42,11 +48,10 @@
       "infoBox": false,
       "geocoder": false,
       "geocoderConfig": { "key": ["ae29a37307840c7ae4a785ac905927e0"] },
-      "selectionIndicator":false,
+      "selectionIndicator": false,
 
       "defaultContextMenu": true,
       "mouseDownView": true,
-      "compass": { "bottom": "240px", "right": "2px" },
       "distanceLegend": { "left": "100px", "bottom": "0px" },
       "locationBar": {
         "fps": true,
@@ -66,7 +71,8 @@
         "icon": "http://mars3d.cn/example/img/basemaps/tdt_img.png",
         "type": "tdt",
         "layer": "img_d",
-        "key": ["9ae78c51a0a28f06444d541148496e36"]
+        "key": ["9ae78c51a0a28f06444d541148496e36"],
+        "show": true
       },
       {
         "pid": 10,
@@ -74,8 +80,18 @@
         "icon": "http://mars3d.cn/example/img/basemaps/tdt_vec.png",
         "type": "group",
         "layers": [
-          { "name": "底图", "type": "tdt", "layer": "vec_d", "key": ["9ae78c51a0a28f06444d541148496e36"] },
-          { "name": "注记", "type": "tdt", "layer": "vec_z", "key": ["9ae78c51a0a28f06444d541148496e36"] }
+          {
+            "name": "底图",
+            "type": "tdt",
+            "layer": "vec_d",
+            "key": ["9ae78c51a0a28f06444d541148496e36"]
+          },
+          {
+            "name": "注记",
+            "type": "tdt",
+            "layer": "vec_z",
+            "key": ["9ae78c51a0a28f06444d541148496e36"]
+          }
         ]
       },
       {
@@ -120,8 +136,7 @@
         "layers": [
           { "name": "底图", "type": "tencent", "layer": "img_d" },
           { "name": "注记", "type": "tencent", "layer": "img_z" }
-        ],
-        "show": true
+        ]
       },
       {
         "pid": 10,
@@ -204,7 +219,7 @@
     "layers": [
       { "id": 20, "name": "辅助图层", "type": "group" },
       {
-        "pid":20,
+        "pid": 20,
         "name": "行政区划界线",
         "type": "xyz",
         "url": "https://t{s}.tianditu.gov.cn/DataServer?T=ibo_w&x={x}&y={y}&l={z}&tk=9ae78c51a0a28f06444d541148496e36",
@@ -213,16 +228,16 @@
         "show": false
       },
       {
-        "pid":20,
+        "pid": 20,
         "name": "天地图注记",
         "type": "tdt",
         "layer": "img_z",
         "key": ["9ae78c51a0a28f06444d541148496e36"],
-        "show": false
+        "show": true
       },
       { "id": 30, "name": "实时路况", "type": "group" },
       {
-        "pid":30,
+        "pid": 30,
         "name": "高德实时路况",
         "type": "gaode",
         "layer": "time",
@@ -231,10 +246,21 @@
         "proxy": "//server.mars3d.cn/proxy/"
       },
       {
-        "pid":30,
+        "pid": 30,
         "name": "百度实时路况",
         "type": "baidu",
         "layer": "time"
+      },
+      {
+        "name": "花崖河水厂",
+        "type": "3dtiles",
+        "url": "http://192.168.0.10:8000/3dtiles/shuichang/tileset.json",
+        "maximumScreenSpaceError": 8,
+        "maximumMemoryUsage": 1024,
+        "rotation": { "z": -42.5 },
+        "position": { "lng": 106.276128, "lat": 35.19746, "alt": 1840.65 },
+        "scale": 0.005,
+        "show": true
       }
     ]
   }

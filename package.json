@@ -1,44 +1,17 @@
 {
-  "name": "mars3d-vue-template",
+  "name": "mars3d-vue2-template",
   "version": "3.1.0",
   "description": "Mars3D平台,Vue最简项目模版",
   "main": "index.js",
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
-  },
-  "dependencies": {
-    "core-js": "^3.12.0",
-    "mars3d": "^3.1.8", 
-    "vue": "^2.6.12",
-    "vue-router": "^3.5.1",
-    "vuex": "^3.6.2"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.13",
-    "@vue/cli-plugin-eslint": "~4.5.13",
-    "@vue/cli-plugin-router": "~4.5.13",
-    "@vue/cli-plugin-vuex": "~4.5.13",
-    "@vue/cli-service": "~4.5.13",
-    "@vue/eslint-config-standard": "^5.1.0",
-    "@babel/eslint-parser": "^7.13.14",
-    "eslint": "^7.26.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0",
-    "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^7.9.0",
-    "sass": "^1.32.12",
-    "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.12"
-  },
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/marsgis/mars3d-vue-template.git"
+    "url": "https://github.com/marsgis/mars3d-vue2-template.git"
   },
   "bugs": {
-    "url": "https://github.com/marsgis/mars3d-vue-template/issues",
+    "url": "https://github.com/marsgis/mars3d-vue2-template/issues",
     "email": "wh@marsgis.cn"
   },
   "keywords": [
@@ -46,27 +19,11 @@
     "mars3d",
     "cesium",
     "vue",
-    "gis"
+    "vue2",
+    "gis",
+    "webgis"
   ],
   "author": "火星科技",
   "license": "Apache-2.0",
-  "homepage": "http://mars3d.cn",
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "@vue/standard"
-    ],
-    "parserOptions": {
-      "parser": "@babel/eslint-parser"
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+  "homepage": "http://mars3d.cn"
 }
