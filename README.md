@@ -1,13 +1,13 @@
-# Mars3D项目模版 - Vue3版
+ 
+<p align="center">
+<img src="https://mars3d.cn/logo.png" width="300px" />
+</p>
 
- [**English**](./README_EN.md) |[**中文**](./README.md) 
+<p align="center">基于Vue3.x的mars3d开发模板</p>
 
-<p>
+<p align="center">
 <a target="_black" href="https://github.com/marsgis/mars3d">
 <img alt="GitHub stars" src="https://img.shields.io/github/stars/marsgis/mars3d?style=flat&logo=github">
-</a>
-<a target="_black" href="https://github.com/marsgis/mars3d">
-<img alt="GitHub forks" src="https://img.shields.io/github/forks/marsgis/mars3d?style=flat&logo=github">
 </a>
 <a target="_black" href="https://www.npmjs.com/package/mars3d">
 <img alt="Npm downloads" src="https://img.shields.io/npm/dt/mars3d?style=flat&logo=npm">
@@ -17,7 +17,10 @@
 </a>
 </p>
 
- 🌎Mars3D平台，在`Vue 3.x`技术栈下的不同应用项目模版。
+[**English**](./README_EN.md) |[**中文**](./README.md) 
+
+
+ 🌎 Mars3D平台，在`Vue 3.x`技术栈下的不同应用项目模版。
  
  如需`Vue 2.x`技术栈下开发，请参考[mars3d-vue2-template](https://github.com/marsgis/mars3d-vue2-template)
    
