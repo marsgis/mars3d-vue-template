@@ -115,6 +115,4 @@ const Cesium = instance?.appContext.config.globalProperties.Cesium;
 - GitHub navigation list：[https://github.com/marsgis/mars3d](https://github.com/marsgis/mars3d)
  
 
-## Copyright notice
-1. Any `individual or organization` can use it `free and unrestricted` in compliance with the relevant requirements of mars3d.
-2. If you need personalized customization, please contact [Mars technology](http://mars3d.cn) to pay for relevant services.
+
