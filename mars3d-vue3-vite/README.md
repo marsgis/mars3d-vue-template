@@ -19,7 +19,7 @@
 </a>
 </p>
 
-
+ [**English**](./README_EN.md) |[**中文**](./README.md) 
 
 ### 建议环境配置
 

@@ -33,7 +33,7 @@ For 'Vue 2.x' technology stack development, please refer to[mars3d-vue2-template
 
 
 
-## Demo 
+## Operation effect 
  [online Demo](http://mars3d.cn/project/vue-template/)  
 
  ![image](http://mars3d.cn/project/vue-template/screenshot.jpg)
