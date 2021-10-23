@@ -19,18 +19,16 @@
 
 [**English**](./README_EN.md) |[**中文**](./README.md) 
 
- 🌎 Mars3D platform,different application project templates under `Vue 3.x` technology stack
-
-
-For 'Vue 2.x' technology stack development, please refer to[mars3d-vue2-template](https://github.com/marsgis/mars3d-vue2-template)
-   
-
-## Subdirectories
+ 
   
 | Directory  |Mars3D |Cesium  |   Instructions  | 
 |  ----  |----  | ----| ----  |
 |[mars3d-vue3-vite](./mars3d-vue3-vite/README.md)	|npm |npm  | [Recommended] Standard vue3 project template| 
 
+
+## Vue2
+ Mars3D platform,different application project templates under `Vue 3.x` technology stack。For `Vue 2.x` technology stack development, please refer to[mars3d-vue2-template](https://github.com/marsgis/mars3d-vue2-template)
+   
 
 
 ## Operation effect 

@@ -4,12 +4,10 @@
 
 <p align="center">Mars3d development template based on Vue3.x + Vite </p>
 
+
 <p align="center">
 <a target="_black" href="https://github.com/marsgis/mars3d">
 <img alt="GitHub stars" src="https://img.shields.io/github/stars/marsgis/mars3d?style=flat&logo=github">
-</a>
-<a target="_black" href="https://github.com/marsgis/mars3d">
-<img alt="GitHub forks" src="https://img.shields.io/github/forks/marsgis/mars3d?style=flat&logo=github">
 </a>
 <a target="_black" href="https://www.npmjs.com/package/mars3d">
 <img alt="Npm downloads" src="https://img.shields.io/npm/dt/mars3d?style=flat&logo=npm">
@@ -112,7 +110,8 @@ const Cesium = instance?.appContext.config.globalProperties.Cesium;
 ### Related websites
 - Mars3D official website：[http://mars3d.cn](http://mars3d.cn)  
 
-- GitHub navigation list：[https://github.com/marsgis/mars3d](https://github.com/marsgis/mars3d)
+- Mars3D GitHub navigation list：[https://github.com/marsgis/mars3d](https://github.com/marsgis/mars3d)
+
  
 
 

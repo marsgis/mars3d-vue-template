@@ -2,14 +2,12 @@
 <img src="https://mars3d.cn/logo.png" width="300px" />
 </p>
 
-<p align="center">基于 Vue3.x + Vite 的 Mars3D最简项目模板</p>
+<p align="center">基于 Vue3.x + Vite 的 Mars3D🌎最简项目模板</p>
+
 
 <p align="center">
 <a target="_black" href="https://github.com/marsgis/mars3d">
 <img alt="GitHub stars" src="https://img.shields.io/github/stars/marsgis/mars3d?style=flat&logo=github">
-</a>
-<a target="_black" href="https://github.com/marsgis/mars3d">
-<img alt="GitHub forks" src="https://img.shields.io/github/forks/marsgis/mars3d?style=flat&logo=github">
 </a>
 <a target="_black" href="https://www.npmjs.com/package/mars3d">
 <img alt="Npm downloads" src="https://img.shields.io/npm/dt/mars3d?style=flat&logo=npm">
@@ -21,7 +19,8 @@
 
  [**English**](./README_EN.md) |[**中文**](./README.md) 
 
-### 建议环境配置
+
+## 建议环境配置
 
 1. 推荐使用 Visual Studio Code 编辑器
 2. 推荐安装 ESlint、Volar 插件（如果已经安装Vetur插件，需要禁用）并将格式化工具设置为eslint （settings.json配置如下）
@@ -111,8 +110,9 @@ const Cesium = instance?.appContext.config.globalProperties.Cesium;
 ### 相关网站 
 - Mars3D官网：[http://mars3d.cn](http://mars3d.cn)  
 
-- GitHub导航列表：[https://github.com/marsgis/mars3d](https://github.com/marsgis/mars3d)
+- Mars3D开源项目列表：[https://github.com/marsgis/mars3d](https://github.com/marsgis/mars3d)
  
 
 ## 版权说明
-1. 任何`个人或组织`可以在遵守Mars3D相关要求下`免费无限制`使用。
+1. Mars3D平台由[火星科技](http://marsgis.cn/)自主研发，拥有所有权利。
+2. 任何个人或组织可以在遵守相关要求下可以免费无限制使用。
