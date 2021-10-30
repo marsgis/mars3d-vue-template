@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {},
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "mars3d": "^3.1.10"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/marsgis/mars3d-vue2-template.git"
