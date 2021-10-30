@@ -23,7 +23,8 @@
   
 | Directory  |Mars3D |Cesium  |   Instructions  | 
 |  ----  |----  | ----| ----  |
-|[mars3d-vue3-vite](./mars3d-vue3-vite/README.md)	|npm |npm  | [Recommended] Standard vue3 project template| 
+|[mars3d-vue3-cli](./mars3d-vue3-cli/README.md)	|npm |npm  | [Recommended] Standard vue3 project template ，vue+vue-cli+ts| 
+|[mars3d-vue3-vite](./mars3d-vue3-vite/README.md)	|npm |npm  | vue3+vite+ts| 
 
 
 ## Vue2

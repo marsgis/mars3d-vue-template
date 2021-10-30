@@ -25,7 +25,8 @@
   
 | 目录  |mars3d包 |Cesium包  |   说明  | 
 |  ----  |----  | ----| ----  |
-|[mars3d-vue3-vite](./mars3d-vue3-vite/README.md)	|npm |npm  | 【推荐】标准的vue3项目模板,使用vite+ts| 
+|[mars3d-vue3-cli](./mars3d-vue3-cli/README.md)	|npm |npm  | 【推荐】标准的vue3项目模板,使用vue+vue-cli+ts| 
+|[mars3d-vue3-vite](./mars3d-vue3-vite/README.md)	|npm |npm  | vue3+vite+ts 实现的项目模板| 
 
 
 ## 如果使用的是Vue2
