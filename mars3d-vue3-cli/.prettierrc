@@ -1,0 +1,9 @@
+{
+  "useTabs": false,
+  "eslintIntegration": true,
+  "singleQuote": false,
+  "semi": true,
+  "bracketSpacing": true,
+  "printWidth":150,
+  "arrowParens": "always"
+}
