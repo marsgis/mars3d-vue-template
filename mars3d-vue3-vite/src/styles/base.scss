@@ -1,3 +1,18 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, "Microsoft Yahei",
+    "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 14px;
+  background: #000;
+  -webkit-overflow-scrolling: touch;
+}
+
 html {
   line-height: 1.15;
   /* 1 */
@@ -5,16 +20,14 @@ html {
   /* 2 */
 }
 
+body {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 /* Sections
      ========================================================================== */
-
-/**
-   * Remove the margin in all browsers.
-   */
-
-body {
-  margin: 0;
-}
 
 /**
    * Render the `main` element consistently in IE.
