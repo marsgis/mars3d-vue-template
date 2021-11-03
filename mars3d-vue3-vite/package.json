@@ -1,6 +1,6 @@
 {
-  "name": "mars3d-vue3-vite",
-  "version": "0.0.0",
+  "name": "mars3d-vue3-vite-template",
+  "version": "3.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
