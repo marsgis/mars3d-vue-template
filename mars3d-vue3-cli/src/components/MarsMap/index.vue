@@ -1,5 +1,5 @@
 <template>
-  <div :id="withKeyId" class="mars3d-container mars3d-container-compare-rh"></div>
+  <div :id="withKeyId" class="mars3d-container"></div>
 </template>
 <script setup lang="ts">
 import { onMounted, computed, onBeforeUnmount, getCurrentInstance } from 'vue'
@@ -18,8 +18,8 @@ const props = withDefaults(defineProps<{
   options: () => ({})
 })
 
-// 用于存放组件实例
-let mapviewer:any = null
+// 用于存放地球组件实例
+let map:any = null
 
 // 使用用户传入的 mapKey 拼接生成 withKeyId 作为当前显示容器的id
 const withKeyId = computed(() => `mars3d-container-${props.mapKey}`)
@@ -29,8 +29,8 @@ onMounted(() => {
   mars3d.Resource.fetchJson({ url: props.url }).then((data: any) => {
     initMars3d({
       // 合并配置项
-      ...props.options,
-      ...data.map3d
+      ...data.map3d,
+      ...props.options
     })
   })
 })
@@ -38,14 +38,14 @@ onMounted(() => {
 // onload事件将在地图渲染后触发
 const emit = defineEmits(['onload'])
 const initMars3d = (option: any) => {
-  mapviewer = new mars3d.Map(withKeyId.value, option)
-  emit('onload', mapviewer)
+  map = new mars3d.Map(withKeyId.value, option)
+  emit('onload', map)
 }
 
 // 组件卸载之前销毁mars3d实例
 onBeforeUnmount(() => {
-  if (mapviewer) {
-    mapviewer.destroy()
+  if (map) {
+    map.destroy()
   }
 })
 
