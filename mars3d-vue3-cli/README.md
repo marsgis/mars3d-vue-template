@@ -91,6 +91,36 @@ import MarsMap from "@comp/MarsMap/index.vue";
 <MarsMap url="config/config.json" map-key="yourkey" @onload="loadHandler" />
 ```
 
+
+3. ### 配置vue.config.js 
+ 
+```js
+// vue.config.js 添加下面配置 
+const CopyWebpackPlugin = require('copy-webpack-plugin')  
+
+module.exports = {
+  //已忽略其他配置
+  configureWebpack: config => { 
+    let cesiumSourcePath = 'node_modules/mars3d-cesium/Build/Cesium/' //cesium库目录
+    let cesiumRunPath = config.output.publicPath || './cesium/' //cesium运行时主目录
+    let plugins = [
+      //标识cesium资源所在的主目录，cesium内部资源加载、多线程等处理时需要用到
+      new webpack.DefinePlugin({
+        CESIUM_BASE_URL: JSON.stringify(cesiumRunPath)
+      }),
+      //cesium相关资源目录需要拷贝到系统目录下面
+      new CopyWebpackPlugin([{ from: path.join(cesiumSourcePath, 'Workers'), to: path.join(cesiumRunPath, 'Workers') }]),
+      new CopyWebpackPlugin([{ from: path.join(cesiumSourcePath, 'Assets'), to: path.join(cesiumRunPath, 'Assets') }]),
+      new CopyWebpackPlugin([{ from: path.join(cesiumSourcePath, 'ThirdParty'), to: path.join(cesiumRunPath, 'ThirdParty') }]),
+      new CopyWebpackPlugin([{ from: path.join(cesiumSourcePath, 'Widgets'), to: path.join(cesiumRunPath, 'Widgets') }])
+    ]
+    return {
+      plugins: plugins
+    }
+  },
+}
+```
+
 4. ### 访问 mars3d 和 Cesium 实例
 
 项目中已经将 mars3d 和 Cesium 实例挂载到 globalProperties，通过如下方式获取
