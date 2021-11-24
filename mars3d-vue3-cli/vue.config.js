@@ -15,7 +15,7 @@ module.exports = {
   productionSourceMap: false,
   configureWebpack: (config) => {
 
-    let cesiumRunPath = config.output.publicPat || './cesium/' //cesium运行时主目录
+    let cesiumRunPath = config.output.publicPath || './cesium/' //cesium运行时主目录
     let plugins = [
       //标识cesium资源所在的主目录，cesium内部资源加载、多线程等处理时需要用到
       new webpack.DefinePlugin({
