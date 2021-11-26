@@ -3,13 +3,15 @@
 </template>
 
 <script setup lang="ts">
-import { ref, getCurrentInstance } from 'vue'
-import MarsMap from '@comp/MarsMap/index.vue'
-const configUrl = ref('config/config.json')
+import { getCurrentInstance, ref } from "vue"
+import MarsMap from "@comp/MarsMap/index.vue"
+
 
 const instance = getCurrentInstance()
 const mars3d = instance?.appContext.config.globalProperties.mars3d
 const Cesium = instance?.appContext.config.globalProperties.Cesium
+
+const configUrl = ref("config/config.json")
 
 const marsOnload = (map: any) => {
   const graphicLayer = new mars3d.layer.GraphicLayer()
@@ -17,25 +19,25 @@ const marsOnload = (map: any) => {
 
   // 2.在layer上绑定监听事件
   graphicLayer.on(mars3d.EventType.click, function (event: any) {
-    console.log('监听layer，单击了矢量对象', event)
+    console.log("监听layer，单击了矢量对象", event)
   })
   graphicLayer.on(mars3d.EventType.mouseOver, function (event: any) {
-    console.log('监听layer，鼠标移入了矢量对象', event)
+    console.log("监听layer，鼠标移入了矢量对象", event)
   })
   graphicLayer.on(mars3d.EventType.mouseOut, function (event: any) {
-    console.log('监听layer，鼠标移出了矢量对象', event)
+    console.log("监听layer，鼠标移出了矢量对象", event)
   })
 
   // 可在图层上绑定popup,对所有加到这个图层的矢量数据都生效
-  graphicLayer.bindPopup('我是layer上绑定的Popup', {
+  graphicLayer.bindPopup("我是layer上绑定的Popup", {
     anchor: [0, -10]
   })
 
   // 可在图层绑定右键菜单,对所有加到这个图层的矢量数据都生效
   graphicLayer.bindContextMenu([
     {
-      text: '删除对象',
-      iconCls: 'fa fa-trash-o',
+      text: "删除对象",
+      iconCls: "fa fa-trash-o",
       callback: function (e: any) {
         const graphic = e.graphic
         if (graphic) {
@@ -69,12 +71,12 @@ const testApi = {
     const graphic = new mars3d.graphic.LabelEntity({
       position: new mars3d.LatLngPoint(116.1, 31.0, 1000),
       style: {
-        text: 'Mars3D平台',
+        text: "Mars3D平台",
         font_size: 25,
-        font_family: '楷体',
-        color: '#003da6',
+        font_family: "楷体",
+        color: "#003da6",
         outline: true,
-        outlineColor: '#bfbfbf',
+        outlineColor: "#bfbfbf",
         outlineWidth: 2,
         horizontalOrigin: Cesium.HorizontalOrigin.CENTER,
         verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
@@ -88,10 +90,10 @@ const testApi = {
     const graphic = new mars3d.graphic.PointEntity({
       position: [116.2, 31.0, 1000],
       style: {
-        color: '#ff0000',
+        color: "#ff0000",
         pixelSize: 10,
         outline: true,
-        outlineColor: '#ffffff',
+        outlineColor: "#ffffff",
         outlineWidth: 2
       }
     })
@@ -100,10 +102,10 @@ const testApi = {
 
   addGraphic_e03 (graphicLayer:any) {
     const graphic = new mars3d.graphic.BillboardEntity({
-      name: '贴地图标',
+      name: "贴地图标",
       position: [116.3, 31.0, 1000],
       style: {
-        image: 'http://mars3d.cn/example/img/marker/mark2.png',
+        image: "http://mars3d.cn/example/img/marker/mark2.png",
         scale: 1,
         horizontalOrigin: Cesium.HorizontalOrigin.CENTER,
         verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
@@ -120,7 +122,7 @@ const testApi = {
         plane: new Cesium.Plane(Cesium.Cartesian3.UNIT_Z, 0.0),
         dimensions: new Cesium.Cartesian2(4000.0, 4000.0),
         material: mars3d.MaterialUtil.createMaterialProperty(mars3d.MaterialType.Image, {
-          image: 'http://mars3d.cn/example/img/textures/movingRiver.png',
+          image: "http://mars3d.cn/example/img/textures/movingRiver.png",
           transparent: true
         })
       }
@@ -135,7 +137,7 @@ const testApi = {
       style: {
         dimensions: new Cesium.Cartesian3(2000.0, 2000.0, 2000.0),
         fill: true,
-        color: '#00ffff',
+        color: "#00ffff",
         opacity: 0.9,
         heading: 45,
         roll: 45,
@@ -150,14 +152,14 @@ const testApi = {
       position: [116.1, 30.9, 1000],
       style: {
         radius: 1800.0,
-        color: '#00ff00',
+        color: "#00ff00",
         opacity: 0.3,
         outline: true,
         outlineWidth: 3,
-        outlineColor: '#ffffff',
+        outlineColor: "#ffffff",
         clampToGround: true
       },
-      popup: '直接传参的popup'
+      popup: "直接传参的popup"
     })
     graphicLayer.addGraphic(graphic)
   },
@@ -169,10 +171,10 @@ const testApi = {
         length: 3000.0,
         topRadius: 0.0,
         bottomRadius: 1300.0,
-        color: '#00FFFF',
+        color: "#00FFFF",
         opacity: 0.7
       },
-      popup: '直接传参的popup'
+      popup: "直接传参的popup"
     })
     graphicLayer.addGraphic(graphic)
   },
@@ -193,10 +195,10 @@ const testApi = {
 
   addGraphic_e09 (graphicLayer:any) {
     const graphic = new mars3d.graphic.ModelEntity({
-      name: '消防员',
+      name: "消防员",
       position: [116.4, 30.9, 1000],
       style: {
-        url: 'http://data.mars3d.cn/gltf/mars/firedrill/xiaofangyuan-run.gltf',
+        url: "http://data.mars3d.cn/gltf/mars/firedrill/xiaofangyuan-run.gltf",
         scale: 16,
         minimumPixelSize: 100
       }
@@ -213,7 +215,7 @@ const testApi = {
       ],
       style: {
         width: 5,
-        color: '#3388ff'
+        color: "#3388ff"
       }
     })
     graphicLayer.addGraphic(graphic) // 还可以另外一种写法: graphic.addTo(graphicLayer)
@@ -227,9 +229,9 @@ const testApi = {
         [116.13, 30.79, 1000]
       ],
       style: {
-        shape: 'pipeline',
+        shape: "pipeline",
         radius: 80,
-        color: '#3388ff',
+        color: "#3388ff",
         opacity: 0.9
       }
     })
@@ -246,7 +248,7 @@ const testApi = {
       ],
       style: {
         width: 500,
-        color: '#3388ff'
+        color: "#3388ff"
       }
     })
     graphicLayer.addGraphic(graphic) // 还可以另外一种写法: graphic.addTo(graphicLayer)
@@ -265,8 +267,8 @@ const testApi = {
         diffHeight: 500,
         // 动画线材质
         material: mars3d.MaterialUtil.createMaterialProperty(mars3d.MaterialType.LineFlow, {
-          image: 'http://mars3d.cn/example/img/textures/fence.png',
-          color: '#00ff00',
+          image: "http://mars3d.cn/example/img/textures/fence.png",
+          color: "#00ff00",
           speed: 10,
           axisY: true
         })
@@ -283,11 +285,11 @@ const testApi = {
         [116.42216, 30.793431, 1048.07]
       ],
       style: {
-        color: '#3388ff',
+        color: "#3388ff",
         opacity: 0.5,
         outline: true,
         outlineWidth: 3,
-        outlineColor: '#ffffff'
+        outlineColor: "#ffffff"
       }
     })
     graphicLayer.addGraphic(graphic) // 还可以另外一种写法: graphic.addTo(graphicLayer)
@@ -303,13 +305,13 @@ const testApi = {
       ],
       style: {
         material: mars3d.MaterialUtil.createMaterialProperty(mars3d.MaterialType.Water, {
-          normalMap: 'http://mars3d.cn/example/img/textures/waterNormals.jpg', // 水正常扰动的法线图
+          normalMap: "http://mars3d.cn/example/img/textures/waterNormals.jpg", // 水正常扰动的法线图
           frequency: 8000.0, // 控制波数的数字。
           animationSpeed: 0.02, // 控制水的动画速度的数字。
           amplitude: 5.0, // 控制水波振幅的数字。
           specularIntensity: 0.8, // 控制镜面反射强度的数字。
-          baseWaterColor: '#006ab4', // rgba颜色对象基础颜色的水。#00ffff,#00baff,#006ab4
-          blendColor: '#006ab4' // 从水中混合到非水域时使用的rgba颜色对象。
+          baseWaterColor: "#006ab4", // rgba颜色对象基础颜色的水。#00ffff,#00baff,#006ab4
+          blendColor: "#006ab4" // 从水中混合到非水域时使用的rgba颜色对象。
         })
       }
     })
