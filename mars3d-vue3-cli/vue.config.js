@@ -26,10 +26,10 @@ module.exports = {
       // cesium相关资源目录需要拷贝到系统目录下面
       new CopyWebpackPlugin({
         patterns: [
-          { from: path.join(cesiumSourcePath, "Workers"), to: path.join(cesiumRunPath, "Workers") },
-          { from: path.join(cesiumSourcePath, "Assets"), to: path.join(cesiumRunPath, "Assets") },
-          { from: path.join(cesiumSourcePath, "ThirdParty"), to: path.join(cesiumRunPath, "ThirdParty") },
-          { from: path.join(cesiumSourcePath, "Widgets"), to: path.join(cesiumRunPath, "Widgets") }
+          { from: path.join(cesiumSourcePath, "Workers"), to: path.join(config.output.path,cesiumRunPath, "Workers") },
+          { from: path.join(cesiumSourcePath, "Assets"), to: path.join(config.output.path,cesiumRunPath, "Assets") },
+          { from: path.join(cesiumSourcePath, "ThirdParty"), to: path.join(config.output.path,cesiumRunPath, "ThirdParty") },
+          { from: path.join(cesiumSourcePath, "Widgets"), to: path.join(config.output.path,cesiumRunPath, "Widgets") }
         ]
       })
     ]

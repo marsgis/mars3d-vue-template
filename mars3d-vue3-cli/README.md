@@ -109,10 +109,10 @@ module.exports = {
         CESIUM_BASE_URL: JSON.stringify(cesiumRunPath)
       }),
       //cesium相关资源目录需要拷贝到系统目录下面
-      new CopyWebpackPlugin([{ from: path.join(cesiumSourcePath, 'Workers'), to: path.join(cesiumRunPath, 'Workers') }]),
-      new CopyWebpackPlugin([{ from: path.join(cesiumSourcePath, 'Assets'), to: path.join(cesiumRunPath, 'Assets') }]),
-      new CopyWebpackPlugin([{ from: path.join(cesiumSourcePath, 'ThirdParty'), to: path.join(cesiumRunPath, 'ThirdParty') }]),
-      new CopyWebpackPlugin([{ from: path.join(cesiumSourcePath, 'Widgets'), to: path.join(cesiumRunPath, 'Widgets') }])
+      new CopyWebpackPlugin([{ from: path.join(cesiumSourcePath, 'Workers'), to: path.join(config.output.path,cesiumRunPath, 'Workers') }]),
+      new CopyWebpackPlugin([{ from: path.join(cesiumSourcePath, 'Assets'), to: path.join(config.output.path,cesiumRunPath, 'Assets') }]),
+      new CopyWebpackPlugin([{ from: path.join(cesiumSourcePath, 'ThirdParty'), to: path.join(config.output.path,cesiumRunPath, 'ThirdParty') }]),
+      new CopyWebpackPlugin([{ from: path.join(cesiumSourcePath, 'Widgets'), to: path.join(config.output.path,cesiumRunPath, 'Widgets') }])
     ]
     return {
       plugins: plugins
