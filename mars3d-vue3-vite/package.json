@@ -7,7 +7,7 @@
     "lint": "eslint ./src/**/*.{js,jsx,vue,ts,tsx} --fix"
   },
   "dependencies": {
-    "mars3d": "^3.1.13",
+    "mars3d": "^3.1.15",
     "vue": "^3.2.16"
   },
   "devDependencies": {
