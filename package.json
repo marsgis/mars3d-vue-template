@@ -6,7 +6,7 @@
   "scripts": {},
   "dependencies": {},
   "devDependencies": {
-    "mars3d": "^3.1.15"
+    "mars3d": "^3.1.16"
   },
   "repository": {
     "type": "git",
