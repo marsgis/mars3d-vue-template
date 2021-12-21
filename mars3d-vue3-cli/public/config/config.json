@@ -65,7 +65,7 @@
         "id": 2021,
         "pid": 10,
         "name": "天地图影像",
-        "icon": "https://cdn.jsdelivr.net/gh/marsgis/mars3d-es5-example/example/img/basemaps/tdt_img.png",
+        "icon": "https://cdn.jsdelivr.net/gh/muyao1987/cdn/mars3d.cn/img/basemaps/tdt_img.png",
         "type": "tdt",
         "layer": "img_d",
         "key": ["9ae78c51a0a28f06444d541148496e36"],
@@ -74,7 +74,7 @@
       {
         "pid": 10,
         "name": "天地图电子",
-        "icon": "https://cdn.jsdelivr.net/gh/marsgis/mars3d-es5-example/example/img/basemaps/tdt_vec.png",
+        "icon": "https://cdn.jsdelivr.net/gh/muyao1987/cdn/mars3d.cn/img/basemaps/tdt_vec.png",
         "type": "group",
         "layers": [
           { "name": "底图", "type": "tdt", "layer": "vec_d", "key": ["9ae78c51a0a28f06444d541148496e36"] },
@@ -85,7 +85,7 @@
         "pid": 10,
         "name": "高德影像",
         "type": "group",
-        "icon": "https://cdn.jsdelivr.net/gh/marsgis/mars3d-es5-example/example/img/basemaps/gaode_img.png",
+        "icon": "https://cdn.jsdelivr.net/gh/muyao1987/cdn/mars3d.cn/img/basemaps/gaode_img.png",
         "layers": [
           { "name": "底图", "type": "gaode", "layer": "img_d" },
           { "name": "注记", "type": "gaode", "layer": "img_z" }
@@ -95,14 +95,14 @@
         "pid": 10,
         "name": "高德电子",
         "type": "gaode",
-        "icon": "https://cdn.jsdelivr.net/gh/marsgis/mars3d-es5-example/example/img/basemaps/gaode_vec.png",
+        "icon": "https://cdn.jsdelivr.net/gh/muyao1987/cdn/mars3d.cn/img/basemaps/gaode_vec.png",
         "layer": "vec"
       },
       {
         "pid": 10,
         "name": "百度影像",
         "type": "group",
-        "icon": "https://cdn.jsdelivr.net/gh/marsgis/mars3d-es5-example/example/img/basemaps/bd-img.png",
+        "icon": "https://cdn.jsdelivr.net/gh/muyao1987/cdn/mars3d.cn/img/basemaps/bd-img.png",
         "layers": [
           { "name": "底图", "type": "baidu", "layer": "img_d" },
           { "name": "注记", "type": "baidu", "layer": "img_z" }
@@ -111,14 +111,14 @@
       {
         "pid": 10,
         "name": "百度电子",
-        "icon": "https://cdn.jsdelivr.net/gh/marsgis/mars3d-es5-example/example/img/basemaps/bd-vec.png",
+        "icon": "https://cdn.jsdelivr.net/gh/muyao1987/cdn/mars3d.cn/img/basemaps/bd-vec.png",
         "type": "baidu",
         "layer": "vec"
       },
       {
         "pid": 10,
         "name": "腾讯影像",
-        "icon": "https://cdn.jsdelivr.net/gh/marsgis/mars3d-es5-example/example/img/basemaps/gaode_img.png",
+        "icon": "https://cdn.jsdelivr.net/gh/muyao1987/cdn/mars3d.cn/img/basemaps/gaode_img.png",
         "type": "group",
         "layers": [
           { "name": "底图", "type": "tencent", "layer": "img_d" },
@@ -128,14 +128,14 @@
       {
         "pid": 10,
         "name": "腾讯电子",
-        "icon": "https://cdn.jsdelivr.net/gh/marsgis/mars3d-es5-example/example/img/basemaps/gaode_vec.png",
+        "icon": "https://cdn.jsdelivr.net/gh/muyao1987/cdn/mars3d.cn/img/basemaps/gaode_vec.png",
         "type": "tencent",
         "layer": "vec"
       },
       {
         "pid": 10,
         "name": "ArcGIS影像",
-        "icon": "https://cdn.jsdelivr.net/gh/marsgis/mars3d-es5-example/example/img/basemaps/esriWorldImagery.png",
+        "icon": "https://cdn.jsdelivr.net/gh/muyao1987/cdn/mars3d.cn/img/basemaps/esriWorldImagery.png",
         "type": "xyz",
         "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
         "enablePickFeatures": false
@@ -143,7 +143,7 @@
       {
         "pid": 10,
         "name": "微软影像",
-        "icon": "https://cdn.jsdelivr.net/gh/marsgis/mars3d-es5-example/example/img/basemaps/bingAerial.png",
+        "icon": "https://cdn.jsdelivr.net/gh/muyao1987/cdn/mars3d.cn/img/basemaps/bingAerial.png",
         "type": "bing",
         "key": "AuKhM0WRkjhX8E4y1OM0TukYycaw_4Vh3eSfXONDf7OARls-WEB3K_Rfx89bWxof",
         "layer": "Aerial"
@@ -152,7 +152,7 @@
         "pid": 10,
         "name": "OSM地图",
         "type": "xyz",
-        "icon": "https://cdn.jsdelivr.net/gh/marsgis/mars3d-es5-example/example/img/basemaps/osm.png",
+        "icon": "https://cdn.jsdelivr.net/gh/muyao1987/cdn/mars3d.cn/img/basemaps/osm.png",
         "url": "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
         "subdomains": "abc"
       },
@@ -160,7 +160,7 @@
         "id": 2017,
         "pid": 10,
         "name": "蓝色底图",
-        "icon": "https://cdn.jsdelivr.net/gh/marsgis/mars3d-es5-example/example/img/basemaps/bd-c-midnight.png",
+        "icon": "https://cdn.jsdelivr.net/gh/muyao1987/cdn/mars3d.cn/img/basemaps/bd-c-midnight.png",
         "type": "xyz",
         "url": "http://map.geoq.cn/arcgis/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/{z}/{y}/{x}",
         "chinaCRS": "GCJ02",
@@ -169,7 +169,7 @@
       {
         "pid": 10,
         "name": "黑色底图",
-        "icon": "https://cdn.jsdelivr.net/gh/marsgis/mars3d-es5-example/example/img/basemaps/bd-c-dark.png",
+        "icon": "https://cdn.jsdelivr.net/gh/muyao1987/cdn/mars3d.cn/img/basemaps/bd-c-dark.png",
         "type": "tencent",
         "layer": "custom",
         "style": "4"
@@ -177,7 +177,7 @@
       {
         "pid": 10,
         "name": "灰色底图",
-        "icon": "https://cdn.jsdelivr.net/gh/marsgis/mars3d-es5-example/example/img/basemaps/bd-c-grayscale.png",
+        "icon": "https://cdn.jsdelivr.net/gh/muyao1987/cdn/mars3d.cn/img/basemaps/bd-c-grayscale.png",
         "type": "mapbox",
         "username": "marsgis",
         "styleId": "cki0a92b123qo1aluk0e5v7sb",
@@ -187,7 +187,7 @@
         "pid": 10,
         "name": "离线地图  (供参考)",
         "type": "xyz",
-        "icon": "https://cdn.jsdelivr.net/gh/marsgis/mars3d-es5-example/example/img/basemaps/mapboxSatellite.png",
+        "icon": "https://cdn.jsdelivr.net/gh/muyao1987/cdn/mars3d.cn/img/basemaps/mapboxSatellite.png",
         "url": "//data.mars3d.cn/tile/googleImg/{z}/{x}/{y}.jpg",
         "minimumLevel": 1,
         "maximumLevel": 18,
@@ -198,7 +198,7 @@
       {
         "pid": 10,
         "name": "单张图片 (本地离线)",
-        "icon": "https://cdn.jsdelivr.net/gh/marsgis/mars3d-es5-example/example/img/basemaps/offline.png",
+        "icon": "https://cdn.jsdelivr.net/gh/muyao1987/cdn/mars3d.cn/img/basemaps/offline.png",
         "type": "image",
         "url": "//data.mars3d.cn/file/img/world/world.jpg"
       }
