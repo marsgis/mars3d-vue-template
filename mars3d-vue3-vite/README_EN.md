@@ -57,11 +57,9 @@ npm run dev
 npm run build
 ```
 
-## Operation effect 
- [online Demo](http://mars3d.cn/project/vue-template/)  
-
- ![image](https://mars3d.cn/project/vue-template/screenshot.jpg)
-
+### Operation effect 
+ [online Demo](http://marsgis.gitee.io/mars3d-es5-template/)  
+ 
 
 ## How to integrate into your existing project
  
