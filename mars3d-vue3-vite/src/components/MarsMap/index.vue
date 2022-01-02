@@ -3,6 +3,7 @@
 </template>
 <script setup lang="ts">
 import { onMounted, computed, onBeforeUnmount, getCurrentInstance } from 'vue'
+import { isPc } from '@/utils/index'
 
 const instance = getCurrentInstance()
 const mars3d = instance?.appContext.config.globalProperties.mars3d
@@ -39,6 +40,41 @@ onMounted(() => {
 const emit = defineEmits(['onload'])
 const initMars3d = (option: any) => {
   map = new mars3d.Map(withKeyId.value, option)
+
+  // //针对不同终端的优化配置
+  if (isPc()) {
+    // Cesium 1.61以后会默认关闭反走样，对于桌面端而言还是开启得好，
+    map.scene.postProcessStages.fxaa.enabled = true
+
+    map.zoomFactor = 2.0 // 鼠标滚轮放大的步长参数
+
+    // IE浏览器优化
+    if (window.navigator.userAgent.toLowerCase().indexOf('msie') >= 0) {
+      map.viewer.targetFrameRate = 20 // 限制帧率
+      map.scene.requestRenderMode = true // 取消实时渲染
+    }
+  } else {
+    map.zoomFactor = 5.0 // 鼠标滚轮放大的步长参数
+    map.scene.screenSpaceCameraController.enableTilt = false
+
+    // 移动设备上禁掉以下几个选项，可以相对更加流畅
+    map.scene.requestRenderMode = true // 取消实时渲染
+    map.scene.fog.enabled = false
+    map.scene.skyAtmosphere.show = false
+    map.scene.globe.showGroundAtmosphere = false
+  }
+
+  // //二三维切换不用动画
+  if (map.viewer.sceneModePicker) {
+    map.viewer.sceneModePicker.viewModel.duration = 0.0
+  }
+
+  // webgl渲染失败后，刷新页面
+  // map.on(mars3d.EventType.renderError, async () => {
+  //   await $alert('程序内存消耗过大，请重启浏览器')
+  //   window.location.reload()
+  // })
+
   emit('onload', map)
 }
 
@@ -57,9 +93,24 @@ onBeforeUnmount(() => {
   overflow: hidden;
 }
 
-/* 重写Cesium的css */
-
-/**cesium按钮背景色*/
+/**cesium 工具按钮栏*/
+.cesium-viewer-toolbar {
+  top: auto;
+  bottom: 35px;
+  left: 12px;
+  right: auto;
+}
+.cesium-toolbar-button img {
+  height: 100%;
+}
+.cesium-viewer-toolbar > .cesium-toolbar-button,
+.cesium-navigationHelpButton-wrapper,
+.cesium-viewer-geocoderContainer {
+  margin-bottom: 5px;
+  float: left;
+  clear: both;
+  text-align: center;
+}
 .cesium-button {
   background-color: #3f4854;
   color: #e6e6e6;
@@ -68,34 +119,61 @@ onBeforeUnmount(() => {
   line-height: 32px;
 }
 
+/**cesium 底图切换面板*/
+.cesium-baseLayerPicker-dropDown {
+  bottom: 0;
+  left: 40px;
+  max-height: 700px;
+  margin-bottom: 5px;
+}
+
+/**cesium 帮助面板*/
+.cesium-navigation-help {
+  top: auto;
+  bottom: 0;
+  left: 40px;
+  transform-origin: left bottom;
+}
+
+/**cesium 二维三维切换*/
+.cesium-sceneModePicker-wrapper {
+  width: auto;
+}
+.cesium-sceneModePicker-wrapper .cesium-sceneModePicker-dropDown-icon {
+  float: right;
+  margin: 0 3px;
+}
+
+/**cesium POI查询输入框*/
+.cesium-viewer-geocoderContainer .search-results {
+  left: 0;
+  right: 40px;
+  width: auto;
+  z-index: 9999;
+}
+.cesium-geocoder-searchButton {
+  background-color: #3f4854;
+}
 .cesium-viewer-geocoderContainer .cesium-geocoder-input {
   background-color: rgba(63, 72, 84, 0.7);
 }
-
 .cesium-viewer-geocoderContainer .cesium-geocoder-input:focus {
   background-color: rgba(63, 72, 84, 0.9);
 }
-
 .cesium-viewer-geocoderContainer .search-results {
   background-color: #3f4854;
 }
 
-.cesium-geocoder-searchButton {
-  background-color: #3f4854;
+/**cesium info信息框*/
+.cesium-infoBox {
+  top: 50px;
+  background: rgba(63, 72, 84, 0.9);
 }
-
 .cesium-infoBox-title {
   background-color: #3f4854;
 }
 
-.cesium-infoBox {
-  background: rgba(63, 72, 84, 0.9);
-}
-
-.cesium-toolbar-button img {
-  height: 100%;
-}
-
+/**cesium 任务栏的FPS信息*/
 .cesium-performanceDisplay-defaultContainer {
   top: auto;
   bottom: 35px;
@@ -106,106 +184,11 @@ onBeforeUnmount(() => {
   color: #fff;
 }
 
-/**cesium工具栏位置*/
-.cesium-viewer-toolbar {
-  top: auto;
-  left: auto;
-  right: 12px;
-  bottom: 35px;
-}
-
-.cesium-viewer-toolbar > .cesium-toolbar-button,
-.cesium-navigationHelpButton-wrapper,
-.cesium-viewer-geocoderContainer {
-  margin-bottom: 5px;
-  float: right;
-  clear: both;
-  text-align: center;
-}
-
-.cesium-baseLayerPicker-dropDown {
-  bottom: 0;
-  right: 40px;
-  max-height: 700px;
-  margin-bottom: 5px;
-}
-
-.cesium-navigation-help {
-  top: auto;
-  bottom: 0;
-  right: 40px;
-  transform-origin: right bottom;
-}
-
-.cesium-sceneModePicker-wrapper {
-  width: auto;
-}
-
-.cesium-sceneModePicker-wrapper .cesium-sceneModePicker-dropDown-icon {
-  float: left;
-  margin: 0 3px;
-}
-
-.cesium-viewer-geocoderContainer .search-results {
-  left: 0;
-  right: 40px;
-  width: auto;
-  z-index: 9999;
-}
-
-.cesium-infoBox-title {
+/**cesium tileset调试信息面板*/
+.cesium-viewer-cesiumInspectorContainer {
+  top: 10px;
+  left: 10px;
+  right: auto;
   background-color: #3f4854;
-}
-
-.cesium-infoBox {
-  top: 50px;
-  background: rgba(63, 72, 84, 0.9);
-}
-
-/**左下工具栏菜单*/
-.toolbar-dropdown-menu-div {
-  background: rgba(43, 44, 47, 0.8);
-  border: 1px solid #2b2c2f;
-  z-index: 991;
-  position: absolute;
-  right: 60px;
-  bottom: 40px;
-  display: none;
-}
-
-.toolbar-dropdown-menu {
-  min-width: 110px;
-  padding: 0;
-}
-.toolbar-dropdown-menu > li {
-  padding: 0 3px;
-  margin: 2px 0;
-}
-.toolbar-dropdown-menu > li > a {
-  color: #edffff;
-  display: block;
-  padding: 4px 10px;
-  clear: both;
-  font-weight: normal;
-  line-height: 1.6;
-  white-space: nowrap;
-  text-decoration: none;
-}
-
-.toolbar-dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus {
-  color: #fff;
-  background-color: #444d59;
-}
-
-.toolbar-dropdown-menu > .active > a,
-.dropdown-menu > .active > a:hover,
-.dropdown-menu > .active > a:focus {
-  color: #fff;
-  background-color: #444d59;
-}
-
-.toolbar-dropdown-menu i {
-  padding-right: 5px;
 }
 </style>
