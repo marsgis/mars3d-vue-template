@@ -6,6 +6,7 @@
 import { ref } from "vue"
 import MarsMap from "@comp/MarsMap/index.vue"
 import * as mars3d from "mars3d"
+
 const Cesium = mars3d.Cesium
 
 const configUrl = ref("config/config.json")

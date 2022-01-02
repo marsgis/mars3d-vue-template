@@ -3,6 +3,9 @@
 </template>
 <script setup>
 import { computed, onBeforeUnmount, onMounted } from "vue"
+import { isPc } from "@/utils/index"
+
+import "mars3d/dist/mars3d.css"
 import * as mars3d from "mars3d"
 
 // props选项
@@ -42,6 +45,41 @@ onMounted(() => {
 const emit = defineEmits(["onload"])
 const initMars3d = (option) => {
   map = new mars3d.Map(withKeyId.value, option)
+
+  // //针对不同终端的优化配置
+  if (isPc()) {
+    // Cesium 1.61以后会默认关闭反走样，对于桌面端而言还是开启得好，
+    map.scene.postProcessStages.fxaa.enabled = true
+
+    map.zoomFactor = 2.0 // 鼠标滚轮放大的步长参数
+
+    // IE浏览器优化
+    if (window.navigator.userAgent.toLowerCase().indexOf("msie") >= 0) {
+      map.viewer.targetFrameRate = 20 // 限制帧率
+      map.scene.requestRenderMode = true // 取消实时渲染
+    }
+  } else {
+    map.zoomFactor = 5.0 // 鼠标滚轮放大的步长参数
+    map.scene.screenSpaceCameraController.enableTilt = false
+
+    // 移动设备上禁掉以下几个选项，可以相对更加流畅
+    map.scene.requestRenderMode = true // 取消实时渲染
+    map.scene.fog.enabled = false
+    map.scene.skyAtmosphere.show = false
+    map.scene.globe.showGroundAtmosphere = false
+  }
+
+  // //二三维切换不用动画
+  if (map.viewer.sceneModePicker) {
+    map.viewer.sceneModePicker.viewModel.duration = 0.0
+  }
+
+  // webgl渲染失败后，刷新页面
+  // map.on(mars3d.EventType.renderError, async () => {
+  //   await $alert('程序内存消耗过大，请重启浏览器')
+  //   window.location.reload()
+  // })
+
   emit("onload", map)
 }
 

@@ -12,7 +12,7 @@
       "showSkyAtmosphere": true,
       "fog": true,
       "fxaa": true,
-      "requestRenderMode": false,
+      "requestRenderMode": true,
       "globe": {
         "depthTestAgainstTerrain": false,
         "baseColor": "#546a53",
@@ -35,7 +35,7 @@
       "homeButton": true,
       "baseLayerPicker": true,
       "sceneModePicker": true,
-      "vrButton": true,
+      "vrButton": false,
       "fullscreenButton": true,
       "navigationHelpButton": true,
       "animation": false,
@@ -46,6 +46,7 @@
 
       "defaultContextMenu": true,
       "mouseDownView": true,
+      "zoom": { "insertIndex": 1 },
       "compass": { "bottom": "toolbar", "left": "5px" },
       "distanceLegend": { "left": "100px", "bottom": "2px" },
       "locationBar": {
@@ -68,8 +69,7 @@
         "icon": "https://muyao1987.gitee.io/cdn/mars3d.cn/img/basemaps/tdt_img.png",
         "type": "tdt",
         "layer": "img_d",
-        "key": ["9ae78c51a0a28f06444d541148496e36"],
-        "show": true
+        "key": ["9ae78c51a0a28f06444d541148496e36"]
       },
       {
         "pid": 10,
@@ -123,7 +123,8 @@
         "layers": [
           { "name": "底图", "type": "tencent", "layer": "img_d" },
           { "name": "注记", "type": "tencent", "layer": "img_z" }
-        ]
+        ],
+        "show": true
       },
       {
         "pid": 10,

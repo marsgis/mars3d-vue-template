@@ -15,8 +15,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.join(__dirname, 'src'),
-      '@comp': path.join(__dirname, 'src/components'),
-      '@comb': path.join(__dirname, 'src/composables')
+      '@comp': path.join(__dirname, 'src/components')
+      // '@comb': path.join(__dirname, 'src/composables')
     }
   },
   css: {

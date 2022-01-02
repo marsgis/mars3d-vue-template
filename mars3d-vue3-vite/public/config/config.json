@@ -1,13 +1,7 @@
 ﻿{
   "map3d": {
     "scene": {
-      "center": {
-        "lat": 31.686288,
-        "lng": 117.229619,
-        "alt": 11333.9,
-        "heading": 359.2,
-        "pitch": -39.5
-      },
+      "center": { "lat": 30.526361, "lng": 116.335987, "alt": 45187, "heading": 0, "pitch": -45 },
       "scene3DOnly": false,
       "shadows": false,
       "removeDblClick": true,
@@ -39,7 +33,7 @@
     },
     "control": {
       "homeButton": true,
-      "baseLayerPicker": false,
+      "baseLayerPicker": true,
       "sceneModePicker": true,
       "vrButton": false,
       "fullscreenButton": true,
@@ -48,8 +42,7 @@
       "timeline": false,
       "infoBox": false,
       "geocoder": false,
-      "geocoderConfig": { "key": ["ae29a37307840c7ae4a785ac905927e0"] },
-      "selectionIndicator": false,
+      "selectionIndicator":false,
 
       "defaultContextMenu": true,
       "mouseDownView": true,
@@ -57,9 +50,9 @@
       "compass": { "bottom": "toolbar", "left": "5px" },
       "distanceLegend": { "left": "100px", "bottom": "2px" },
       "locationBar": {
-        "fps": false,
-        "crs": "CGCS2000_GK_Zone_3",
-        "crsDecimal": 0,
+        "fps": true,
+        "crs":"CGCS2000_GK_Zone_3",
+        "crsDecimal":0,
         "template": "<div>经度:{lng}</div> <div>纬度:{lat}</div> <div>横{crsx}  纵{crsy}</div> <div>海拔：{alt}米</div> <div>层级：{level}</div><div>方向：{heading}°</div> <div>俯仰角：{pitch}°</div><div>视高：{cameraHeight}米</div>"
       }
     },
@@ -84,18 +77,8 @@
         "icon": "https://muyao1987.gitee.io/cdn/mars3d.cn/img/basemaps/tdt_vec.png",
         "type": "group",
         "layers": [
-          {
-            "name": "底图",
-            "type": "tdt",
-            "layer": "vec_d",
-            "key": ["9ae78c51a0a28f06444d541148496e36"]
-          },
-          {
-            "name": "注记",
-            "type": "tdt",
-            "layer": "vec_z",
-            "key": ["9ae78c51a0a28f06444d541148496e36"]
-          }
+          { "name": "底图", "type": "tdt", "layer": "vec_d", "key": ["9ae78c51a0a28f06444d541148496e36"] },
+          { "name": "注记", "type": "tdt", "layer": "vec_z", "key": ["9ae78c51a0a28f06444d541148496e36"] }
         ]
       },
       {
@@ -224,7 +207,7 @@
     "layers": [
       { "id": 20, "name": "辅助图层", "type": "group" },
       {
-        "pid": 20,
+        "pid":20,
         "name": "行政区划界线",
         "type": "xyz",
         "url": "https://t{s}.tianditu.gov.cn/DataServer?T=ibo_w&x={x}&y={y}&l={z}&tk=9ae78c51a0a28f06444d541148496e36",
@@ -233,7 +216,7 @@
         "show": false
       },
       {
-        "pid": 20,
+        "pid":20,
         "name": "天地图注记",
         "type": "tdt",
         "layer": "img_z",
@@ -242,7 +225,7 @@
       },
       { "id": 30, "name": "实时路况", "type": "group" },
       {
-        "pid": 30,
+        "pid":30,
         "name": "高德实时路况",
         "type": "gaode",
         "layer": "time",
@@ -251,7 +234,7 @@
         "proxy": "//server.mars3d.cn/proxy/"
       },
       {
-        "pid": 30,
+        "pid":30,
         "name": "百度实时路况",
         "type": "baidu",
         "layer": "time"
