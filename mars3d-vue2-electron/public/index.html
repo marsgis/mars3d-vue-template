@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="author" content="火星科技 http://mars3d.cn ">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+
+    <!-- <title><%= htmlWebpackPlugin.options.title %></title> -->
+    <title>Mars3D平台 桌面程序</title>
+    <script>
+        window.basePathUrl = '<%= BASE_URL %>' //标识config、widgets所在的目录
+    </script>
+
+
+    <!-- 方式2：使用cdn引入的Cesium --> 
+    <!-- <link href="https://unpkg.com/mars3d-cesium/Build/Cesium/Widgets/widgets.css" rel="stylesheet"   type="text/css" />
+    <script src="https://unpkg.com/mars3d-cesium/Build/Cesium/Cesium.js"  type="text/javascript"></script>
+    <script src="https://unpkg.com/@turf/turf/turf.min.js" type="text/javascript" ></script> -->
+
+
+    <!-- 方式3：使用直接引入的Cesium ，需要拷贝对应目录到public下 --> 
+    <!-- <script type="text/javascript" >
+      window.CESIUM_BASE_URL ="<%= BASE_URL %>lib/Cesium/"
+    </script>
+    <link rel="stylesheet" href="<%= BASE_URL %>lib/Cesium/Widgets/widgets.css">
+    <script type="text/javascript" src="<%= BASE_URL %>lib/Cesium/Cesium.js"></script> -->
+ 
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

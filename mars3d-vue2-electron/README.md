@@ -1,11 +1,9 @@
- 
 <p align="center">
 <img src="https://muyao1987.gitee.io/cdn/mars3d.cn/logo.png" width="300px" />
 </p>
 
 
-<p align="center">基于Vue3.x技术栈的 Mars3D🌎最简项目模板</p>
-
+<p align="center">基于Vue2.x + electron 技术栈的 Mars3D🌎CS桌面程序项目模板</p>
 
 <p align="center">
 <a target="_black" href="https://github.com/marsgis/mars3d">
@@ -19,27 +17,46 @@
 </a>
 </p>
 
-[**English**](./README_EN.md) |[**中文**](./README.md) 
+ [**English**](./README_EN.md) |[**中文**](./README.md) 
 
+ Mars3D平台基于`Vue2.x ` 、 `vueCli 4.x ` 和 `electron 6.x`  的最简的CS应用项目模版，可以使用该模板建立自己的CS桌面版三维地球程序。
 
-  
-| 目录  |mars3d包 |Cesium包  |   说明  | 
-|  ----  |----  | ----| ----  |
-|[mars3d-vue3-vite](./mars3d-vue3-vite/README.md)	|npm |npm  | vue3项目模板,使用vue3+vite+ts| 
-|[mars3d-vue3-cli](./mars3d-vue3-cli/README.md)	|npm |npm  | vue3项目模板,使用vue+vue-cli+ts| 
-|[mars3d-vue3-js](./mars3d-vue3-js/README.md)	|npm |npm  |  vue3项目模板,使用vue+vue-cli+js| 
-|[mars3d-vue2](./mars3d-vue2/README.md)	|npm |npm  | vue2项目模板,使用vue+vue-cli | 
-|[mars3d-vue2-electron](./mars3d-vue2-electron/README.md)	|npm |npm  | 适用于CS桌面程序的项目模板| 
-
-
-## 如果使用的是Vue2
- 当前仓库是基于`Vue 3.x`技术栈下的最简项目模板，如需`Vue 2.x`技术栈下开发，请访问[mars3d-vue2-template](https://github.com/marsgis/mars3d-vue2-template)
-   
  
 
-### 运行效果 
- [在线体验](http://marsgis.gitee.io/mars3d-es5-template/)  
+
+##  首次运行前安装依赖
+```
+npm install / cnpm install 
+```
+
+##  CS桌面程序访问
+
+### 编译并热部署的Electron开发环境 (Compiles and hot-reloads for Electron development)
+```
+npm run serve / cnpm run serve
+```
+
+### 编译并压缩的Electron生产环境 (Compiles and minifies for Electron production)
+```
+npm run build / cnpm run build
+```
+
+
+
+##  BS浏览器访问
+
+### 编译并热部署的web浏览器开发环境 (Compiles and hot-reloads for development)
+```
+npm run serve-web / cnpm run serve-web
+```
+
+### 编译并压缩的web浏览器生产环境 (Compiles and minifies for production)
+```
+npm run build-web / cnpm run build-web
+```
+
  
+
 
 ## Mars3D 是什么 
 >  `Mars3D平台` 是[火星科技](http://marsgis.cn/)研发的一款基于 WebGL 技术实现的三维客户端开发平台，基于[Cesium](https://cesium.com/cesiumjs/)优化提升与B/S架构设计，支持多行业扩展的轻量级高效能GIS开发平台，能够免安装、无插件地在浏览器中高效运行，并可快速接入与使用多种GIS数据和三维模型，呈现三维空间的可视化，完成平台在不同行业的灵活应用。
