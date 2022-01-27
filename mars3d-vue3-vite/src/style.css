@@ -1,0 +1,62 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bg-gis {
+  background-size: auto;
+  overflow: hidden;
+  left: 0;
+  width: "100%";
+  position: absolute;
+  transition: all 0.3s;
+}
+
+.collapsed {
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+a {
+  color: #62a8ea;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #89bceb;
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline: none;
+  outline-offset: -2px;
+}
+ul,
+li {
+  list-style: none;
+}
+
+/*dark样式*/
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+a:hover {
+  color: #cc3300;
+  text-decoration: underline;
+}
