@@ -69,7 +69,7 @@ npm install mars3d   //或  cnpm install mars3d   或  yarn add mars3d
 2. ### 拷贝文件
  > 场景配置文件：`public\config\config.json`
 
- > 组件定义文件：`src\components\mars3d\Map.vue`
+ > 组件定义文件：`src\components\mars-work\mars-map.vue`
 
 3. ### 需要的组件中引入Map组件创建地球 
 
@@ -78,7 +78,7 @@ npm install mars3d   //或  cnpm install mars3d   或  yarn add mars3d
 ```javascript
 // script
 
-import MarsMap from "@comp/MarsMap/index.vue";
+import MarsMap from "@comp/mars-work/mars-map.vue";
 ```
 
 ```html
@@ -116,6 +116,31 @@ module.exports = {
   },
 }
 ```
+
+#### 不配置vue.config.js时，直接引入CDN的Cesium库
+如果您在上面第3步骤集成中遇到各种奇怪问题无法解决，大部分是vue.config的配置问题时。 
+修改`public\index.html`中的下面注释
+```html
+<link href="https://unpkg.com/mars3d-cesium/Build/Cesium/Widgets/widgets.css" rel="stylesheet"   type="text/css" />
+<script src="https://unpkg.com/mars3d-cesium/Build/Cesium/Cesium.js"  type="text/javascript"></script>
+<script src="https://unpkg.com/@turf/turf/turf.min.js" type="text/javascript" ></script>
+```
+
+项目中提供了快捷配置的环境变量，VUE_APP_MARS3D_SOURCE=cdn
+
+ #### 不配置vue.config.js时，直接引入外部Cesium库
+如果您在上面第3步骤集成中遇到各种奇怪问题无法解决，大部分是vue.config的配置问题时。
+可以直接在html中使用script引入的Cesium库 ，该方式不需要修改 `vue.config`  
+从官网下载的SDK中拷贝Cesium放在`public\lib\Cesium\`下,并取消`public\index.html`中的下面注释
+```html
+<script type="text/javascript" >
+  window.CESIUM_BASE_URL ="<%= BASE_URL %>lib/Cesium/"
+</script>
+<link rel="stylesheet" href="<%= BASE_URL %>lib/Cesium/Widgets/widgets.css">
+<script type="text/javascript" src="<%= BASE_URL %>lib/Cesium/Cesium.js"></script>
+```
+项目中提供了快捷配置的环境变量，VUE_APP_MARS3D_SOURCE=local
+
 
 4. ### 访问 mars3d 和 Cesium 实例
  

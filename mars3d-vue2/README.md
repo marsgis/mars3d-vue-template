@@ -113,6 +113,9 @@ module.exports = {
 <script src="https://unpkg.com/mars3d-cesium/Build/Cesium/Cesium.js"  type="text/javascript"></script>
 <script src="https://unpkg.com/@turf/turf/turf.min.js" type="text/javascript" ></script>
 ```
+
+项目中提供了快捷配置的环境变量，VUE_APP_MARS3D_SOURCE=cdn
+
  #### 不配置vue.config.js时，直接引入外部Cesium库
 如果您在上面第3步骤集成中遇到各种奇怪问题无法解决，大部分是vue.config的配置问题时。
 可以直接在html中使用script引入的Cesium库 ，该方式不需要修改 `vue.config`  
@@ -124,6 +127,7 @@ module.exports = {
 <link rel="stylesheet" href="<%= BASE_URL %>lib/Cesium/Widgets/widgets.css">
 <script type="text/javascript" src="<%= BASE_URL %>lib/Cesium/Cesium.js"></script>
 ```
+项目中提供了快捷配置的环境变量，VUE_APP_MARS3D_SOURCE=local
 
 
 
