@@ -1,17 +1,17 @@
 <template>
   <div id="centerDiv" class="mapcontainer">
-    <Map :url="configUrl" @onload="onMapload" />
+    <mars-map :url="configUrl" @onload="onMapload" />
   </div>
 </template>
 
 <script>
-import Map from '../components/mars3d/Map.vue'
+import MarsMap from '../components/mars-work/mars-map.vue'
 
 export default {
   name: 'Index',
 
   components: {
-    Map
+    MarsMap
   },
 
   data() {

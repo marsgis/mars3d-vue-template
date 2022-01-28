@@ -4,11 +4,14 @@
     "node": true,
     "jquery": true
   },
-  "extends": ["plugin:vue/essential", "@vue/standard"],
+  "extends": [
+    "plugin:vue/essential",
+    "@vue/standard"
+  ],
   "rules": {
     "space-before-function-paren": "off"
   },
   "parserOptions": {
-    "parser": "@babel/eslint-parser"
+    "ecmaVersion": 2020
   }
 }
