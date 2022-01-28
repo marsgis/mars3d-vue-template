@@ -1,6 +1,5 @@
 import fs from "fs-extra"
 import path from "path"
-import externalGlobals from "rollup-plugin-external-globals"
 import serveStatic from "serve-static"
 import { HtmlTagDescriptor, normalizePath, Plugin, UserConfig } from "vite"
 
@@ -46,32 +45,10 @@ function vitePluginCesium(
       if (!isBuild) {
         // -----------dev-----------
         userConfig.optimizeDeps = {
-          exclude: ["mar3d-cesium"]
+          exclude: ["mars3d-cesium"]
         }
         userConfig.define = {
           CESIUM_BASE_URL: JSON.stringify(CESIUM_BASE_URL)
-        }
-      } else {
-        // -----------build------------
-        if (rebuildCesium) {
-          // build 1) rebuild cesium library
-          userConfig.build = {
-            assetsInlineLimit: 0,
-            chunkSizeWarningLimit: 5000,
-            rollupOptions: {
-              output: {
-                intro: `window.CESIUM_BASE_URL = "${CESIUM_BASE_URL}";`
-              }
-            }
-          }
-        } else {
-          // build 2) copy Cesium.js later
-          userConfig.build = {
-            rollupOptions: {
-              external: ["mar3d-cesium"],
-              plugins: [externalGlobals({ cesium: "Cesium" })]
-            }
-          }
         }
       }
       return userConfig
@@ -108,12 +85,10 @@ function vitePluginCesium(
           }
         }
       ]
-      if (!isBuild) {
-        tags.push({
-          tag: "script",
-          attrs: { src: normalizePath(path.join(base, "mars3d-cesium/Cesium.js")) }
-        })
-      }
+      tags.push({
+        tag: "script",
+        attrs: { src: normalizePath(path.join(base, "mars3d-cesium/Cesium.js")) }
+      })
       return tags
     }
   }

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -11,12 +11,13 @@
     "vue": "^3.2.25"
   },
   "devDependencies": {
+    "@types/node": "^17.0.13",
     "@vitejs/plugin-vue": "^2.0.0",
-    "typescript": "^4.4.4",
-    "vite": "^2.7.2",
-    "vue-tsc": "^0.29.8",
     "fs-extra": "^10.0.0",
     "rollup-plugin-external-globals": "^0.6.1",
-    "serve-static": "^1.14.2"
+    "serve-static": "^1.14.2",
+    "typescript": "^4.4.4",
+    "vite": "^2.7.2",
+    "vue-tsc": "^0.29.8"
   }
 }

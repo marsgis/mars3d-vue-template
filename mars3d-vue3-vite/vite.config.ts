@@ -6,8 +6,6 @@ import mars3dCesium from "./build/cesium-plugin";
 export default defineConfig({
   plugins: [
     vue(),
-    mars3dCesium({
-      rebuildCesium: true,
-    }),
+    mars3dCesium(),
   ],
 });
