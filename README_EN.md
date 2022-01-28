@@ -28,7 +28,7 @@
 
 
 ## Vue2
- Mars3D platform,different application project templates under `Vue 3.x` technology stack。For `Vue 2.x` technology stack development, please refer to[mars3d-vue2-template](https://github.com/marsgis/mars3d-vue2-template)
+ Mars3D platform,different application project templates under `Vue 3.x` technology stack。For `Vue 2.x` technology stack development, please refer to[mars3d-vue2-template](https://github.com/marsgis/mars3d-vue-template)
    
 
 

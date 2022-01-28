@@ -1,6 +1,6 @@
 {
   "name": "mars3d-vue-electron",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "Mars3D平台,CS桌面版程序脚手架，使用Vue-Electron技术栈",
   "main": "background.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "postuninstall": "electron-builder install-app-deps"
   },
   "dependencies": {
-    "mars3d": "^3.1.19",     
+    "mars3d": "^3.2.0",     
     "core-js": "^3.8.2",
     "element-ui": "^2.13.1",
     "normalize.css": "^8.0.1",
@@ -44,10 +44,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/marsgis/mars3d-vue2-template.git"
+    "url": "https://github.com/marsgis/mars3d-vue-template.git"
   },
   "bugs": {
-    "url": "https://github.com/marsgis/mars3d-vue2-template/issues",
+    "url": "https://github.com/marsgis/mars3d-vue-template/issues",
     "email": "wh@marsgis.cn"
   },
   "keywords": [

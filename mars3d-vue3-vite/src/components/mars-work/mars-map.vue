@@ -50,7 +50,7 @@ const initMars3d = (option: any) => {
   const lat = getQueryString("lat")
   const lng = getQueryString("lng")
   if (lat && lng) {
-    map.flyToPoint(new mars3d.LatLngPoint(lng, lat), { duration: 0 })
+    map.flyToPoint(new mars3d.LngLatPoint(lng, lat), { duration: 0 })
   }
 
   // 开场动画

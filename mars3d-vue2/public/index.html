@@ -8,7 +8,7 @@
     <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
 
     <!-- <title><%= htmlWebpackPlugin.options.title %></title> -->
-    <title>Mars3D最简项目模版 - Vue版</title>
+    <title>Mars3D最简项目模版 - Vue2版</title>
 
     <script>
       window.basePathUrl = '<%= BASE_URL %>' //标识config、widgets所在的目录
@@ -19,7 +19,7 @@
     <link href="https://unpkg.com/mars3d-cesium/Build/Cesium/Widgets/widgets.css" rel="stylesheet" type="text/css" />
     <script src="https://unpkg.com/mars3d-cesium/Build/Cesium/Cesium.js" type="text/javascript"></script>
     <script src="https://unpkg.com/@turf/turf/turf.min.js" type="text/javascript"></script>
-    <% } %> 
+    <% } %>
     <% if (VUE_APP_MARS3D_SOURCE=="local") { %>
     <!-- 方式3：使用直接引入的Cesium ，需要拷贝对应目录到public下 -->
     <script type="text/javascript">

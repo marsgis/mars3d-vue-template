@@ -32,7 +32,7 @@
 
 
 ## 如果使用的是Vue2
- 当前仓库是基于`Vue 3.x`技术栈下的最简项目模板，如需`Vue 2.x`技术栈下开发，请访问[mars3d-vue2-template](https://github.com/marsgis/mars3d-vue2-template)
+ 当前仓库是基于`Vue 3.x`技术栈下的最简项目模板，如需`Vue 2.x`技术栈下开发，请访问[mars3d-vue2-template](https://github.com/marsgis/mars3d-vue-template)
    
  
 

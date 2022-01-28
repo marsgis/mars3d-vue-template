@@ -81,7 +81,7 @@ export default {
     // 以下为演示代码
     addGraphic_e01(graphicLayer) {
       const graphic = new this.mars3d.graphic.LabelEntity({
-        position: new this.mars3d.LatLngPoint(116.1, 31.0, 1000),
+        position: new this.mars3d.LngLatPoint(116.1, 31.0, 1000),
         style: {
           text: 'Mars3D平台',
           font_size: 25,
@@ -129,7 +129,7 @@ export default {
 
     addGraphic_e04(graphicLayer) {
       const graphic = new this.mars3d.graphic.PlaneEntity({
-        position: new this.mars3d.LatLngPoint(116.4, 31.0, 1000),
+        position: new this.mars3d.LngLatPoint(116.4, 31.0, 1000),
         style: {
           plane: new this.Cesium.Plane(this.Cesium.Cartesian3.UNIT_Z, 0.0),
           dimensions: new this.Cesium.Cartesian2(4000.0, 4000.0),
@@ -145,7 +145,7 @@ export default {
     //
     addGraphic_e05(graphicLayer) {
       const graphic = new this.mars3d.graphic.BoxEntity({
-        position: new this.mars3d.LatLngPoint(116.5, 31.0, 1000),
+        position: new this.mars3d.LngLatPoint(116.5, 31.0, 1000),
         style: {
           dimensions: new this.Cesium.Cartesian3(2000.0, 2000.0, 2000.0),
           fill: true,
@@ -194,7 +194,7 @@ export default {
     //
     addGraphic_e08(graphicLayer) {
       const graphic = new this.mars3d.graphic.EllipsoidEntity({
-        position: new this.mars3d.LatLngPoint(116.3, 30.9, 1000),
+        position: new this.mars3d.LngLatPoint(116.3, 30.9, 1000),
         style: {
           radii: new this.Cesium.Cartesian3(1500.0, 1500.0, 1500.0),
           material: this.Cesium.Color.RED.withAlpha(0.5),

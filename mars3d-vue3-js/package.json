@@ -1,6 +1,6 @@
 {
   "name": "mars3d-vue3-js",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "在`Vue 3.x`技术栈下的Mars3D平台 最简项目模板",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -12,7 +12,7 @@
     "ant-design-vue": "^3.0.0-alpha.7",
     "axios": "^0.23.0",
     "core-js": "^3.6.5",
-    "mars3d": "^3.1.19",
+    "mars3d": "^3.2.0",
     "vue": "^3.2.26"
   },
   "devDependencies": {
