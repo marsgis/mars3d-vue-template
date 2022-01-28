@@ -25,17 +25,13 @@
   
 | 目录  |mars3d包 |Cesium包  |   说明  | 
 |  ----  |----  | ----| ----  |
-|[mars3d-vue3-vite](./mars3d-vue3-vite/README.md)	|npm |npm  | vue3项目模板,使用vue3+vite+ts|  
+|[mars3d-vue3-vite](./mars3d-vue3-vite/README.md)	|npm |npm  | 【推荐】 vue3项目模板,使用vue3+vite+ts|  
 |[mars3d-vue3-js](./mars3d-vue3-js/README.md)	|npm |npm  |  vue3项目模板,使用vue+vue-cli+js| 
-|[mars3d-vue2](./mars3d-vue2/README.md)	|npm |npm  | vue2项目模板,使用vue+vue-cli | 
+|[mars3d-vue2](./mars3d-vue2/README.md)	|npm |npm  | vue2项目模板,使用vue+vue-cli+js| 
 |[mars3d-vue2-electron](./mars3d-vue2-electron/README.md)	|npm |npm  | 适用于CS桌面程序的项目模板| 
 
 
-## 如果使用的是Vue2
- 当前仓库是基于`Vue 3.x`技术栈下的最简项目模板，如需`Vue 2.x`技术栈下开发，请访问[mars3d-vue2-template](https://github.com/marsgis/mars3d-vue-template)
-   
  
-
 ### 运行效果 
  [在线体验](http://marsgis.gitee.io/mars3d-es5-template/)  
  
