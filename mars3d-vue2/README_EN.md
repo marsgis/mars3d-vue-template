@@ -141,14 +141,7 @@ When running an error, please check whether there is any conflict between the re
   >1. Check the compatibility between webpack and copy-webpack-plugin versions
   >2. Check whether webpack and copy-webpack-plugin are compatible with Node and NPM versions
 
-
-6. ### If you encounter a variety of strange integration problems that cannot be solved, you can switch to the following template for use (easier to use)
-Simplest project (CDN Version)[mars3d-vue2-cdn](../mars3d-vue2-cdn/)  `Non-npm introduces Cesium and Mars3D`
-
-
-7. ### If you purchased the licensed version, you can refer to the following repository to integrate the mars3D library with non-NPM versions.
-Simplest project (Local Version)[mars3d-vue2-local](../mars3d-vue2-local/)   `Mars3d library non-NPM introduced`
-
+ 
 
 ## What is Mars3D
 >  `Mars3D platform` is [Mars technology](http://marsgis.cn/) a 3D client development platform based on WebGL technology, which is based on [Cesium](https://cesium.com/cesiumjs/) optimization and B / S architecture design,The lightweight and efficient GIS development platform supporting multi industry expansion can run efficiently in the browser without installation and plug-ins, and can quickly access and use a variety of GIS data and three-dimensional models, present the visualization of three-dimensional space, and complete the flexible application of the platform in different industries.

@@ -30,7 +30,8 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^7.0.0",
     "sass": "^1.32.12",
-    "sass-loader": "^8.0.2",
+    "sass-loader": "^8.0.2", 
+    "copy-webpack-plugin": "^6.3.2",
     "vue-template-compiler": "^2.6.12"
   },
   "repository": {
