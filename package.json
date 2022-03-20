@@ -1,12 +1,12 @@
 {
   "name": "mars3d-vue-template",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "Mars3D平台,Vue最简项目模版",
   "main": "index.js",
   "scripts": {},
   "dependencies": {},
   "devDependencies": {
-    "mars3d": "^3.2.0"
+    "mars3d": "^3.3.0"
   },
   "repository": {
     "type": "git",
