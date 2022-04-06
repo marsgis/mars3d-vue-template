@@ -139,10 +139,10 @@ export default {
 
 /**cesium工具栏位置*/
 .cesium-viewer-toolbar {
-  top: auto;
-  left: auto;
-  right: 12px;
-  bottom: 35px;
+  top: auto !important;
+  left: auto !important;
+  right: 12px !important;
+  bottom: 35px !important;
 }
 
 .cesium-viewer-toolbar > .cesium-toolbar-button,

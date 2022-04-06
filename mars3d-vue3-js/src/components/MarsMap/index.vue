@@ -99,10 +99,10 @@ onBeforeUnmount(() => {
 
 /**cesium 工具按钮栏*/
 .cesium-viewer-toolbar {
-  top: auto;
-  bottom: 35px;
-  left: 12px;
-  right: auto;
+  top: auto !important;
+  bottom: 35px !important;
+  left: 12px !important;
+  right: auto !important;
 }
 .cesium-toolbar-button img {
   height: 100%;
