@@ -45,8 +45,8 @@ export default {
   },
 
   beforeDestroy () {
-    let map = this[`map${this.mapKey}`]
-    if(map){
+    const map = this[`map${this.mapKey}`]
+    if (map) {
       map.destroy()
       delete this[`map${this.mapKey}`]
     }
