@@ -66,7 +66,7 @@
         "icon": "https://muyao1987.gitee.io/cdn/mars3d.cn/img/basemaps/tdt_img.png",
         "type": "tdt",
         "layer": "img_d",
-        "key": ["9ae78c51a0a28f06444d541148496e36"]
+        "key": ["789e558be762ff832392a0393fd8a4f1"]
       },
       {
         "pid": 10,
@@ -74,8 +74,8 @@
         "icon": "https://muyao1987.gitee.io/cdn/mars3d.cn/img/basemaps/tdt_vec.png",
         "type": "group",
         "layers": [
-          { "name": "底图", "type": "tdt", "layer": "vec_d", "key": ["9ae78c51a0a28f06444d541148496e36"] },
-          { "name": "注记", "type": "tdt", "layer": "vec_z", "key": ["9ae78c51a0a28f06444d541148496e36"] }
+          { "name": "底图", "type": "tdt", "layer": "vec_d", "key": ["789e558be762ff832392a0393fd8a4f1"] },
+          { "name": "注记", "type": "tdt", "layer": "vec_z", "key": ["789e558be762ff832392a0393fd8a4f1"] }
         ]
       },
       {
@@ -207,7 +207,7 @@
         "pid":20,
         "name": "行政区划界线",
         "type": "xyz",
-        "url": "https://t{s}.tianditu.gov.cn/DataServer?T=ibo_w&x={x}&y={y}&l={z}&tk=9ae78c51a0a28f06444d541148496e36",
+        "url": "https://t{s}.tianditu.gov.cn/DataServer?T=ibo_w&x={x}&y={y}&l={z}&tk=789e558be762ff832392a0393fd8a4f1",
         "subdomains": "01234567",
         "maximumLevel": 10,
         "show": false
@@ -217,7 +217,7 @@
         "name": "天地图注记",
         "type": "tdt",
         "layer": "img_z",
-        "key": ["9ae78c51a0a28f06444d541148496e36"],
+        "key": ["789e558be762ff832392a0393fd8a4f1"],
         "show": false
       },
       { "id": 30, "name": "实时路况", "type": "group" },
