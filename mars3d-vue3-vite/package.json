@@ -21,6 +21,7 @@
     "serve-static": "^1.14.2",
     "typescript": "^4.4.4",
     "vite": "^2.7.2",
+    "vite-plugin-mars3d": "^1.1.3",
     "vue-tsc": "^0.29.8"
   },
   "repository": {
