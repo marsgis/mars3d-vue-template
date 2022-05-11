@@ -5,11 +5,11 @@
 /**
  * 地图渲染组件
  * @copyright 火星科技 mars3d.cn
- * @author 火星吴彦祖 2021-12-30
+ * @author 火星吴彦祖 2022-02-19
  */
-import { computed, onBeforeUnmount, onMounted } from "vue"
-import * as mars3d from "mars3d"
-import { getQueryString, isPc } from "../../utils/mars-util"
+import { computed, onUnmounted, onMounted } from "vue"
+import * as mars3d from "mars3d" 
+// import { $alert, $message } from "@mars/components/mars-ui/index"
 
 const props = withDefaults(
   defineProps<{
@@ -47,33 +47,29 @@ const initMars3d = (option: any) => {
   map = new mars3d.Map(withKeyId.value, option)
 
   // //如果有xyz传参，进行定位
-  const lat = getQueryString("lat")
-  const lng = getQueryString("lng")
-  if (lat && lng) {
-    map.flyToPoint(new mars3d.LngLatPoint(lng, lat), { duration: 0 })
-  }
+  // const lat = getQueryString("lat")
+  // const lng = getQueryString("lng")
+  // if (lat && lng) {
+  //   map.flyToPoint(new mars3d.LngLatPoint(lng, lat), { duration: 0 })
+  // }
 
   // 开场动画
   // map.openFlyAnimation();
 
-  // //针对不同终端的优化配置
-  if (isPc()) {
-    // Cesium 1.61以后会默认关闭反走样，对于桌面端而言还是开启得好，
-    map.scene.postProcessStages.fxaa.enabled = true
-
+  // 针对不同终端的优化配置
+  if (mars3d.Util.isPCBroswer()) {
     map.zoomFactor = 2.0 // 鼠标滚轮放大的步长参数
 
     // IE浏览器优化
     if (window.navigator.userAgent.toLowerCase().indexOf("msie") >= 0) {
       map.viewer.targetFrameRate = 20 // 限制帧率
-      map.scene.requestRenderMode = true // 取消实时渲染
+      map.scene.requestRenderMode = false // 取消实时渲染
     }
   } else {
     map.zoomFactor = 5.0 // 鼠标滚轮放大的步长参数
-    map.scene.screenSpaceCameraController.enableTilt = false
 
     // 移动设备上禁掉以下几个选项，可以相对更加流畅
-    map.scene.requestRenderMode = true // 取消实时渲染
+    map.scene.requestRenderMode = false // 取消实时渲染
     map.scene.fog.enabled = false
     map.scene.skyAtmosphere.show = false
     map.scene.globe.showGroundAtmosphere = false
@@ -85,60 +81,45 @@ const initMars3d = (option: any) => {
   }
 
   // webgl渲染失败后，刷新页面
-  map.on(mars3d.EventType.renderError, async () => {
-    alert("程序内存消耗过大，请重启浏览器")
-    window.location.reload()
-  })
+  // map.on(mars3d.EventType.renderError, async () => {
+  //   await $alert("程序内存消耗过大，请重启浏览器")
+  //   window.location.reload()
+  // })
 
   // map构造完成后的一些处理
   onMapLoad()
+
   emit("onload", map)
 }
 
 // map构造完成后的一些处理
 function onMapLoad() {
-  // 用于 config.json 中 西藏垭口 图层的详情按钮 演示
-  // @ts-ignore
-  window.showPopupDetails = (item: any) => {
-    alert(item.NAME)
-  }
+  // // Mars3D地图内部使用，如右键菜单弹窗
+  // // @ts-ignore
+  // window.globalAlert = $alert
+  // // @ts-ignore
+  // window.globalMsg = $message
 
-  // 用于 config.json中配置的图层，绑定额外方法和参数
-  const tiles3dLayer = map.getLayer(204012, "id") // 上海市区
-  if (tiles3dLayer) {
-    tiles3dLayer.options.onSetOpacity = function (opacity: number) {
-      tiles3dLayer.style = {
-        color: {
-          conditions: [
-            ["${floor} >= 200", "rgba(45, 0, 75," + 0.5 * opacity + ")"],
-            ["${floor} >= 100", "rgba(170, 162, 204," + opacity + ")"],
-            ["${floor} >= 50", "rgba(224, 226, 238," + opacity + ")"],
-            ["${floor} >= 25", "rgba(252, 230, 200," + opacity + ")"],
-            ["${floor} >= 10", "rgba(248, 176, 87," + opacity + ")"],
-            ["${floor} >= 5", "rgba(198, 106, 11," + opacity + ")"],
-            ["true", "rgba(127, 59, 8," + opacity + ")"]
-          ]
-        }
-      }
-    }
-  }
+  // // 用于 config.json 中 西藏垭口 图层的详情按钮 演示
+  // // @ts-ignore
+  // window.showPopupDetails = (item: any) => {
+  //   $alert(item.NAME)
+  // }
+
+ 
 }
 
 // 组件卸载之前销毁mars3d实例
-onBeforeUnmount(() => {
+onUnmounted(() => {
   if (map) {
     map.destroy()
     map = null
   }
+  console.log("map销毁完成", map)
 })
 </script>
 
 <style>
-.mars3d-container {
-  height: 100%;
-  overflow: hidden;
-}
-
 /**cesium 工具按钮栏*/
 .cesium-viewer-toolbar {
   top: auto !important;

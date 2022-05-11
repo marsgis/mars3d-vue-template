@@ -47,12 +47,13 @@ export default {
     })
   },
 
-  beforeDestroy () {
+  beforeDestroy() {
     const map = this[`map${this.mapKey}`]
     if (map) {
       map.destroy()
       delete this[`map${this.mapKey}`]
     }
+    console.log('>>>>> 地图卸载完成 >>>>')
   },
 
   methods: {
@@ -87,7 +88,7 @@ export default {
 }
 </script>
 
-<style >
+<style>
 .mars3d-container {
   height: 100%;
   overflow: hidden;

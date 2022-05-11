@@ -26,10 +26,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/marsgis/mars3d-vue-template/.git"
+    "url": "https://github.com/marsgis/mars3d-vue-template.git"
   },
   "bugs": {
-    "url": "https://github.com/marsgis/mars3d-vue-template//issues",
+    "url": "https://github.com/marsgis/mars3d-vue-template/issues",
     "email": "wh@marsgis.cn"
   },
   "keywords": [
