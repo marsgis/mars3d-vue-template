@@ -1,0 +1,44 @@
+{
+  "name": "mars3d-webpack-template",
+  "version": "3.3.0",
+  "description": "Mars3D平台，webpack技术栈模版",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --mode development",
+    "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "@babel/core": "^7.17.12",
+    "@babel/plugin-proposal-class-properties": "^7.17.12",
+    "mars3d": "^3.3.9",
+    "mars3d-cesium": "^1.93.0"
+  },
+  "devDependencies": {
+    "babel-loader": "^8.2.5",
+    "copy-webpack-plugin": "^10.2.4",
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marsgis/mars3d-webpack-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marsgis/mars3d-webpack-template/issues",
+    "email": "wh@marsgis.cn"
+  },
+  "keywords": [
+    "marsgis",
+    "mars3d",
+    "cesium",
+    "vue",
+    "gis"
+  ],
+  "author": "火星科技",
+  "license": "Apache-2.0",
+  "homepage": "http://mars3d.cn"
+}
