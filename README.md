@@ -31,6 +31,10 @@
 [在线体验](http://marsgis.gitee.io/mars3d-es5-template/)
 
 
+ ## 视频讲解
+
+建议先看一遍视频讲解，再实际操作，您可以[新页面查看高清视频](https://www.bilibili.com/video/BV17P4y1F7gv/)
+
 
 ## Mars3D 是什么
 
