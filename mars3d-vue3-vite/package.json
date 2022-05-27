@@ -15,10 +15,7 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.13",
-    "@vitejs/plugin-vue": "^2.0.0",
-    "fs-extra": "^10.0.0",
-    "rollup-plugin-external-globals": "^0.6.1",
-    "serve-static": "^1.14.2",
+    "@vitejs/plugin-vue": "^2.0.0", 
     "typescript": "^4.4.4",
     "vite": "^2.7.2",
     "vite-plugin-mars3d": "^1.1.4",
