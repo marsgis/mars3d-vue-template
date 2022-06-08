@@ -119,7 +119,7 @@ onUnmounted(() => {
 })
 </script>
 
-<style>
+<style lang="less"> 
 /**cesium 工具按钮栏*/
 .cesium-viewer-toolbar {
   top: auto !important;
@@ -139,11 +139,14 @@ onUnmounted(() => {
   text-align: center;
 }
 .cesium-button {
-  background-color: #3f4854;
+  background-color: rgba(23, 49, 71, 0.8);
   color: #e6e6e6;
   fill: #e6e6e6;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   line-height: 32px;
+}
+.cesium-button:hover {
+  background: #3ea6ff;
 }
 
 /**cesium 底图切换面板*/
@@ -152,6 +155,7 @@ onUnmounted(() => {
   left: 40px;
   max-height: 700px;
   margin-bottom: 5px;
+  background-color: rgba(23, 49, 71, 0.8);
 }
 
 /**cesium 帮助面板*/
@@ -160,6 +164,18 @@ onUnmounted(() => {
   bottom: 0;
   left: 40px;
   transform-origin: left bottom;
+  background: none;
+  background-color: rgba(23, 49, 71, 0.8);
+  .cesium-navigation-help-instructions {
+    background: none;
+  }
+  .cesium-navigation-button {
+    background: none;
+  }
+  .cesium-navigation-button-selected,
+  .cesium-navigation-button-unselected:hover {
+    background: rgba(0, 138, 255, 0.2);
+  }
 }
 
 /**cesium 二维三维切换*/
@@ -179,7 +195,7 @@ onUnmounted(() => {
   z-index: 9999;
 }
 .cesium-geocoder-searchButton {
-  background-color: #3f4854;
+  background-color: rgba(23, 49, 71, 0.8);
 }
 .cesium-viewer-geocoderContainer .cesium-geocoder-input {
   background-color: rgba(63, 72, 84, 0.7);
@@ -188,16 +204,16 @@ onUnmounted(() => {
   background-color: rgba(63, 72, 84, 0.9);
 }
 .cesium-viewer-geocoderContainer .search-results {
-  background-color: #3f4854;
+  background-color: rgba(23, 49, 71, 0.8);
 }
 
 /**cesium info信息框*/
 .cesium-infoBox {
   top: 50px;
-  background: rgba(63, 72, 84, 0.9);
+  background-color: rgba(23, 49, 71, 0.8);
 }
 .cesium-infoBox-title {
-  background-color: #3f4854;
+  background-color: rgba(23, 49, 71, 0.8);
 }
 
 /**cesium 任务栏的FPS信息*/
@@ -216,6 +232,59 @@ onUnmounted(() => {
   top: 10px;
   left: 10px;
   right: auto;
-  background-color: #3f4854;
+}
+.cesium-cesiumInspector {
+  background-color: rgba(23, 49, 71, 0.8);
+}
+
+/**覆盖mars3d内部控件的颜色等样式*/
+.mars3d-compass .mars3d-compass-outer {
+  fill: rgba(23, 49, 71, 0.8);
+}
+.mars3d-contextmenu-ul,
+.mars3d-sub-menu {
+  background-color: rgba(23, 49, 71, 0.8);
+
+  > li > a:hover,
+  > li > a:focus,
+  > li > .active {
+    background-color: #3ea6ff;
+  }
+
+  > .active > a,
+  > .active > a:hover,
+  > .active > a:focus {
+    background-color: #3ea6ff;
+  }
+}
+
+/* Popup样式*/
+.mars3d-popup-color {
+  color: #ffffff;
+}
+.mars3d-popup-background {
+  background: rgba(23, 49, 71, 0.8);
+}
+.mars3d-popup-content {
+  margin: 15px;
+}
+.mars3d-template-content label {
+  padding-right: 6px;
+}
+.mars3d-template-titile {
+  border-bottom: 1px solid #3ea6ff;
+}
+.mars3d-template-titile a {
+  font-size: 16px;
+}
+.mars3d-tooltip {
+  background: rgba(23, 49, 71, 0.8);
+  border: 1px solid rgba(23, 49, 71, 0.8);
+}
+
+.mars3d-popup-btn-custom {
+  padding: 3px 10px;
+  border: 1px solid #209ffd;
+  background: #209ffd1c;
 }
 </style>

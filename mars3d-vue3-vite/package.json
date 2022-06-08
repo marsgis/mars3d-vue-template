@@ -16,6 +16,7 @@
   "devDependencies": {
     "@types/node": "^17.0.13",
     "@vitejs/plugin-vue": "^2.0.0", 
+    "less": "^4.1.2",
     "typescript": "^4.4.4",
     "vite": "^2.7.2",
     "vite-plugin-mars3d": "^1.1.4",
