@@ -6,6 +6,9 @@
 
 <script>
 import MarsMap from '../components/mars-work/mars-map.vue'
+import * as mars3d from 'mars3d'
+
+const Cesium = mars3d.Cesium
 
 export default {
   name: 'Index',
