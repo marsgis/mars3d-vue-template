@@ -11,6 +11,7 @@ import * as mars3d from 'mars3d'
 const Cesium = mars3d.Cesium
 
 export default {
+  // eslint-disable-next-line vue/multi-word-component-names
   name: 'Index',
 
   components: {
