@@ -28,6 +28,7 @@ export default {
     // 地图构造完成回调
     onMapload(map) {
       // 以下为演示代码
+      map.setCameraView({ lat: 30.617828, lng: 116.294045, alt: 44160, heading: 357, pitch: -59 })
 
       // 创建entity图层
       const graphicLayer = new this.mars3d.layer.GraphicLayer()
