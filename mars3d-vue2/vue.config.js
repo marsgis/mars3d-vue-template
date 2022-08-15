@@ -16,12 +16,11 @@ module.exports = {
     open: true // 配置自动启动浏览器
   },
   configureWebpack: (config) => {
-    let plugins = []
     if (process.env.VUE_APP_MARS3D_SOURCE === 'module') {
       const cesiumSourcePath = 'node_modules/mars3d-cesium/Build/Cesium/' // cesium库安装目录
       const cesiumRunPath = './mars3d-cesium/' // cesium运行时路径
 
-      plugins = [
+      let plugins = [
         // 标识cesium资源所在的主目录，cesium内部资源加载、多线程等处理时需要用到
         new webpack.DefinePlugin({
           CESIUM_BASE_URL: JSON.stringify(path.join(config.output.publicPath, cesiumRunPath))
@@ -36,11 +35,14 @@ module.exports = {
           ]
         })
       ]
-    }
-
-    return {
-      module: { unknownContextCritical: false }, // 配置加载的模块类型，cesium时必须配置
-      plugins: plugins
+      return {
+        module: { unknownContextCritical: false }, // 配置加载的模块类型，cesium时必须配置
+        plugins: plugins
+      }
+    } else {
+      return {
+        externals: { 'mars3d-cesium': 'Cesium' } //排除使用 mars3d-cesium
+      }
     }
   }
 }
