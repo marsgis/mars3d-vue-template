@@ -11,7 +11,7 @@
   "dependencies": {
     "core-js": "^3.8.3",
     "mars3d": "~3.4.0",
-    "mars3d-cesium": "^1.96.8",
+    "mars3d-cesium": "~1.96.8",
     "vue": "^2.6.14",
     "vue-router": "^3.5.3",
     "vuex": "^3.6.2"
@@ -27,6 +27,7 @@
     "eslint-plugin-vue": "^8.0.3",
     "sass": "^1.32.12",
     "sass-loader": "^8.0.2",
+    "node-polyfill-webpack-plugin": "^2.0.1",
     "vue-template-compiler": "^2.6.14"
   },
   "repository": {

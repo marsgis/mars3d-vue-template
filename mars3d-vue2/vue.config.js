@@ -1,6 +1,8 @@
 const path = require('path')
 const webpack = require('webpack')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin')
+
 
 module.exports = {
   publicPath: '/',
@@ -33,7 +35,8 @@ module.exports = {
             { from: path.join(cesiumSourcePath, 'ThirdParty'), to: path.join(config.output.path, cesiumRunPath, 'ThirdParty') },
             { from: path.join(cesiumSourcePath, 'Widgets'), to: path.join(config.output.path, cesiumRunPath, 'Widgets') }
           ]
-        })
+        }),
+        new NodePolyfillPlugin()
       ]
       return {
         module: { unknownContextCritical: false }, // 配置加载的模块类型，cesium时必须配置
