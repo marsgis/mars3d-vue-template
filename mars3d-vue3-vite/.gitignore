@@ -1,7 +1,9 @@
 .DS_Store
 node_modules
 /dist
-lib/CesiumUnminified/
+public/lib/CesiumUnminified/
+packages/mars3d/dist/plugins/
+packages/mars3d/node_modules/
 mars3d-*src.*
 
 # local env files
