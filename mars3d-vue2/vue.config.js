@@ -47,5 +47,19 @@ module.exports = {
         externals: { 'mars3d-cesium': 'Cesium' } //排除使用 mars3d-cesium
       }
     }
-  }
+  },
+  css: {
+    // 启用 CSS modules
+    // requireModuleExtension: false,
+    // 是否使用css分离插件
+    extract: true,
+    // 开启 CSS source maps，一般不建议开启
+    sourceMap: false,
+    // css预设器配置项
+    loaderOptions: {
+      sass: {
+        prependData: '@import "mars3d-cesium/Build/Cesium/Widgets/widgets.css";',
+      },
+    },
+  },
 }
