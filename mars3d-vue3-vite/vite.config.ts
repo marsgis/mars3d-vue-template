@@ -6,6 +6,6 @@ import { vitePluginMars3d } from "vite-plugin-mars3d"
 export default defineConfig({
   plugins: [
     vue(),
-      vitePluginMars3d(),
+    vitePluginMars3d(),
   ],
 });
