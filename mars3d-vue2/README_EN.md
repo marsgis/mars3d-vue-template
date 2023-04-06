@@ -49,7 +49,7 @@ npm install mars3d   //  or yarn add mars3d
 2. ### Copy files
  > Scene profile：`public\config\config.json`
 
- > Component definition file：`src\components\mars3d\Map.vue`
+ > Component definition file：`src\components\mars-work\mars-map.vue`
 
 
 3. ### configuration vue.config.js 
@@ -133,7 +133,7 @@ Refer to the `src\views\Index.vue` file to introduce the Map component and const
 ```js
 <Map :url="configUrl" @onload="onMapload" />
 
-import Map from '../components/mars3d/Map.vue'
+import Map from '../components/mars-work/mars-map.vue'
 ```
 5. ### Common problem
 When running an error, please check whether there is any conflict between the related versions, such as webpack 4.43.0 and copy-webpack-plugin 7.0.0

@@ -44,7 +44,7 @@ npm install mars3d   //或  cnpm install mars3d   或  yarn add mars3d
 2. ### 拷贝文件
  > 场景配置文件：`public\config\config.json`
 
- > 组件定义文件：`src\components\mars3d\Map.vue`
+ > 组件定义文件：`src\components\mars-work\mars-map.vue`
 
 
 3. ### 配置vue.config.js 
@@ -137,7 +137,7 @@ module.exports = {
 ```js
 <Map :url="configUrl" @onload="onMapload" />
 
-import Map from '../components/mars3d/Map.vue'
+import Map from '../components/mars-work/mars-map.vue'
 ```
 5. ### 常见问题
  运行报错时，请检查相关版本是否有冲突，比如webpack 4.43.0与copy-webpack-plugin 7.0.0 会出问题
