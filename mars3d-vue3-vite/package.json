@@ -20,8 +20,8 @@
     "@vitejs/plugin-vue": "^4.0.0",
     "less": "^4.1.2",
     "typescript": "4.5.5",
-    "vite": "^4.0.4",
-    "vite-plugin-mars3d": "^2.0.3",
+    "vite": "^4.3.9",
+    "vite-plugin-mars3d": "^3.0.0",
     "terser": "^5.16.1",
     "vue-tsc": "^0.29.8"
   },
