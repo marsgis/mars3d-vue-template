@@ -12,7 +12,7 @@
   "dependencies": {
     "mars3d": "~3.5.0",
     "@turf/turf": "^6.5.0",
-    "mars3d-cesium": "^1.106.0",
+    "mars3d-cesium": "^1.105.0",
     "vue": "^3.2.27"
   },
   "devDependencies": {
