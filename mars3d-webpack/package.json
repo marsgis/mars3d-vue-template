@@ -1,6 +1,6 @@
 {
   "name": "mars3d-webpack-template",
-  "version": "3.5.0",
+  "version": "3.6.0",
   "description": "Mars3D平台，webpack技术栈模版",
   "main": "index.js",
   "scripts": {
@@ -11,8 +11,8 @@
     "@babel/core": "^7.17.12",
     "@babel/plugin-proposal-class-properties": "^7.17.12",
     "@turf/turf": "^6.5.0",
-    "mars3d-cesium": "~1.107.0",
-    "mars3d": "~3.5.12"
+    "mars3d-cesium": "~1.108.0",
+    "mars3d": "~3.6.0"
   },
   "devDependencies": {
     "babel-loader": "^8.2.5",
