@@ -1,0 +1,66 @@
+{
+  "name": "@turf/tesselate",
+  "version": "6.5.0",
+  "description": "turf tesselate module",
+  "author": "Turf Authors",
+  "contributors": [
+    "Abel Vázquez <@AbelVM>",
+    "Morgan Herlocker <@morganherlocker>",
+    "Tom MacWright <@tmcw>",
+    "Vladimir Agafonkin <@mourner>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Turfjs/turf/issues"
+  },
+  "homepage": "https://github.com/Turfjs/turf",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Turfjs/turf.git"
+  },
+  "funding": "https://opencollective.com/turf",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "turf",
+    "turfjs",
+    "tesselation",
+    "earcut",
+    "polygon",
+    "triangles"
+  ],
+  "main": "dist/js/index.js",
+  "module": "dist/es/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/es/index.js",
+      "require": "./dist/js/index.js"
+    }
+  },
+  "types": "index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "bench": "node -r esm bench.js",
+    "build": "rollup -c ../../rollup.config.js && echo '{\"type\":\"module\"}' > dist/es/package.json",
+    "docs": "node ../../scripts/generate-readmes",
+    "test": "npm-run-all test:*",
+    "test:tape": "node -r esm test.js"
+  },
+  "devDependencies": {
+    "benchmark": "*",
+    "npm-run-all": "*",
+    "rollup": "*",
+    "tape": "*"
+  },
+  "dependencies": {
+    "@turf/helpers": "^6.5.0",
+    "earcut": "^2.0.0"
+  },
+  "gitHead": "5375941072b90d489389db22b43bfe809d5e451e"
+}

@@ -1,0 +1,74 @@
+{
+  "name": "@turf/interpolate",
+  "version": "6.5.0",
+  "description": "turf interpolate module",
+  "author": "Turf Authors",
+  "contributors": [
+    "Stefano Borghi <@stebogit>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Turfjs/turf/issues"
+  },
+  "homepage": "https://github.com/Turfjs/turf",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Turfjs/turf.git"
+  },
+  "funding": "https://opencollective.com/turf",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "turf",
+    "idw",
+    "interpolate"
+  ],
+  "main": "dist/js/index.js",
+  "module": "dist/es/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/es/index.js",
+      "require": "./dist/js/index.js"
+    }
+  },
+  "types": "index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "bench": "node -r esm bench.js",
+    "build": "rollup -c ../../rollup.config.js && echo '{\"type\":\"module\"}' > dist/es/package.json",
+    "docs": "node ../../scripts/generate-readmes",
+    "test": "npm-run-all test:*",
+    "test:tape": "node -r esm test.js",
+    "test:types": "tsc --esModuleInterop --noEmit types.ts"
+  },
+  "devDependencies": {
+    "@turf/truncate": "^6.5.0",
+    "benchmark": "*",
+    "chromatism": "*",
+    "load-json-file": "*",
+    "npm-run-all": "*",
+    "rollup": "*",
+    "tape": "*",
+    "write-json-file": "*"
+  },
+  "dependencies": {
+    "@turf/bbox": "^6.5.0",
+    "@turf/centroid": "^6.5.0",
+    "@turf/clone": "^6.5.0",
+    "@turf/distance": "^6.5.0",
+    "@turf/helpers": "^6.5.0",
+    "@turf/hex-grid": "^6.5.0",
+    "@turf/invariant": "^6.5.0",
+    "@turf/meta": "^6.5.0",
+    "@turf/point-grid": "^6.5.0",
+    "@turf/square-grid": "^6.5.0",
+    "@turf/triangle-grid": "^6.5.0"
+  },
+  "gitHead": "5375941072b90d489389db22b43bfe809d5e451e"
+}

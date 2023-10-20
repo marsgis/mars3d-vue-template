@@ -1,0 +1,69 @@
+{
+  "name": "@turf/voronoi",
+  "version": "6.5.0",
+  "description": "turf voronoi module",
+  "author": "Turf Authors",
+  "contributors": [
+    "Philippe Riviere <@Fil>",
+    "Mike Bostock <@mbostock>",
+    "Steve Bennett <@stevage1>",
+    "Denis Carriere <@DenisCarriere>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Turfjs/turf/issues"
+  },
+  "homepage": "https://github.com/Turfjs/turf",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Turfjs/turf.git"
+  },
+  "funding": "https://opencollective.com/turf",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "turf",
+    "geometry",
+    "voronoi",
+    "polygons",
+    "points"
+  ],
+  "main": "dist/js/index.js",
+  "module": "dist/es/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/es/index.js",
+      "require": "./dist/js/index.js"
+    }
+  },
+  "types": "index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "bench": "node -r esm bench.js",
+    "build": "rollup -c ../../rollup.config.js && echo '{\"type\":\"module\"}' > dist/es/package.json",
+    "docs": "node ../../scripts/generate-readmes",
+    "test": "npm-run-all test:*",
+    "test:tape": "node -r esm test.js"
+  },
+  "devDependencies": {
+    "benchmark": "*",
+    "glob": "*",
+    "load-json-file": "*",
+    "npm-run-all": "*",
+    "rollup": "*",
+    "tape": "*",
+    "write-json-file": "*"
+  },
+  "dependencies": {
+    "@turf/helpers": "^6.5.0",
+    "@turf/invariant": "^6.5.0",
+    "d3-voronoi": "1.1.2"
+  },
+  "gitHead": "5375941072b90d489389db22b43bfe809d5e451e"
+}

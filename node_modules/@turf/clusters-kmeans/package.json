@@ -1,0 +1,82 @@
+{
+  "name": "@turf/clusters-kmeans",
+  "version": "6.5.0",
+  "description": "turf clusters-kmeans module",
+  "author": "Turf Authors",
+  "contributors": [
+    "David Gómez Matarrodona <@solzimer>",
+    "Stefano Borghi <@stebogit>",
+    "Denis Carriere <@DenisCarriere>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Turfjs/turf/issues"
+  },
+  "homepage": "https://github.com/Turfjs/turf",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Turfjs/turf.git"
+  },
+  "funding": "https://opencollective.com/turf",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "turf",
+    "geojson",
+    "cluster",
+    "clusters",
+    "clustering",
+    "k-means"
+  ],
+  "main": "dist/js/index.js",
+  "module": "dist/es/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/es/index.js",
+      "require": "./dist/js/index.js"
+    }
+  },
+  "types": "dist/js/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "bench": "ts-node bench.js",
+    "build": "npm-run-all build:*",
+    "build:es": "tsc --outDir dist/es --module esnext --declaration false && echo '{\"type\":\"module\"}' > dist/es/package.json",
+    "build:js": "tsc",
+    "docs": "node ../../scripts/generate-readmes",
+    "test": "npm-run-all test:*",
+    "test:tape": "ts-node -r esm test.js",
+    "test:types": "tsc --esModuleInterop --noEmit types.ts"
+  },
+  "devDependencies": {
+    "@turf/centroid": "^6.5.0",
+    "@turf/clusters": "^6.5.0",
+    "@turf/random": "^6.5.0",
+    "@types/skmeans": "^0.11.2",
+    "@types/tape": "*",
+    "benchmark": "*",
+    "chromatism": "*",
+    "concaveman": "*",
+    "load-json-file": "*",
+    "matrix-to-grid": "*",
+    "npm-run-all": "*",
+    "tape": "*",
+    "ts-node": "*",
+    "tslint": "*",
+    "typescript": "*",
+    "write-json-file": "*"
+  },
+  "dependencies": {
+    "@turf/clone": "^6.5.0",
+    "@turf/helpers": "^6.5.0",
+    "@turf/invariant": "^6.5.0",
+    "@turf/meta": "^6.5.0",
+    "skmeans": "0.9.7"
+  },
+  "gitHead": "5375941072b90d489389db22b43bfe809d5e451e"
+}

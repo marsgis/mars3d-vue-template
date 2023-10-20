@@ -1,0 +1,73 @@
+{
+  "name": "@turf/point-grid",
+  "version": "6.5.0",
+  "description": "turf point-grid module",
+  "author": "Turf Authors",
+  "contributors": [
+    "Stefano Borghi <@stebogit>",
+    "Denis Carriere <@DenisCarriere>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Turfjs/turf/issues"
+  },
+  "homepage": "https://github.com/Turfjs/turf",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Turfjs/turf.git"
+  },
+  "funding": "https://opencollective.com/turf",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "turf",
+    "grid",
+    "points",
+    "geojson"
+  ],
+  "main": "dist/js/index.js",
+  "module": "dist/es/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/es/index.js",
+      "require": "./dist/js/index.js"
+    }
+  },
+  "types": "dist/js/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "bench": "ts-node bench.js",
+    "build": "npm-run-all build:*",
+    "build:es": "tsc --outDir dist/es --module esnext --declaration false && echo '{\"type\":\"module\"}' > dist/es/package.json",
+    "build:js": "tsc",
+    "docs": "node ../../scripts/generate-readmes",
+    "test": "npm-run-all test:*",
+    "test:tape": "ts-node -r esm test.js",
+    "test:types": "tsc --esModuleInterop --noEmit types.ts"
+  },
+  "devDependencies": {
+    "@turf/bbox-polygon": "^6.5.0",
+    "@turf/truncate": "^6.5.0",
+    "@types/tape": "*",
+    "benchmark": "*",
+    "load-json-file": "*",
+    "npm-run-all": "*",
+    "tape": "*",
+    "ts-node": "*",
+    "tslint": "*",
+    "typescript": "*",
+    "write-json-file": "*"
+  },
+  "dependencies": {
+    "@turf/boolean-within": "^6.5.0",
+    "@turf/distance": "^6.5.0",
+    "@turf/helpers": "^6.5.0",
+    "@turf/invariant": "^6.5.0"
+  },
+  "gitHead": "5375941072b90d489389db22b43bfe809d5e451e"
+}

@@ -1,0 +1,65 @@
+{
+  "name": "@turf/point-on-feature",
+  "version": "6.5.0",
+  "description": "turf point-on-feature module",
+  "author": "Turf Authors",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Turfjs/turf/issues"
+  },
+  "homepage": "https://github.com/Turfjs/turf",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Turfjs/turf.git"
+  },
+  "funding": "https://opencollective.com/turf",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "turf",
+    "centroid",
+    "geojson",
+    "point",
+    "surface",
+    "polygon"
+  ],
+  "main": "dist/js/index.js",
+  "module": "dist/es/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/es/index.js",
+      "require": "./dist/js/index.js"
+    }
+  },
+  "types": "index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "bench": "node -r esm bench.js",
+    "build": "rollup -c ../../rollup.config.js && echo '{\"type\":\"module\"}' > dist/es/package.json",
+    "docs": "node ../../scripts/generate-readmes",
+    "test": "npm-run-all test:*",
+    "test:tape": "node -r esm test.js"
+  },
+  "devDependencies": {
+    "@turf/meta": "^6.5.0",
+    "@turf/truncate": "^6.5.0",
+    "benchmark": "*",
+    "npm-run-all": "*",
+    "rollup": "*",
+    "tape": "*"
+  },
+  "dependencies": {
+    "@turf/boolean-point-in-polygon": "^6.5.0",
+    "@turf/center": "^6.5.0",
+    "@turf/explode": "^6.5.0",
+    "@turf/helpers": "^6.5.0",
+    "@turf/nearest-point": "^6.5.0"
+  },
+  "gitHead": "5375941072b90d489389db22b43bfe809d5e451e"
+}
