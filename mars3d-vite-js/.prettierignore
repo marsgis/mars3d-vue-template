@@ -1,0 +1,14 @@
+
+# Ignore everything
+*
+
+# Unignore directories (to all depths) and unignore code and style files in these directories
+!.github/**/
+!.vscode/**/
+!src/**/
+
+!**/*.js
+!**/*.css
+!**/*.html
+!**/*.md
+!**/*.json

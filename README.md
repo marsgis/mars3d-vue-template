@@ -21,6 +21,7 @@
 | 目录                                             | 说明                                               |
 | ------------------------------------------------ | -------------------------------------------------- |
 | [mars3d-vue3-vite](./mars3d-vue3-vite/README.md) | 【推荐】 vue3 项目模板,使用 vue3、vite、ts         |
+| [mars3d-vite-js](./mars3d-vite-js/README.md) |  vite项目模板,使用 vite、js        |
 | [mars3d-vue2](./mars3d-vue2/README.md)           | vue2 项目模板,使用 vue、vue-cli、js                |
 | [mars3d-webpack](./mars3d-webpack/README.md)     | webpack 项目模板,仅为了演示 webpack 技术栈下的配置 |
 

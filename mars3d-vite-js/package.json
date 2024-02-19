@@ -1,0 +1,54 @@
+{
+  "name": "mars3d-vue-template",
+  "version": "3.7.0",
+  "description": "The minimal recommended setup for an app using Cesium+Mars3D with Vite.",
+  "type": "module",
+  "scripts": {
+    "prepare": "husky install",
+    "serve": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "eslint": "eslint \"./**/*.js\" \"./**/*.html\" --cache --quiet",
+    "prettier": "prettier --write --no-config \"**/*\"",
+    "prettier-check": "prettier --check --no-config \"**/*\""
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-cesium": "^10.0.2",
+    "eslint-plugin-es": "^4.1.0",
+    "eslint-plugin-html": "^7.1.0",
+    "husky": "^8.0.3",
+    "prettier": "^3.2.4",
+    "vite": "^5.0.8",
+    "vite-plugin-static-copy": "^1.0.0"
+  },
+  "dependencies": {
+    "mars3d": "^3.7.3",
+    "mars3d-cesium": "^1.114.0"
+  },
+  "lint-staged": {
+    "*.{js,html}": [
+      "eslint --cache --quiet",
+      "prettier --write --no-config"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marsgis/mars3d-vue-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marsgis/mars3d-vue-template/issues",
+    "email": "wh@marsgis.cn"
+  },
+  "keywords": [
+    "marsgis",
+    "mars3d",
+    "cesium",
+    "vue",
+    "gis"
+  ],
+  "author": "火星科技",
+  "license": "Apache-2.0",
+  "homepage": "http://mars3d.cn"
+}
