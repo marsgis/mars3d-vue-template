@@ -36,7 +36,7 @@ export default {
   },
 
   mounted() {
-    mars3d.Cesium.Resource.fetchJson({ url: this.url }).then((data) => {
+    mars3d.Util.fetchJson({ url: this.url }).then((data) => {
       // 构建地图
       this.initMars3d({
         ...data.map3d,

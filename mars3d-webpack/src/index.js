@@ -15,7 +15,7 @@ function init() {
   let configUrl = "./config/config.json";
 
   // 读取 config.json 配置文件
-  Cesium.Resource.fetchJson({ url: configUrl })
+  mars3d.Util.fetchJson({ url: configUrl })
     .then(function (json) {
       console.log("读取 config.json 配置文件完成", json); // 打印测试信息
 
