@@ -155,20 +155,13 @@
         "layer": "Aerial"
       },
       {
-        "pid": 10,
-        "name": "OSM地图(暂不可用)",
-        "type": "xyz",
-        "icon": "img/basemaps/osm.png",
-        "url": "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-        "subdomains": "abc"
-      },
-      {
         "id": 2017,
         "pid": 10,
-        "name": "暗色底图",
+        "name": "蓝色底图",
+        "icon": "/img/basemaps/bd-c-midnight.png",
         "type": "gaode",
-        "icon": "img/basemaps/blackMarble.png",
         "layer": "vec",
+        "chinaCRS": "GCJ02",
         "invertColor": true,
         "filterColor": "#4e70a6",
         "brightness": 0.6,
@@ -179,53 +172,27 @@
       },
       {
         "pid": 10,
-        "name": "蓝色底图",
-        "icon": "img/basemaps/bd-c-midnight.png",
-        "type": "xyz",
-        "url": "http://map.geoq.cn/arcgis/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/{z}/{y}/{x}",
-        "chinaCRS": "GCJ02",
-        "enablePickFeatures": false
-      },
-      {
-        "pid": 10,
         "name": "黑色底图",
-        "icon": "img/basemaps/bd-c-dark.png",
-        "type": "tencent",
-        "layer": "custom",
-        "style": "4"
+        "icon": "/img/basemaps/bd-c-dark.png",
+        "type": "gaode",
+        "layer": "vec",
+        "chinaCRS": "GCJ02",
+        "invertColor": true,
+        "filterColor": "#909090",
+        "brightness": 0.6,
+        "contrast": 1.8,
+        "gamma": 0.3,
+        "hue": 1,
+        "saturation": 0
       },
       {
         "pid": 10,
-        "name": "离线地图 (供参考)",
-        "type": "group",
-        "icon": "img/basemaps/google_img.png",
-        "layers": [
-          {
-            "name": "全球",
-            "type": "xyz",
-            "url": "{dataServer}/tile/googleImg/{z}/{x}/{y}.jpg",
-            "minimumLevel": 0,
-            "maximumLevel": 9
-          },
-          {
-            "name": "中国",
-            "type": "xyz",
-            "url": "{dataServer}/tile/googleImg/{z}/{x}/{y}.jpg",
-            "minimumTerrainLevel": 10,
-            "minimumLevel": 10,
-            "maximumLevel": 12,
-            "rectangle": { "xmin": 69.706929, "xmax": 136.560941, "ymin": 15.831038, "ymax": 52.558005 }
-          },
-          {
-            "name": "具体项目(如合肥)",
-            "type": "xyz",
-            "url": "{dataServer}/tile/googleImg/{z}/{x}/{y}.jpg",
-            "minimumTerrainLevel": 12,
-            "minimumLevel": 12,
-            "maximumLevel": 18,
-            "rectangle": { "xmin": 116.33236, "xmax": 118.183557, "ymin": 31.143784, "ymax": 32.565035 }
-          }
-        ]
+        "name": "离线影像地图 (供参考)",
+        "icon": "/img/basemaps/google_img.png",
+        "type": "xyz",
+        "url": "{dataServer}/tile/img/{z}/{x}/{y}.jpg",
+        "chinaCRS": "GCJ02",
+        "maximumLevel": 13
       },
       {
         "pid": 10,
