@@ -53,7 +53,7 @@
       "mouseDownView": true,
       "zoom": { "insertIndex": 1 },
       "compass": { "bottom": "toolbar", "left": "5px" },
-      "distanceLegend": { "left": "100px", "bottom": "2px" },
+      "distanceLegend": { "left": "10px","bottom": "2px" },
       "locationBar": {
         "crs": "CGCS2000_GK_Zone_3",
         "crsDecimal": 0,
