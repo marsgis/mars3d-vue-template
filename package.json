@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {},
   "devDependencies": {
-    "mars3d": "~3.8.0"
+    "mars3d": "~3.8.7"
   },
   "repository": {
     "type": "git",

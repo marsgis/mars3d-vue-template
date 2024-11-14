@@ -24,8 +24,8 @@
     "vite-plugin-static-copy": "^1.0.0"
   },
   "dependencies": {
-    "mars3d": "~3.8.0", 
-    "mars3d-cesium": "~1.123.0"
+    "mars3d": "~3.8.7", 
+    "mars3d-cesium": "~1.121.2"
   },
   "lint-staged": {
     "*.{js,html}": [

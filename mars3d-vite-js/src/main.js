@@ -1,5 +1,5 @@
 import "mars3d-cesium/Build/Cesium/Widgets/widgets.css";
-import "mars3d/dist/mars3d.css";
+import "mars3d/mars3d.css";
 import "./style.css";
 
 import * as mars3d from "mars3d";
