@@ -211,10 +211,10 @@ export default {
     },
     addDemoGraphic9: (graphicLayer) => {
       const graphic = new mars3d.graphic.ModelEntity({
-        name: '消防员',
+        name: '警车',
         position: [116.4, 30.9, 1000],
         style: {
-          url: '//data.mars3d.cn/gltf/mars/firedrill/xiaofangyuan-run.gltf',
+          url: '//data.mars3d.cn/gltf/mars/jingche/jingche.gltf',
           scale: 16,
           minimumPixelSize: 100
         },
