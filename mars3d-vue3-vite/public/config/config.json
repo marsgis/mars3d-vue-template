@@ -581,7 +581,7 @@
         "url": "{dataServer}/file/geojson/xizangyakou.json",
         "symbol": {
           "styleOptions": {
-            "image": "img/marker/mark-red.png",
+            "image": "//data.mars3d.cn/img/marker/mark-red.png",
             "scaleByDistance": true,
             "scaleByDistance_far": 5000000,
             "scaleByDistance_farValue": 0.5,
@@ -624,7 +624,7 @@
         "url": "{dataServer}/file/geojson/hfty-point.json",
         "symbol": {
           "styleOptions": {
-            "image": "img/marker/mark-red.png",
+            "image": "//data.mars3d.cn/img/marker/mark-red.png",
             "scale": 1,
             "scaleByDistance": true,
             "scaleByDistance_far": 20000,
@@ -709,7 +709,7 @@
         "symbol": {
           "type": "billboardP",
           "styleOptions": {
-            "image": "img/marker/mark-red.png",
+            "image": "//data.mars3d.cn/img/marker/mark-red.png",
             "scaleByDistance": true,
             "scaleByDistance_far": 20000,
             "scaleByDistance_farValue": 0.6,
@@ -744,7 +744,7 @@
         "symbol": {
           "type": "billboardP",
           "styleOptions": {
-            "image": "img/marker/mark-blue.png",
+            "image": "//data.mars3d.cn/img/marker/mark-blue.png",
             "scaleByDistance": true,
             "scaleByDistance_far": 20000,
             "scaleByDistance_farValue": 0.6,
@@ -765,9 +765,9 @@
           },
           "styleField": "address",
           "styleFieldOptions": {
-            "AB03": { "image": "img/marker/mark-red.png" },
-            "A980": { "image": "img/marker/mark-blue.png" },
-            "A900": { "image": "img/marker/mark-green.png" }
+            "AB03": { "image": "//data.mars3d.cn/img/marker/mark-red.png" },
+            "A980": { "image": "//data.mars3d.cn/img/marker/mark-blue.png" },
+            "A900": { "image": "//data.mars3d.cn/img/marker/mark-green.png" }
           }
         },
         "popup": "名称：{NAME}<br />地址：{address}",

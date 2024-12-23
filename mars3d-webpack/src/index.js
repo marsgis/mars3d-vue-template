@@ -126,7 +126,7 @@ const demoData = {
       name: "贴地图标",
       position: [116.3, 31.0, 1000],
       style: {
-        image: "img/marker/mark-blue.png",
+        image: "//data.mars3d.cn/img/marker/mark-blue.png",
         scale: 1,
         horizontalOrigin: Cesium.HorizontalOrigin.CENTER,
         verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
@@ -144,7 +144,7 @@ const demoData = {
         dimensions: new Cesium.Cartesian2(4000.0, 4000.0),
         materialType: mars3d.MaterialType.Image2,
         materialOptions: {
-          image: "img/textures/poly-rivers.png",
+          image: "//data.mars3d.cn/img/textures/poly-rivers.png",
           transparent: true,
         },
       },
@@ -288,7 +288,7 @@ const demoData = {
         // 动画线材质
         materialType: mars3d.MaterialType.LineFlow,
         materialOptions: {
-          image: "img/textures/fence.png",
+          image: "//data.mars3d.cn/img/textures/fence.png",
           color: "#00ff00",
           speed: 10,
           axisY: true,
@@ -327,7 +327,7 @@ const demoData = {
       style: {
         materialType: mars3d.MaterialType.Water,
         materialOptions: {
-          normalMap: "img/textures/waterNormals.jpg", // 水正常扰动的法线图
+          normalMap: "//data.mars3d.cn/img/textures/waterNormals.jpg", // 水正常扰动的法线图
           frequency: 8000.0, // 控制波数的数字。
           animationSpeed: 0.02, // 控制水的动画速度的数字。
           amplitude: 5.0, // 控制水波振幅的数字。
