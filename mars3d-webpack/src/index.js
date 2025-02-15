@@ -20,7 +20,7 @@ function init() {
       console.log("读取 config.json 配置文件完成", json); // 打印测试信息
 
       //合并属性参数，可覆盖config.json中的对应配置
-      let mapOptions = mars3d.Util.merge(json.map3d, {
+      let mapOptions = mars3d.Util.merge(json, {
         scene: {
           center: {
             lat: 30.183412,

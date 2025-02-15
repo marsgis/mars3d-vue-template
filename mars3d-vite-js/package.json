@@ -1,6 +1,6 @@
 {
   "name": "mars3d-vue-template",
-  "version": "3.8.0",
+  "version": "3.9.0",
   "description": "The minimal recommended setup for an app using Cesium+Mars3D with Vite.",
   "type": "module",
   "scripts": {
@@ -24,8 +24,8 @@
     "vite-plugin-static-copy": "^1.0.0"
   },
   "dependencies": {
-    "mars3d": "~3.8.8", 
-    "mars3d-cesium": "~1.124.0"
+    "mars3d": "~3.9.0", 
+    "mars3d-cesium": "~1.126.0"
   },
   "lint-staged": {
     "*.{js,html}": [

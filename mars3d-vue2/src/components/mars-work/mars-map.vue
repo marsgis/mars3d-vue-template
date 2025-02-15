@@ -61,9 +61,6 @@ export default {
       if (this.url) {
         // 存在url时才读取
         mapOptions = await mars3d.Util.fetchJson({ url: this.url })
-        if (mapOptions.map3d) {
-          mapOptions = mapOptions.map3d
-        }
         if (this.options) {
           mapOptions = mars3d.Util.merge(mapOptions, toRaw(this.options)) // 合并配置
         }

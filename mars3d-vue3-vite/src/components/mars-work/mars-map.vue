@@ -41,9 +41,6 @@ const initMars3d = async () => {
   if (props.url) {
     // 存在url时才读取
     mapOptions = await mars3d.Util.fetchJson({ url: props.url });
-    if (mapOptions.map3d) {
-      mapOptions = mapOptions.map3d;
-    }
     if (props.options) {
       mapOptions = mars3d.Util.merge(mapOptions, toRaw(props.options)); // 合并配置
     }

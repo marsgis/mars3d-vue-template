@@ -8,7 +8,7 @@ import * as mars3d from "mars3d";
 
 // 获取配置
 mars3d.Util.fetchJson({ url: "/config/config.json" }).then((data) => {
-  initMars3d(data.map3d);
+  initMars3d(data);
 });
 
 function initMars3d(options) {
