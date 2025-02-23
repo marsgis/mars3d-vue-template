@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "@turf/turf": "^7.1.0",
+    "@turf/turf": "^7.2.0",
     "mars3d": "~3.9.0", 
     "mars3d-cesium": "~1.126.0",
     "vue": "^2.7.14",
