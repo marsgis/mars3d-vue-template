@@ -11,7 +11,7 @@
     "showSkyAtmosphere": true,
     "fog": true,
     "fxaa": true,
-    "requestRenderMode": true,
+    "requestRenderMode": false,
     "globe": {
       "depthTestAgainstTerrain": false,
       "baseColor": "#546a53",
