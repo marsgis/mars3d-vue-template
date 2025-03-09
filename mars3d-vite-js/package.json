@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "mars3d": "~3.9.0", 
-    "mars3d-cesium": "~1.126.0"
+    "mars3d-cesium": "~1.127.0"
   },
   "lint-staged": {
     "*.{js,html}": [
