@@ -1,6 +1,6 @@
 {
   "name": "mars3d-vue-template",
-  "version": "3.9.0",
+  "version": "3.10.0",
   "description": "Mars3D平台,Vue最简项目模版",
   "main": "index.js",
   "scripts": {
@@ -11,8 +11,8 @@
   "dependencies": {
     "core-js": "^3.8.3",
     "@turf/turf": "^7.2.0",
-    "mars3d": "~3.9.0", 
-    "mars3d-cesium": "~1.130.0",
+    "mars3d": "~3.10.0", 
+    "mars3d-cesium": "~1.131.0",
     "vue": "^2.7.14",
     "vue-router": "^3.5.3",
     "vuex": "^3.6.2"
