@@ -11,7 +11,7 @@
     "@babel/core": "^7.17.12",
     "@babel/plugin-proposal-class-properties": "^7.17.12",
     "@turf/turf": "^7.2.0",
-    "mars3d-cesium": "~1.134.0",
+    "mars3d-cesium": "~1.135.0",
     "mars3d": "~3.10.0"
   },
   "devDependencies": {
