@@ -1,6 +1,6 @@
 <!--
   地图渲染组件 (建议使用mars3d地图的地方都用该组件)
-  @copyright 火星科技 mars3d.cn
+  @copyright mars3d.cn
   @author 木遥 2024-12-03
 -->
 <template>
