@@ -196,6 +196,6 @@ import Map from '../components/mars-work/mars-map.vue'
 
 如您需要：去除页面周边的 Mars3D Logo；将 F12 控制台版权信息替换为
 贵单位 / 项目名称；或在对外商业交付、政企招投标中取得盖章授权文件，
-请购买 Mars3D SDK 商业授权👉 <https://mall.marsgis.cn>
+请购买 Mars3D SDK 商业授权👉 <http://mars3d.cn/buy.html>
 
 购买后只需用授权版 SDK 覆盖项目中的类库文件，**项目代码无需任何修改**。
